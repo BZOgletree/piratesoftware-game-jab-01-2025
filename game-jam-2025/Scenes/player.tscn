@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmfg2abhjewqg"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_qvba5"]
+[ext_resource type="Texture2D" uid="uid://6awpeauspt8d" path="res://Assets/icon.svg" id="2_h8a5i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_15etn"]
+radius = 6.91585
+height = 25.4891
+
+[node name="Player" type="Node2D"]
+scale = Vector2(7.37436, 5.41407)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_qvba5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_15etn")
+debug_color = Color(0.883968, 0.129678, 0.748684, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(2.27374e-13, -5.96046e-08)
+scale = Vector2(0.109375, 0.199219)
+texture = ExtResource("2_h8a5i")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+drag_left_margin = 0.5
+drag_top_margin = 0.5
+drag_right_margin = 0.5
+drag_bottom_margin = 0.5

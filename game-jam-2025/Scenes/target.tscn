@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://4rj322a6aw1m"]
+
+[ext_resource type="Texture2D" uid="uid://6awpeauspt8d" path="res://Assets/icon.svg" id="2_epljr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_15etn"]
+radius = 6.91585
+height = 25.4891
+
+[node name="Target" type="Node2D"]
+scale = Vector2(7.37436, 5.41407)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CapsuleShape2D_15etn")
+debug_color = Color(0.883968, 0.129678, 0.748684, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+modulate = Color(0.989044, 0.255289, 0.628401, 1)
+position = Vector2(2.27374e-13, -5.96046e-08)
+scale = Vector2(0.109375, 0.199219)
+texture = ExtResource("2_epljr")
