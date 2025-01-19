@@ -1,23 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://4rj322a6aw1m"]
+[gd_scene load_steps=4 format=3 uid="uid://ua7jj7xp0xja"]
 
-[ext_resource type="Texture2D" uid="uid://6awpeauspt8d" path="res://Assets/icon.svg" id="2_epljr"]
+[ext_resource type="Script" path="res://Scripts/target.gd" id="1_w0enk"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_15etn"]
-radius = 6.91585
-height = 25.4891
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eoui0"]
+radius = 45.0
+height = 116.0
 
-[node name="Target" type="Node2D"]
-scale = Vector2(7.37436, 5.41407)
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6xrq6"]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-gravity_scale = 0.0
+[node name="Target" type="CharacterBody2D"]
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_w0enk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("CapsuleShape2D_15etn")
-debug_color = Color(0.883968, 0.129678, 0.748684, 0.42)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_eoui0")
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-modulate = Color(0.989044, 0.255289, 0.628401, 1)
-position = Vector2(2.27374e-13, -5.96046e-08)
-scale = Vector2(0.109375, 0.199219)
-texture = ExtResource("2_epljr")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(-86.2188, 108.25)
+texture = SubResource("PlaceholderTexture2D_6xrq6")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_max_distance = 300.0
+simplify_path = true
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

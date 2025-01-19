@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8h0b5q3vqflv"]
+
+[ext_resource type="Texture2D" uid="uid://n3j6l5cxwe4m" path="res://Assets/pixil-frame-0.png" id="1_ofm0q"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_44s0y"]
+texture = ExtResource("1_ofm0q")
+texture_region_size = Vector2i(18, 18)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_32cyu"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_44s0y")
+
+[node name="TileMapLayer" type="TileMapLayer"]
+tile_set = SubResource("TileSet_32cyu")
+navigation_enabled = false
