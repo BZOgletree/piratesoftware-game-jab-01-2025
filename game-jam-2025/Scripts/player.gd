@@ -1,5 +1,10 @@
 extends CharacterBody2D
-const speed = 250
+const speed = 200
+
+@onready var area2D = $Area2D
+var kill_state = false
+var break_barrier = false
+var collision
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,8 +15,32 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	get_input()
 	move_and_slide()
-	pass
+	check_for_kill()
+	check_for_breaking_barrier()
 
-func get_input():
+func get_input(): 
 	var input_direction = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = input_direction * speed
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	var layer = area.get_collision_layer()
+	print(area.get_collision_layer())
+	if layer == 6:
+		kill_state = true
+	if layer == 7:
+		break_barrier = true
+		print('Can break')
+	kill_state = true
+	collision = area
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	kill_state = false
+	break_barrier = false
+
+func check_for_kill():
+	if Input.is_action_just_pressed("Bite") && kill_state:
+		collision.get_parent().queue_free()
+
+func check_for_breaking_barrier():
+	if Input.is_action_just_pressed("Claw") && break_barrier:
+		collision.get_parent().queue_free()
