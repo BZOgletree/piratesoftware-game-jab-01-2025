@@ -27,6 +27,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	print(area.get_collision_layer())
 	if layer == 6:
 		kill_state = true
+		print("Can kill")
 	if layer == 7:
 		break_barrier = true
 		print('Can break')

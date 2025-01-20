@@ -1,31 +1,29 @@
 [gd_scene load_steps=5 format=3 uid="uid://budn5kngr202o"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_agtxk"]
-[ext_resource type="Texture2D" uid="uid://6awpeauspt8d" path="res://Assets/icon.svg" id="2_pee6s"]
+[ext_resource type="Texture2D" uid="uid://b3nct4ahqhppb" path="res://Assets/Player1.png" id="2_e1x46"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8o5c"]
-size = Vector2(110, 124)
+size = Vector2(39, 39)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a5cg4"]
-radius = 46.0
-height = 118.0
+radius = 16.0
+height = 34.0
 
 [node name="Player" type="CharacterBody2D"]
-collision_layer = 7
-collision_mask = 7
+collision_layer = 15
+collision_mask = 15
 script = ExtResource("1_agtxk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 1)
-scale = Vector2(0.673829, 0.873047)
-texture = ExtResource("2_pee6s")
+texture = ExtResource("2_e1x46")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 10
+collision_mask = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2, -1)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_w8o5c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

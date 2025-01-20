@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://cxgj6c6h8kw8c"]
 
+[ext_resource type="Texture2D" uid="uid://dxps34m6xbahb" path="res://Assets/Barrier1.png" id="1_jo56b"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lxgvy"]
-size = Vector2(290, 83)
+size = Vector2(71, 83)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rx0qx"]
-size = Vector2(266, 63)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0eml3"]
+size = Vector2(50, 50)
 
 [node name="Barrier" type="RigidBody2D"]
 collision_layer = 5
@@ -14,19 +14,14 @@ collision_mask = 5
 gravity_scale = 0.0
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-815, -227)
 collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(812, 226.5)
 shape = SubResource("RectangleShape2D_lxgvy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_rx0qx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-3.05176e-05, -3.05176e-05)
-scale = Vector2(269, 62)
-texture = SubResource("PlaceholderTexture2D_0eml3")
+texture = ExtResource("1_jo56b")

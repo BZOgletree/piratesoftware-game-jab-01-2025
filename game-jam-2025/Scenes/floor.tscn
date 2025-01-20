@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://n3j6l5cxwe4m" path="res://Assets/pixil-frame-0.png" id="1_kca4u"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_qjxbw"]
-vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_x1r83"]
+vertices = PackedVector2Array(8.9375, 9.0625, -9.0625, 9.0625, -9.0625, -9.0625, 9, -9.1875)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-9.0625, -9.0625, 9, -9.1875, 8.9375, 9.0625, -9.0625, 9.0625)])
 agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ijn3b"]
@@ -13,7 +13,7 @@ texture = ExtResource("1_kca4u")
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
 1:0/0 = 0
-1:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_qjxbw")
+1:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_x1r83")
 0:1/0 = 0
 1:1/0 = 0
 
