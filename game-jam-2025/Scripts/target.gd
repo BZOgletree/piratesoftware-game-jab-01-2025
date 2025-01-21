@@ -17,17 +17,16 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
 	velocity = dir * speed
-	if speed == state.ALERT:
+	if speed == state.IDLE:
 		makePath()
-	print(nav_agent.is_target_reachable())
 	move_and_slide()
 
 func makePath():
-	nav_agent.target_position = escape_location.global_position
+	nav_agent.target_position = player.global_position
 
 func _on_alert_radius_area_entered(area: Area2D) -> void:
 	print('Alerted')
-	self.speed = state.ALERT
+	self.speed = state.IDLE
 	print(self.speed)
 
 func _on_alert_radius_area_exited(area: Area2D) -> void:
