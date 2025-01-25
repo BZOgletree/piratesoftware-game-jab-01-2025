@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://cg224f6opev6x"]
+
+[ext_resource type="Texture2D" uid="uid://da4bib440r50" path="res://Assets/Floor1/F1fLr.png" id="1_v3oqs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0osw"]
+size = Vector2(9.83824, 149.803)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mu8aw"]
+size = Vector2(10.3698, 298.681)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nm2i5"]
+size = Vector2(10.1102, 119.558)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_25wg0"]
+vertices = PackedVector2Array(270.5, -313, 273.5, -281, 228.75, -282, 226.984, -312.539, 265.5, 347, 267.5, 377, 224.156, 376.18, 228.398, 347.898, 275.5, -159, 275.5, -129, 226.984, -132.938, 226.984, -159.805, 264.5, 167, 266.5, 198, 228.75, 197.5, 226.984, 165.461, 228.398, 465.273, -219.906, 466.688, -219.906, -462.445, 226.984, -462.445)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(6, 16, 17, 18), PackedInt32Array(14, 7, 6, 18, 15), PackedInt32Array(10, 15, 18), PackedInt32Array(11, 10, 18), PackedInt32Array(2, 11, 18, 3), PackedInt32Array(19, 3, 18)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(228.396, 465.276, -219.91, 466.69, -219.91, -462.448, 226.981, -462.448, 226.981, -312.541, 270.5, -313, 273.5, -281, 228.75, -282, 226.981, -159.806, 275.5, -159, 275.5, -129, 226.981, -132.936, 226.981, 165.463, 264.5, 167, 266.5, 198, 228.75, 197.5, 228.396, 347.897, 265.5, 347, 267.5, 377, 224.153, 376.181)])
+agent_radius = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1hay4"]
+texture = ExtResource("1_v3oqs")
+16:1/size_in_atlas = Vector2i(30, 60)
+16:1/0 = 0
+16:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(228.396, -309.713, 239.709, -309.713, 239.709, -470.933, -232.638, -472.347, -232.638, 475.176, 241.123, 478.004, 239.709, 377.595, 226.981, 377.595, 226.981, 463.862, -218.496, 465.276, -219.91, -459.619, 225.567, -458.205)
+16:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_25wg0")
+
+[sub_resource type="TileSet" id="TileSet_klmsb"]
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_1hay4")
+
+[node name="FirstFloorFrontLeftRoom" type="Node2D"]
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(242.286, 281.049)
+shape = SubResource("RectangleShape2D_y0osw")
+
+[node name="Area2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(242.02, 26.5007)
+shape = SubResource("RectangleShape2D_mu8aw")
+
+[node name="Area2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(242.151, -212.708)
+shape = SubResource("RectangleShape2D_nm2i5")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 1, 0, 0, 0)
+tile_set = SubResource("TileSet_klmsb")
