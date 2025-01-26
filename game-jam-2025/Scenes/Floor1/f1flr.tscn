@@ -11,10 +11,10 @@ size = Vector2(10.3698, 298.681)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nm2i5"]
 size = Vector2(10.1102, 119.558)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_25wg0"]
-vertices = PackedVector2Array(270.5, -313, 273.5, -281, 228.75, -282, 226.984, -312.539, 265.5, 347, 267.5, 377, 224.156, 376.18, 228.398, 347.898, 275.5, -159, 275.5, -129, 226.984, -132.938, 226.984, -159.805, 264.5, 167, 266.5, 198, 228.75, 197.5, 226.984, 165.461, 228.398, 465.273, -219.906, 466.688, -219.906, -462.445, 226.984, -462.445)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(6, 16, 17, 18), PackedInt32Array(14, 7, 6, 18, 15), PackedInt32Array(10, 15, 18), PackedInt32Array(11, 10, 18), PackedInt32Array(2, 11, 18, 3), PackedInt32Array(19, 3, 18)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(228.396, 465.276, -219.91, 466.69, -219.91, -462.448, 226.981, -462.448, 226.981, -312.541, 270.5, -313, 273.5, -281, 228.75, -282, 226.981, -159.806, 275.5, -159, 275.5, -129, 226.981, -132.936, 226.981, 165.463, 264.5, 167, 266.5, 198, 228.75, 197.5, 228.396, 347.897, 265.5, 347, 267.5, 377, 224.153, 376.181)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_1sioa"]
+vertices = PackedVector2Array(226.984, -312.539, 365, -312, 355, -282, 228.75, -282, 226.984, -159.805, 359, -158, 353, -126, 226.984, -132.938, 226.984, 165.461, 363, 168, 359, 200, 228.75, 197.5, 228.398, 347.898, 359, 348, 357, 378, 224.156, 376.18, 228.398, 465.273, -219.906, 466.688, -219.906, -462.445, 226.984, -462.445)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(15, 16, 17, 18), PackedInt32Array(11, 12, 15, 18, 8), PackedInt32Array(7, 8, 18), PackedInt32Array(4, 7, 18), PackedInt32Array(3, 4, 18, 0), PackedInt32Array(19, 0, 18)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(228.396, 465.276, -219.91, 466.69, -219.91, -462.448, 226.981, -462.448, 226.981, -312.541, 365, -312, 355, -282, 228.75, -282, 226.981, -159.806, 359, -158, 353, -126, 226.981, -132.936, 226.981, 165.463, 363, 168, 359, 200, 228.75, 197.5, 228.396, 347.897, 359, 348, 357, 378, 224.153, 376.181)])
 agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1hay4"]
@@ -22,7 +22,7 @@ texture = ExtResource("1_v3oqs")
 16:1/size_in_atlas = Vector2i(30, 60)
 16:1/0 = 0
 16:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(228.396, -309.713, 239.709, -309.713, 239.709, -470.933, -232.638, -472.347, -232.638, 475.176, 241.123, 478.004, 239.709, 377.595, 226.981, 377.595, 226.981, 463.862, -218.496, 465.276, -219.91, -459.619, 225.567, -458.205)
-16:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_25wg0")
+16:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_1sioa")
 
 [sub_resource type="TileSet" id="TileSet_klmsb"]
 physics_layer_0/collision_layer = 1
