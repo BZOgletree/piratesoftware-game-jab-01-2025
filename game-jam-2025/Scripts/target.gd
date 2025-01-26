@@ -32,7 +32,8 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	var current_position = self.translate
 	if (target_position != null):
-		print(target_position.position)
+		if nav_agent.is_target_reached():
+			current_escape_waypoint_location += 1
 
 func makePath():
 	if current_escape_waypoint_location == 1:
