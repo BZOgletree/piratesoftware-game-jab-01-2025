@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhbkpprxcjpbs"]
+[gd_scene load_steps=9 format=3 uid="uid://bhbkpprxcjpbs"]
 
 [ext_resource type="PackedScene" uid="uid://x4ystqk34ocr" path="res://Scenes/Floor6 (First level)/floor_6_map.tscn" id="1_sjgvh"]
 [ext_resource type="PackedScene" uid="uid://bcosepain78m5" path="res://Scenes/stopwatch.tscn" id="2_03adn"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://budn5kngr202o" path="res://Scenes/player.tscn" id="4_48oll"]
 [ext_resource type="PackedScene" uid="uid://b5onfjpq3c8uj" path="res://Scenes/escape_location.tscn" id="5_psj5r"]
 [ext_resource type="PackedScene" uid="uid://ua7jj7xp0xja" path="res://Scenes/target.tscn" id="6_moxcc"]
+[ext_resource type="PackedScene" uid="uid://3qcwmqyv03uy" path="res://Justins work/doorway_waypoint.tscn" id="7_31nix"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_q3hmo"]
 
 [node name="Floor6-FirstLevel" type="Node2D"]
 
@@ -27,6 +30,299 @@ zoom = Vector2(2, 2)
 position = Vector2(924.997, 547.447)
 rotation = -0.473038
 
-[node name="Target" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_moxcc")]
-position = Vector2(-766.63, -591.23)
+[node name="Clark" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") instance=ExtResource("6_moxcc")]
+position = Vector2(-716, -600)
 player = NodePath("../Player")
+escape_location = NodePath("../EscapeLocation")
+escape_waypoint_1 = NodePath("../Doorway Waypoint2")
+escape_waypoint_2 = NodePath("../Doorway Waypoint3")
+escape_waypoint_3 = NodePath("../Doorway Waypoint5")
+escape_waypoint_4 = NodePath("../Doorway Waypoint8")
+escape_waypoint_5 = NodePath("../Doorway Waypoint9")
+
+[node name="Jon" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") instance=ExtResource("6_moxcc")]
+position = Vector2(-277, -582)
+player = NodePath("../Player")
+escape_location = NodePath("../EscapeLocation")
+escape_waypoint_1 = NodePath("../Doorway Waypoint17")
+escape_waypoint_2 = NodePath("../Doorway Waypoint29")
+escape_waypoint_3 = NodePath("../Doorway Waypoint15")
+escape_waypoint_4 = NodePath("../Doorway Waypoint26")
+escape_waypoint_5 = NodePath("../Doorway Waypoint12")
+
+[node name="Alana" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") instance=ExtResource("6_moxcc")]
+position = Vector2(297, -548)
+player = NodePath("../Player")
+escape_location = NodePath("../EscapeLocation")
+escape_waypoint_1 = NodePath("../Doorway Waypoint20")
+escape_waypoint_2 = NodePath("../Doorway Waypoint18")
+escape_waypoint_3 = NodePath("../Doorway Waypoint15")
+escape_waypoint_4 = NodePath("../Doorway Waypoint26")
+escape_waypoint_5 = NodePath("../Doorway Waypoint11")
+
+[node name="Victor" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") instance=ExtResource("6_moxcc")]
+position = Vector2(901, -556)
+player = NodePath("../Player")
+escape_location = NodePath("../EscapeLocation")
+escape_waypoint_1 = NodePath("../Doorway Waypoint23")
+escape_waypoint_2 = NodePath("../Doorway Waypoint25")
+escape_waypoint_3 = NodePath("../Doorway Waypoint22")
+escape_waypoint_4 = NodePath("../Doorway Waypoint25")
+escape_waypoint_5 = NodePath("../Doorway Waypoint12")
+
+[node name="Leon" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3") instance=ExtResource("6_moxcc")]
+position = Vector2(-285, -16)
+player = NodePath("../Player")
+escape_location = NodePath("../EscapeLocation")
+escape_waypoint_1 = NodePath("../Doorway Waypoint16")
+escape_waypoint_2 = NodePath("../Doorway Waypoint25")
+escape_waypoint_3 = NodePath("../Doorway Waypoint11")
+
+[node name="Liam" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") instance=ExtResource("6_moxcc")]
+position = Vector2(304, -20)
+player = NodePath("../Player")
+escape_location = NodePath("../EscapeLocation")
+escape_waypoint_1 = NodePath("../Doorway Waypoint28")
+escape_waypoint_2 = NodePath("../Doorway Waypoint9")
+escape_waypoint_3 = NodePath("../Doorway Waypoint12")
+escape_waypoint_4 = NodePath("../Doorway Waypoint26")
+escape_waypoint_5 = NodePath("../Doorway Waypoint11")
+
+[node name="Gollum" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") instance=ExtResource("6_moxcc")]
+position = Vector2(-300, 444)
+player = NodePath("../Player")
+escape_location = NodePath("../EscapeLocation")
+escape_waypoint_1 = NodePath("../Doorway Waypoint29")
+escape_waypoint_2 = NodePath("../Doorway Waypoint19")
+escape_waypoint_3 = NodePath("../Doorway Waypoint22")
+escape_waypoint_4 = NodePath("../Doorway Waypoint26")
+escape_waypoint_5 = NodePath("../Doorway Waypoint11")
+
+[node name="David" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") instance=ExtResource("6_moxcc")]
+position = Vector2(-878, 444)
+player = NodePath("../Player")
+escape_location = NodePath("../EscapeLocation")
+escape_waypoint_1 = NodePath("../Doorway Waypoint6")
+escape_waypoint_2 = NodePath("../Doorway Waypoint7")
+escape_waypoint_3 = NodePath("../Doorway Waypoint28")
+escape_waypoint_4 = NodePath("../Doorway Waypoint26")
+escape_waypoint_5 = NodePath("../Doorway Waypoint12")
+
+[node name="Michelle" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4") instance=ExtResource("6_moxcc")]
+position = Vector2(-852, -28)
+player = NodePath("../Player")
+escape_location = NodePath("../EscapeLocation")
+escape_waypoint_1 = NodePath("../Doorway Waypoint3")
+escape_waypoint_2 = NodePath("../Doorway Waypoint5")
+escape_waypoint_3 = NodePath("../Doorway Waypoint8")
+escape_waypoint_4 = NodePath("../Doorway Waypoint9")
+
+[node name="Doorway Waypoint" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(-1050, -267)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint2" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(-690, -263)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint2"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint3" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(-689, 187)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint3"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint4" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(-1051, 188)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint4"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint5" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(-625, 325)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint5"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint6" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(-619, 565)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint6"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint7" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(-39, 566)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint7"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint8" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(-36, 328)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint8"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint9" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(542, 331)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint9"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint10" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(542, 570)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint10"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint11" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(1058, 252)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint11"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint12" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(697, 252)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint12"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint13" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(-534, -136)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint13"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint14" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(-533, 103)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint14"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint15" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(-44, 103)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint15"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint16" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(-45, -136)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint16"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint17" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(-107, -273)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint17"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint18" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(-466, -270)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint18"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint19" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(-36, -358)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint19"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint20" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(-28, -594)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint20"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint21" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(116, -266)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint21"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint22" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(477, -267)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint22"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint23" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(695, -267)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint23"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint24" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(1056, -266)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint24"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint25" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(625, -133)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint25"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint26" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(626, 103)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint26"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint27" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(474, 167)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint27"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint28" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(115, 172)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint28"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint29" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(-106, 177)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint29"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Doorway Waypoint30" parent="." instance=ExtResource("7_31nix")]
+position = Vector2(-468, 182)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint30"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("SegmentShape2D_q3hmo")
