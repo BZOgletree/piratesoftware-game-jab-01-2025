@@ -1,0 +1,90 @@
+[gd_scene load_steps=12 format=3 uid="uid://e3fu6v7r1j76"]
+
+[ext_resource type="Texture2D" uid="uid://b1jp4owkby5g" path="res://Assets/Floor6/F6R5-6.png" id="1_75r75"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_mb3yd"]
+vertices = PackedVector2Array(-282.5, -133, 283.5, -133, 325.5, -127, 323.5, -120, 282.5, -109, -283.5, -111, -360.5, -131, -166.5, 221, -170.5, 281, -183.5, 279, -189.5, 221, -284.5, -225, 283.5, -223, -360.5, -110, -282.5, 221, -281.5, 135, -279.5, 104, 282.5, 131, 282.5, 221, 190.5, 220, 283.5, 108, 192.5, 278, 177.5, 279, 166.5, 220, 334.5, 111, 335.5, 125, -347.5, 109, -348.5, 123)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(0, 11, 12, 1), PackedInt32Array(5, 13, 6), PackedInt32Array(10, 14, 15, 16), PackedInt32Array(17, 18, 19, 16), PackedInt32Array(16, 5, 4, 20, 17), PackedInt32Array(19, 21, 22, 23), PackedInt32Array(24, 25, 17, 20), PackedInt32Array(16, 19, 23), PackedInt32Array(16, 23, 7, 10), PackedInt32Array(26, 16, 15, 27)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-282.5, -133, -284.5, -225, 283.5, -223, 283.5, -133, 325.5, -127, 323.5, -120, 282.5, -109, 283.5, 108, 334.5, 111, 335.5, 125, 282.5, 131, 282.5, 221, 190.5, 220, 192.5, 278, 177.5, 279, 166.5, 220, -166.5, 221, -170.5, 281, -183.5, 279, -189.5, 221, -282.5, 221, -281.5, 135, -348.5, 123, -347.5, 109, -279.5, 104, -283.5, -111, -360.5, -110, -360.5, -131)])
+agent_radius = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k6xkw"]
+texture = ExtResource("1_75r75")
+16:20/size_in_atlas = Vector2i(38, 31)
+16:20/0 = 0
+16:20/0/physics_layer_0/polygon_0/points = PackedVector2Array(-284.964, -138.593, -296.278, -138.593, -294.864, -236.174, 294.864, -234.759, 297.692, -137.179, 283.55, -137.179, 282.136, -224.86, -283.55, -227.688)
+16:20/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_mb3yd")
+
+[sub_resource type="TileSet" id="TileSet_pnvar"]
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_k6xkw")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hxfjr"]
+size = Vector2(7, 208)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwjyh"]
+size = Vector2(326, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r05tf"]
+size = Vector2(7, 99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ari2f"]
+size = Vector2(95, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qkx7"]
+size = Vector2(7, 205)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlsni"]
+size = Vector2(11, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5h8cr"]
+size = Vector2(96, 8)
+
+[node name="F6R5-6" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 20, 0, 0, 0)
+tile_set = SubResource("TileSet_pnvar")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-282.5, 7)
+shape = SubResource("RectangleShape2D_hxfjr")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(9, 238)
+shape = SubResource("RectangleShape2D_wwjyh")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-281.5, 191.5)
+shape = SubResource("RectangleShape2D_r05tf")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(-235.5, 238)
+shape = SubResource("RectangleShape2D_ari2f")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(298.5, 7.5)
+shape = SubResource("RectangleShape2D_6qkx7")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(299.5, 193)
+shape = SubResource("RectangleShape2D_rlsni")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+position = Vector2(255, 238)
+shape = SubResource("RectangleShape2D_5h8cr")

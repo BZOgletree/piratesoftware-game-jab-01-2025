@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://x4ystqk34ocr"]
+
+[ext_resource type="PackedScene" uid="uid://d1b113nhkwvla" path="res://Scenes/Floor6 (First level)/f_6r_1_4.tscn" id="1_205kn"]
+[ext_resource type="PackedScene" uid="uid://e3fu6v7r1j76" path="res://Scenes/Floor6 (First level)/f_6r_5_6.tscn" id="2_s34c3"]
+[ext_resource type="PackedScene" uid="uid://dcu5wil4rc25d" path="res://Scenes/Floor6 (First level)/f_6r_7_8.tscn" id="3_p1jha"]
+[ext_resource type="PackedScene" uid="uid://org54ecohfiq" path="res://Scenes/Floor6 (First level)/f_6r_9.tscn" id="4_mqc71"]
+[ext_resource type="PackedScene" uid="uid://1fbbg8ovpbak" path="res://Scenes/Floor6 (First level)/f_6r_peaks.tscn" id="5_727tl"]
+
+[node name="Floor6Map" type="Node2D"]
+
+[node name="F6R1-4" parent="." instance=ExtResource("1_205kn")]
+position = Vector2(-651.421, 6.84045)
+scale = Vector2(1, -1)
+
+[node name="F6R5-6" parent="." instance=ExtResource("2_s34c3")]
+position = Vector2(-69.254, 7.90143)
+scale = Vector2(1, -1)
+
+[node name="F6R7-8" parent="." instance=ExtResource("3_p1jha")]
+position = Vector2(-69.3844, -469.443)
+
+[node name="F6R9" parent="." instance=ExtResource("4_mqc71")]
+position = Vector2(-635.774, -476.019)
+scale = Vector2(-1, 1)
+
+[node name="F6RPeaks" parent="." instance=ExtResource("5_727tl")]
+position = Vector2(-650.606, -929.47)
+
+[node name="F6R1-5" parent="." instance=ExtResource("1_205kn")]
+position = Vector2(1109.38, 9.72168)
+scale = Vector2(-1, -1)
+
+[node name="F6R5-7" parent="." instance=ExtResource("2_s34c3")]
+position = Vector2(512.179, 9.72168)
+scale = Vector2(1, -1)
+
+[node name="F6R7-9" parent="." instance=ExtResource("3_p1jha")]
+position = Vector2(513.9, -466.13)
+
+[node name="F6R1-6" parent="." instance=ExtResource("1_205kn")]
+position = Vector2(531.524, -925.107)
+scale = Vector2(-1, 1)
+
+[node name="F6R1-7" parent="." instance=ExtResource("1_205kn")]
+position = Vector2(-68.3373, -926.872)
+
+[node name="F6R10" parent="." instance=ExtResource("4_mqc71")]
+position = Vector2(1094.52, -473.813)
+
+[node name="F6RPeaks2" parent="." instance=ExtResource("5_727tl")]
+position = Vector2(1096.4, -924.985)

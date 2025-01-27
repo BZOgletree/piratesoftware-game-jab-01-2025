@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://crp6snhlaouel"]
+[gd_scene load_steps=7 format=3 uid="uid://crp6snhlaouel"]
 
 [ext_resource type="PackedScene" uid="uid://dxr2c2s06ssrf" path="res://Scenes/Floor5 (Second Level)/floor_5_(second_level).tscn" id="1_ax2td"]
 [ext_resource type="PackedScene" uid="uid://budn5kngr202o" path="res://Scenes/player.tscn" id="2_6bwcw"]
 [ext_resource type="PackedScene" uid="uid://6s2y2bkxqfef" path="res://Scenes/hud.tscn" id="3_o4ibg"]
 [ext_resource type="PackedScene" uid="uid://bcosepain78m5" path="res://Scenes/stopwatch.tscn" id="4_ghnu4"]
 [ext_resource type="PackedScene" uid="uid://b5onfjpq3c8uj" path="res://Scenes/escape_location.tscn" id="5_s2phr"]
+[ext_resource type="PackedScene" uid="uid://ua7jj7xp0xja" path="res://Scenes/target.tscn" id="6_0ychp"]
 
 [node name="floor-2-level" type="Node2D"]
 position = Vector2(-720.814, -352.398)
@@ -24,3 +25,7 @@ zoom = Vector2(2, 2)
 
 [node name="EscapeLocation" parent="." instance=ExtResource("5_s2phr")]
 position = Vector2(126.403, 58.4074)
+
+[node name="Target" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_0ychp")]
+position = Vector2(1463.45, 547.908)
+player = NodePath("../Player")
