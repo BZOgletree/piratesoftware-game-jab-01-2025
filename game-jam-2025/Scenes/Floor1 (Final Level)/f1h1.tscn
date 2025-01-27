@@ -2,17 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://f6cup1qybl81" path="res://Assets/ZombZomb/Hallway1.png" id="1_oegc7"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_bkt8d"]
-vertices = PackedVector2Array(496.391, -25.4531, 499.219, 31.1094, 479.422, 28.2813, 482.25, -25.4531, -507, 36, -513, -28, -482.25, -28.2813, -476.594, 31.1094, 479.422, 90.5078, -473.758, 87.6797, -473.758, -90.5078, 482.25, -90.5078)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(2, 8, 9, 7, 10), PackedInt32Array(10, 11, 3, 2), PackedInt32Array(10, 7, 6)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-507, 36, -513, -28, -482.247, -28.2843, -473.762, -90.5097, 482.247, -90.5097, 482.247, -25.4559, 496.389, -25.4559, 499.217, 31.1127, 479.418, 28.2842, 479.418, 90.5096, -473.762, 87.6812, -476.59, 31.1127)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_k2g4i"]
+vertices = PackedVector2Array(546.5, -23, 548.5, 27, 479.422, 28.2813, 482.5, -22, -473.5, -24, -473.766, -90.5078, 482.25, -90.5078, 479.422, 90.5078, -473.766, 87.6797, -473.5, 28, -571.5, 25, -571.5, -22)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 3, 2), PackedInt32Array(2, 7, 8, 9), PackedInt32Array(4, 2, 9, 10, 11)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-571.5, 25, -571.5, -22, -473.5, -24, -473.762, -90.5097, 482.247, -90.5097, 482.5, -22, 546.5, -23, 548.5, 27, 479.418, 28.2842, 479.418, 90.5096, -473.762, 87.6812, -473.5, 28)])
 agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m1slh"]
 texture = ExtResource("1_oegc7")
 0:23/size_in_atlas = Vector2i(62, 15)
 0:23/0 = 0
-0:23/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_bkt8d")
+0:23/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_k2g4i")
 
 [sub_resource type="TileSet" id="TileSet_pecaw"]
 physics_layer_0/collision_layer = 1

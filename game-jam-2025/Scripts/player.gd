@@ -2,6 +2,7 @@ extends CharacterBody2D
 const speed = 200
 
 @export var hud: CanvasLayer
+@export var sprite: AnimatedSprite2D
 @onready var area2D = $Area2D
 
 var kill_state = false
@@ -23,6 +24,18 @@ func _process(delta: float) -> void:
 func get_input(): 
 	var input_direction = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = input_direction * speed
+	if input_direction != Vector2(0,0):
+		sprite.animation = "Moving"
+	else:
+		sprite.animation = "Idle"
+	if velocity.x > 0:
+		sprite.rotation_degrees = 90
+	if velocity.y > 0:
+		sprite.rotation_degrees = 180
+	if velocity.y < 0:
+		sprite.rotation_degrees = 0
+	if velocity.x < 0:
+		sprite.rotation_degrees = 270
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	var layer = area.get_collision_layer()

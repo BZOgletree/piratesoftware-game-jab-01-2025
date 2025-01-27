@@ -32,39 +32,38 @@ func _physics_process(_delta: float) -> void:
 	makePath()
 	move_and_slide()
 	var current_position = self.translate
-	#if nav_agent.distance_to_target() < 5:
-		#if self.speed == state.IDLE:
-			#next_workstation = 2 if next_workstation == 1 else 1
-		#else:
-			#current_escape_waypoint_location += 1
+	if nav_agent.distance_to_target() < 5:
+		if self.speed == state.IDLE:
+			next_workstation = 2 if next_workstation == 1 else 1
+		else:
+			current_escape_waypoint_location += 1
 
 func makePath():
-	nav_agent.target_position = player.global_position
-	#if self.speed == state.IDLE:
-		#if workstation_waypoint_1 == null:
-			#pass
-		#elif next_workstation == 1:
-			#nav_agent.target_position = workstation_waypoint_1.global_position
-		#else:
-			#nav_agent.target_position = workstation_waypoint_2.global_position
-	#elif current_escape_waypoint_location == 1:
-		#nav_agent.target_position = escape_waypoint_1.global_position
-		#target_position = escape_waypoint_1.global_position
-	#elif current_escape_waypoint_location == 2:
-		#nav_agent.target_position = escape_waypoint_2.global_position
-		#target_position = escape_waypoint_2.global_position
-	#elif current_escape_waypoint_location == 3:
-		#nav_agent.target_position = escape_waypoint_3.global_position
-		#target_position = escape_waypoint_3.global_position
-	#elif current_escape_waypoint_location == 4:
-		#nav_agent.target_position = escape_waypoint_4.global_position
-		#target_position = escape_waypoint_4.global_position
-	#elif current_escape_waypoint_location == 5:
-		#nav_agent.target_position = escape_waypoint_5.global_position
-		#target_position = escape_waypoint_5.global_position
-	#else:
-		#nav_agent.target_position = escape_location.global_position
-		#target_position = escape_location.global_position
+	if self.speed == state.IDLE:
+		if workstation_waypoint_1 == null:
+			pass
+		elif next_workstation == 1:
+			nav_agent.target_position = workstation_waypoint_1.global_position
+		else:
+			nav_agent.target_position = workstation_waypoint_2.global_position
+	elif current_escape_waypoint_location == 1:
+		nav_agent.target_position = escape_waypoint_1.global_position
+		target_position = escape_waypoint_1.global_position
+	elif current_escape_waypoint_location == 2:
+		nav_agent.target_position = escape_waypoint_2.global_position
+		target_position = escape_waypoint_2.global_position
+	elif current_escape_waypoint_location == 3:
+		nav_agent.target_position = escape_waypoint_3.global_position
+		target_position = escape_waypoint_3.global_position
+	elif current_escape_waypoint_location == 4:
+		nav_agent.target_position = escape_waypoint_4.global_position
+		target_position = escape_waypoint_4.global_position
+	elif current_escape_waypoint_location == 5:
+		nav_agent.target_position = escape_waypoint_5.global_position
+		target_position = escape_waypoint_5.global_position
+	else:
+		nav_agent.target_position = escape_location.global_position
+		target_position = escape_location.global_position
 
 
 func _on_alert_radius_area_entered(area: Area2D) -> void:

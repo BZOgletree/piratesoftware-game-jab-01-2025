@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://hwmbi4chg6lj"]
+
+[ext_resource type="PackedScene" uid="uid://dx5qsgp1ttggq" path="res://Scenes/Floor 4 (Third Level)/f_4_bottompart_1_2.tscn" id="1_lo5lc"]
+[ext_resource type="PackedScene" uid="uid://b1ur8rxaod7ml" path="res://Scenes/Floor 4 (Third Level)/f_4_bottompart_3_4.tscn" id="2_ipvsy"]
+[ext_resource type="PackedScene" uid="uid://b2rovhfaptixd" path="res://Scenes/Floor 4 (Third Level)/f_4_hospital.tscn" id="3_oj4kn"]
+[ext_resource type="PackedScene" uid="uid://dc7kn7frybmq5" path="res://Scenes/Floor 4 (Third Level)/f_4_outside_split_bottom.tscn" id="4_07fyo"]
+[ext_resource type="PackedScene" uid="uid://d0thpb8unwdnm" path="res://Scenes/Floor 4 (Third Level)/f_4_outside_split_top.tscn" id="5_51deu"]
+
+[node name="Floor4Map" type="Node2D"]
+
+[node name="F4Bottompart1-2" parent="." instance=ExtResource("1_lo5lc")]
+position = Vector2(-430.656, 278.147)
+
+[node name="F4Bottompart3-4" parent="." instance=ExtResource("2_ipvsy")]
+position = Vector2(-430.076, 755.515)
+
+[node name="F4Hospital" parent="." instance=ExtResource("3_oj4kn")]
+position = Vector2(29.0663, -425.261)
+
+[node name="F4OutsideSplitBottom" parent="." instance=ExtResource("4_07fyo")]
+position = Vector2(1186.54, 551.196)
+rotation = 1.5708
+scale = Vector2(1, -1)
+metadata/_edit_group_ = true
+
+[node name="F4OutsideSplitTop" parent="." instance=ExtResource("5_51deu")]
+position = Vector2(1191.29, -354.818)
+rotation = 1.5708
+metadata/_edit_group_ = true
+
+[node name="F4OutsideSplitBottom2" parent="." instance=ExtResource("4_07fyo")]
+position = Vector2(-1111.37, 553.942)
+rotation = 1.5708
+metadata/_edit_group_ = true
+
+[node name="F4OutsideSplitTop2" parent="." instance=ExtResource("5_51deu")]
+position = Vector2(-1110.17, -352.073)
+rotation = 1.5708
+
+[node name="F4Bottompart1-3" parent="." instance=ExtResource("1_lo5lc")]
+position = Vector2(504.791, 278.147)
+scale = Vector2(-1, 1)
+
+[node name="F4Bottompart3-5" parent="." instance=ExtResource("2_ipvsy")]
+position = Vector2(505.372, 755.515)
+scale = Vector2(-1, 1)
