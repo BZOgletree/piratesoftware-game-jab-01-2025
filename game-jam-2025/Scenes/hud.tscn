@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://6s2y2bkxqfef"]
+
+[ext_resource type="Script" path="res://Scenes/hud.gd" id="1_20m51"]
+
+[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("stopwatch_label", "health_label")]
+script = ExtResource("1_20m51")
+stopwatch_label = NodePath("TimerLabel")
+health_label = NodePath("HealthLabel")
+
+[node name="HealthLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Health: 100"
+
+[node name="TimerLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -57.5
+offset_right = 57.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "00:00:000"
