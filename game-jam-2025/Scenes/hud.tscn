@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" path="res://Scenes/hud.gd" id="1_20m51"]
 
-[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("stopwatch_label", "health_label")]
+[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("stopwatch_label", "health_label", "target_label")]
 script = ExtResource("1_20m51")
 stopwatch_label = NodePath("TimerLabel")
 health_label = NodePath("HealthLabel")
+target_label = NodePath("TargetLabel")
 
 [node name="HealthLabel" type="Label" parent="."]
 offset_right = 40.0
@@ -21,3 +22,12 @@ offset_right = 57.5
 offset_bottom = 23.0
 grow_horizontal = 2
 text = "00:00:000"
+
+[node name="TargetLabel" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "Remaining: "

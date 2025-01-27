@@ -3,6 +3,7 @@ const speed = 200
 
 @export var hud: CanvasLayer
 @onready var area2D = $Area2D
+
 var kill_state = false
 var break_barrier = false
 var collision
