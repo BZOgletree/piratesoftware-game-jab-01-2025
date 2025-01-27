@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://brjdtapv7kbyp"]
+
+[ext_resource type="Texture2D" uid="uid://sqewpjpmjtg3" path="res://Assets/Floor5/F5Bottomhall1.png" id="1_kadck"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_5gsnl"]
+vertices = PackedVector2Array(-322.5, -62, -328.5, -130, -299.5, -129, -298.5, -62, 307.5, -62, 302.5, -137, 330.5, -136, 332.5, -63, 158.5, -62, 147.5, -134, 181.5, -136, 181.5, -64, -0.5, -135, 34.5, -136, 30.5, -62, 6.5, -63, -145.5, -61, -149.5, -133, -124.5, -134, -115.5, -62, 392.5, -62, 393.5, 55, -385.5, 55, -385.5, -62)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(16, 17, 18, 19), PackedInt32Array(7, 20, 21, 22, 4), PackedInt32Array(11, 4, 22, 8), PackedInt32Array(14, 8, 22), PackedInt32Array(19, 15, 14, 22, 16), PackedInt32Array(3, 16, 22, 0), PackedInt32Array(0, 22, 23)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-385.5, -62, -322.5, -62, -328.5, -130, -299.5, -129, -298.5, -62, -145.5, -61, -149.5, -133, -124.5, -134, -115.5, -62, 6.5, -63, -0.5, -135, 34.5, -136, 30.5, -62, 158.5, -62, 147.5, -134, 181.5, -136, 181.5, -64, 307.5, -62, 302.5, -137, 330.5, -136, 332.5, -63, 392.5, -62, 393.5, 55, -385.5, 55)])
+agent_radius = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2yinh"]
+texture = ExtResource("1_kadck")
+5:20/size_in_atlas = Vector2i(52, 11)
+5:20/0 = 0
+5:20/0/physics_layer_0/polygon_0/points = PackedVector2Array(-325.5, -62, -326.5, -74, -397.5, -75, -396.5, 65, 395.5, 65, 394.5, 55, -385.5, 54, -385.5, -63)
+5:20/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_5gsnl")
+
+[sub_resource type="TileSet" id="TileSet_800sn"]
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_2yinh")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1er30"]
+size = Vector2(147.221, 9.53384)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n820j"]
+size = Vector2(114.679, 8.15274)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mype"]
+size = Vector2(117.06, 10.3181)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fn3y"]
+size = Vector2(117.854, 9.67245)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uoujn"]
+size = Vector2(59.1198, 10.3275)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2q32w"]
+size = Vector2(10.3181, 123.817)
+
+[node name="F5BottomHall" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 20, 0, 0, 0)
+tile_set = SubResource("TileSet_800sn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Area2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-214.185, -59.8504)
+shape = SubResource("RectangleShape2D_1er30")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="Area2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-49.4921, -59.7472)
+shape = SubResource("RectangleShape2D_n820j")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="Area2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(101.708, -61.8393)
+shape = SubResource("RectangleShape2D_5mype")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="Area2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(251.32, -59.9291)
+shape = SubResource("RectangleShape2D_8fn3y")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+
+[node name="Area2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(371.169, -59.4535)
+shape = SubResource("RectangleShape2D_uoujn")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+
+[node name="Area2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(409.063, 9.99055)
+shape = SubResource("RectangleShape2D_2q32w")

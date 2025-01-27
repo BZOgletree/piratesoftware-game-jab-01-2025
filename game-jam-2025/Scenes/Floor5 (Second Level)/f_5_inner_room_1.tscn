@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://bbrip4lrqtq55"]
+
+[ext_resource type="Texture2D" uid="uid://b2l5p7p2bsjkk" path="res://Assets/Floor5/F5innerroom.png" id="1_ji021"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_55fyd"]
+vertices = PackedVector2Array(-70.5, 21, -111.5, 16, -109.5, 3, -72.5, -9, 77.5, -7, 76.5, 23, 16.5, 110, -13.5, 110, -72.5, 109, 17.5, -96, 76.5, -95, 16.5, 145, 0.5, 145, 77.5, 108, -71.5, -95, -11.5, -96, 112.5, -7, 113.5, 10, -9.5, -126, 6.5, -127)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8, 0, 9, 10), PackedInt32Array(6, 11, 12, 7), PackedInt32Array(5, 13, 6), PackedInt32Array(3, 14, 15, 9, 0), PackedInt32Array(4, 16, 17, 5), PackedInt32Array(15, 18, 19, 9)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-11.5, -96, -9.5, -126, 6.5, -127, 17.5, -96, 76.5, -95, 77.5, -7, 112.5, -7, 113.5, 10, 76.5, 23, 77.5, 108, 16.5, 110, 16.5, 145, 0.5, 145, -13.5, 110, -72.5, 109, -70.5, 21, -111.5, 16, -109.5, 3, -72.5, -9, -71.5, -95)])
+agent_radius = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hqhqj"]
+texture = ExtResource("1_ji021")
+7:18/size_in_atlas = Vector2i(12, 16)
+7:18/0 = 0
+7:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-73.5, 21, -73.5, 111, -13.5, 110, -12.5, 120, -83.5, 120, -83.5, 22)
+7:18/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_55fyd")
+
+[sub_resource type="TileSet" id="TileSet_d2srj"]
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_hqhqj")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsf0c"]
+size = Vector2(6.59973, 97.0345)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5swq"]
+size = Vector2(67.1808, 10.2736)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8roc5"]
+size = Vector2(67.1808, 9.72644)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwf0b"]
+size = Vector2(7.49069, 91.7626)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plynt"]
+size = Vector2(65.3991, 8.83554)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euc65"]
+size = Vector2(8.38156, 93.5444)
+
+[node name="f5InnerRoom1" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(0.529724, -6.35678)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 18, 0, 0, 0)
+tile_set = SubResource("TileSet_d2srj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-69.9539, -56.3352)
+shape = SubResource("RectangleShape2D_lsf0c")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-37.8816, -100.189)
+shape = SubResource("RectangleShape2D_l5swq")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(59.2264, -99.9893)
+shape = SubResource("RectangleShape2D_8roc5")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(90.8533, -53.6258)
+shape = SubResource("RectangleShape2D_hwf0b")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(61.0082, 116.945)
+shape = SubResource("RectangleShape2D_plynt")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(89.517, 71.1)
+shape = SubResource("RectangleShape2D_euc65")

@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dty41cqji0bra"]
+
+[ext_resource type="Texture2D" uid="uid://ccp4pq16xkd6m" path="res://Assets/Floor5/F5PeakR2.png" id="1_8ftp1"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_5r5wd"]
+vertices = PackedVector2Array(-116.5, -81, -120.5, -100, -72.5, -104, -73.5, -73, 77.5, -104, 77.5, 104, -71.5, 77, -122.5, 81, -72.5, 105, -122.5, 101)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5, 6), PackedInt32Array(7, 6, 5, 8, 9)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-73.5, -73, -71.5, 77, -122.5, 81, -122.5, 101, -72.5, 105, 77.5, 104, 77.5, -104, -72.5, -104, -120.5, -100, -116.5, -81)])
+agent_radius = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jxkk1"]
+texture = ExtResource("1_8ftp1")
+7:16/size_in_atlas = Vector2i(12, 15)
+7:16/0 = 0
+7:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-82.5, -114, -82.5, -105, 77.5, -104, 77.5, 105, -82.5, 107, -82.5, 114, 86.5, 114, 86.5, -114)
+7:16/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_5r5wd")
+
+[sub_resource type="TileSet" id="TileSet_sfouy"]
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_jxkk1")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7ofo"]
+size = Vector2(8, 146)
+
+[node name="F5PeakR2" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 16, 0, 0, 0)
+tile_set = SubResource("TileSet_sfouy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-3, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-67, 4)
+shape = SubResource("RectangleShape2D_k7ofo")
