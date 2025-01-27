@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://crp6snhlaouel"]
+
+[ext_resource type="PackedScene" uid="uid://dxr2c2s06ssrf" path="res://Scenes/Floor5 (Second Level)/floor_5_(second_level).tscn" id="1_ax2td"]
+[ext_resource type="PackedScene" uid="uid://budn5kngr202o" path="res://Scenes/player.tscn" id="2_6bwcw"]
+[ext_resource type="PackedScene" uid="uid://6s2y2bkxqfef" path="res://Scenes/hud.tscn" id="3_o4ibg"]
+[ext_resource type="PackedScene" uid="uid://bcosepain78m5" path="res://Scenes/stopwatch.tscn" id="4_ghnu4"]
+[ext_resource type="PackedScene" uid="uid://b5onfjpq3c8uj" path="res://Scenes/escape_location.tscn" id="5_s2phr"]
+
+[node name="floor-2-level" type="Node2D"]
+position = Vector2(-720.814, -352.398)
+
+[node name="Floor 2 Layout" parent="." instance=ExtResource("1_ax2td")]
+position = Vector2(710, -4)
+
+[node name="Player" parent="." instance=ExtResource("2_6bwcw")]
+position = Vector2(1394.01, 576.542)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
+
+[node name="HUD" parent="." instance=ExtResource("3_o4ibg")]
+
+[node name="Stopwatch" parent="." instance=ExtResource("4_ghnu4")]
+
+[node name="EscapeLocation" parent="." instance=ExtResource("5_s2phr")]
+position = Vector2(126.403, 58.4074)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://enxind4ovc18"
-path="res://.godot/imported/F2R1-4.png-f2ff1b31b93e3086e28d77a1b44a90a7.ctex"
+uid="uid://cg7l57d72wnbl"
+path="res://.godot/imported/F6RPeaks.png-0dfbb127953cb4d22cd9c9b45ded77a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Floor2/F2R1-4.png"
-dest_files=["res://.godot/imported/F2R1-4.png-f2ff1b31b93e3086e28d77a1b44a90a7.ctex"]
+source_file="res://Assets/Floor6/F6RPeaks.png"
+dest_files=["res://.godot/imported/F6RPeaks.png-0dfbb127953cb4d22cd9c9b45ded77a5.ctex"]
 
 [params]
 
