@@ -38,7 +38,7 @@ scale = Vector2(1, -1)
 position = Vector2(513.9, -466.13)
 
 [node name="F6R1-6" parent="." instance=ExtResource("1_205kn")]
-position = Vector2(531.524, -925.107)
+position = Vector2(530.11, -925.815)
 scale = Vector2(-1, 1)
 
 [node name="F6R1-7" parent="." instance=ExtResource("1_205kn")]
