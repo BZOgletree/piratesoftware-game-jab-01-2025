@@ -1518,7 +1518,7 @@ shape = SubResource("CircleShape2D_sf5ph")
 visible = false
 sprite_frames = SubResource("SpriteFrames_u6riv")
 animation = &"Idle"
-frame_progress = 0.63148
+frame_progress = 0.095449
 
 [node name="Blue" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -1534,7 +1534,7 @@ animation = &"Idle"
 visible = false
 sprite_frames = SubResource("SpriteFrames_yx7ck")
 animation = &"Idle"
-frame_progress = 0.0233689
+frame_progress = 0.487339
 
 [node name="GreenHair" type="AnimatedSprite2D" parent="."]
 visible = false

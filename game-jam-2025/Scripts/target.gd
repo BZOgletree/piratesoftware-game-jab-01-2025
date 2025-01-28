@@ -25,19 +25,25 @@ extends CharacterBody2D
 @export var target_skin_army: AnimatedSprite2D
 
 @export var current_skin: int
+@export var starting_state: int
 var currently_selected_skin
 
 enum state {
-	IDLE = 0,
-	ALERT = 150,
-	PANIC = 200
+	IDLE = 75,
+	ALERT = 125,
+	PANIC = 175
 }
 
 var current_escape_waypoint_location = 1
 var target_position
 
 func _ready() -> void:
-	speed = state.IDLE
+	if starting_state == 1:
+		speed = state.ALERT
+	elif starting_state == 2:
+		speed = state.PANIC
+	else:
+		speed = state.IDLE
 	pickSkin()
 
 func _physics_process(_delta: float) -> void:
@@ -47,7 +53,7 @@ func _physics_process(_delta: float) -> void:
 	makePath()
 	move_and_slide()
 	if nav_agent.distance_to_target() < 5:
-		if self.speed == state.IDLE:
+		if self.speed == state.IDLE && workstation_waypoint_1 != null:
 			next_workstation = 2 if next_workstation == 1 else 1
 		else:
 			current_escape_waypoint_location += 1
@@ -83,7 +89,7 @@ func makePath():
 func _on_alert_radius_area_entered(area: Area2D) -> void:
 	if area.get_parent() == player:
 		pickSkin()
-		self.speed = state.ALERT
+		self.speed = state.ALERT if self.speed == state.IDLE else state.PANIC
 	if escape_location == area:
 		speed = 0
 		await get_tree().create_timer(2.0).timeout

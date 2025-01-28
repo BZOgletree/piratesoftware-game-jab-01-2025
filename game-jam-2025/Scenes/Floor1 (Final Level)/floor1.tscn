@@ -235,6 +235,7 @@ escape_waypoint_2 = NodePath("../DoorwayWaypoint4")
 escape_waypoint_3 = NodePath("../DoorwayWaypoint5")
 escape_waypoint_4 = NodePath("../DoorwayWaypoint3")
 escape_waypoint_5 = NodePath("../DoorwayWaypoint3")
+current_skin = 10
 
 [node name="Guard Lincon" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("3_pycy6")]
 position = Vector2(795, -458)
@@ -435,6 +436,8 @@ shape = SubResource("SegmentShape2D_20ywh")
 [node name="DoorwayWaypoint4" type="Area2D" parent="."]
 position = Vector2(1894.71, -284.414)
 rotation = 3.14159
+collision_layer = 16
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorwayWaypoint4"]
 shape = SubResource("SegmentShape2D_20ywh")
@@ -493,6 +496,8 @@ shape = SubResource("SegmentShape2D_20ywh")
 [node name="DoorwayWaypoint13" type="Area2D" parent="."]
 position = Vector2(1900.93, -130)
 rotation = 1.5708
+collision_layer = 16
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorwayWaypoint13"]
 position = Vector2(9.53674e-07, -9.53674e-07)
