@@ -46,6 +46,8 @@ func get_input():
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	var layer = area.get_collision_layer()
+	print(layer)
+	print(area)
 	if layer == 6:
 		kill_state = true
 	collision = area

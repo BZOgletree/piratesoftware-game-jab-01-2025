@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://qqs6ysaoacew"]
+[gd_scene load_steps=4 format=3 uid="uid://qqs6ysaoacew"]
 
 [ext_resource type="Texture2D" uid="uid://cbp65wr20tili" path="res://Assets/Stairs.png" id="1_utkp7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjhmy"]
-size = Vector2(270, 150)
+size = Vector2(169, 103)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwre1"]
+size = Vector2(273, 156)
 
 [node name="Stairs" type="Node2D"]
 
@@ -11,9 +14,17 @@ size = Vector2(270, 150)
 texture = ExtResource("1_utkp7")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 16
-collision_mask = 16
+collision_layer = 32
+collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1, -10)
+position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_hjhmy")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2.5, -12)
+shape = SubResource("RectangleShape2D_fwre1")
