@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://hwmbi4chg6lj"]
 
-[ext_resource type="PackedScene" uid="uid://dx5qsgp1ttggq" path="res://Scenes/Floor 4 (Third Level)/f_4_bottompart_1_2.tscn" id="1_lo5lc"]
-[ext_resource type="PackedScene" uid="uid://b1ur8rxaod7ml" path="res://Scenes/Floor 4 (Third Level)/f_4_bottompart_3_4.tscn" id="2_ipvsy"]
-[ext_resource type="PackedScene" uid="uid://b2rovhfaptixd" path="res://Scenes/Floor 4 (Third Level)/f_4_hospital.tscn" id="3_oj4kn"]
-[ext_resource type="PackedScene" uid="uid://dc7kn7frybmq5" path="res://Scenes/Floor 4 (Third Level)/f_4_outside_split_bottom.tscn" id="4_07fyo"]
-[ext_resource type="PackedScene" uid="uid://d0thpb8unwdnm" path="res://Scenes/Floor 4 (Third Level)/f_4_outside_split_top.tscn" id="5_51deu"]
+[ext_resource type="PackedScene" uid="uid://dx5qsgp1ttggq" path="res://Scenes/Floor4 (Third Level)/f_4_bottompart_1_2.tscn" id="1_lo5lc"]
+[ext_resource type="PackedScene" uid="uid://b1ur8rxaod7ml" path="res://Scenes/Floor4 (Third Level)/f_4_bottompart_3_4.tscn" id="2_ipvsy"]
+[ext_resource type="PackedScene" uid="uid://b2rovhfaptixd" path="res://Scenes/Floor4 (Third Level)/f_4_hospital.tscn" id="3_oj4kn"]
+[ext_resource type="PackedScene" uid="uid://dc7kn7frybmq5" path="res://Scenes/Floor4 (Third Level)/f_4_outside_split_bottom.tscn" id="4_07fyo"]
+[ext_resource type="PackedScene" uid="uid://d0thpb8unwdnm" path="res://Scenes/Floor4 (Third Level)/f_4_outside_split_top.tscn" id="5_51deu"]
 
 [node name="Floor4Map" type="Node2D"]
 

@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://bf6lj1kfphkrd"]
+
+[ext_resource type="PackedScene" uid="uid://b3y4j2stv7cg3" path="res://Scenes/Floor3 (Fourth Level)/f_3_bottom_left.tscn" id="1_ipxgq"]
+[ext_resource type="PackedScene" uid="uid://uxi1012f8rl1" path="res://Scenes/Floor3 (Fourth Level)/f_3_bottom_mid.tscn" id="2_mscnv"]
+[ext_resource type="PackedScene" uid="uid://cn17onbstpquf" path="res://Scenes/Floor3 (Fourth Level)/f_3_bottom_right.tscn" id="3_grdw0"]
+[ext_resource type="PackedScene" uid="uid://gmkmge5pm8xf" path="res://Scenes/Floor3 (Fourth Level)/f_3_peak.tscn" id="4_clhnb"]
+[ext_resource type="PackedScene" uid="uid://cxg5ypb0fsmvh" path="res://Scenes/Floor3 (Fourth Level)/f_3_top_left.tscn" id="5_buhmg"]
+[ext_resource type="PackedScene" uid="uid://bc37ajsjjqxfg" path="res://Scenes/Floor3 (Fourth Level)/f_3_top_mid.tscn" id="6_85b72"]
+[ext_resource type="PackedScene" uid="uid://d3oync0bbnrit" path="res://Scenes/Floor3 (Fourth Level)/f_3_top_right.tscn" id="7_o3y0a"]
+
+[node name="Floor 3 Map" type="Node2D"]
+
+[node name="F3BottomLeft" parent="." instance=ExtResource("1_ipxgq")]
+position = Vector2(-633.551, 508.25)
+
+[node name="F3BottomMid" parent="." instance=ExtResource("2_mscnv")]
+position = Vector2(86.0847, 507.975)
+
+[node name="F3BottomRight" parent="." instance=ExtResource("3_grdw0")]
+position = Vector2(813.44, 507.975)
+
+[node name="F3Peak" parent="." instance=ExtResource("4_clhnb")]
+position = Vector2(960.62, -166.212)
+
+[node name="F3TopLeft" parent="." instance=ExtResource("5_buhmg")]
+position = Vector2(-633.551, 143.587)
+
+[node name="F3TopMid" parent="." instance=ExtResource("6_85b72")]
+position = Vector2(90.7654, -52.4812)
+
+[node name="F3TopRight" parent="." instance=ExtResource("7_o3y0a")]
+position = Vector2(813.44, 151.307)
+
+[node name="F3Peak2" parent="." instance=ExtResource("4_clhnb")]
+position = Vector2(-762.664, -165.021)
+scale = Vector2(-1, 1)

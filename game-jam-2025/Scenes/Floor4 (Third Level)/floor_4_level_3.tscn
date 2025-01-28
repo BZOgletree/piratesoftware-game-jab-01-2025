@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://de81iti328gc3"]
 
-[ext_resource type="PackedScene" uid="uid://hwmbi4chg6lj" path="res://Scenes/Floor 4 (Third Level)/floor_4_map.tscn" id="1_1hq5q"]
+[ext_resource type="PackedScene" uid="uid://hwmbi4chg6lj" path="res://Scenes/Floor4 (Third Level)/floor_4_map.tscn" id="1_1hq5q"]
 [ext_resource type="PackedScene" uid="uid://budn5kngr202o" path="res://Scenes/player.tscn" id="2_y8lp6"]
 [ext_resource type="PackedScene" uid="uid://bcosepain78m5" path="res://Scenes/stopwatch.tscn" id="4_5xomb"]
 [ext_resource type="PackedScene" uid="uid://6s2y2bkxqfef" path="res://Scenes/hud.tscn" id="5_w0gm7"]

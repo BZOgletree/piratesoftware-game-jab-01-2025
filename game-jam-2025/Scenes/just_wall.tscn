@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bifydgmnbo3gl"]
+
+[ext_resource type="Texture2D" uid="uid://cqxu14sroltge" path="res://Assets/ZombZomb/JustWall.png" id="1_n6mr4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_equyw"]
+size = Vector2(29.3665, 171.527)
+
+[node name="JustWall" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_n6mr4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.591347, 6.10459)
+shape = SubResource("RectangleShape2D_equyw")

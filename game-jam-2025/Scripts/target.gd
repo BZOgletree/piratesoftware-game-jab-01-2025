@@ -22,7 +22,6 @@ enum state {
 var current_escape_waypoint_location = 1
 var target_position
 
-
 func _ready() -> void:
 	speed = state.IDLE
 
@@ -31,7 +30,6 @@ func _physics_process(_delta: float) -> void:
 	velocity = dir * speed
 	makePath()
 	move_and_slide()
-	var current_position = self.translate
 	if nav_agent.distance_to_target() < 5:
 		if self.speed == state.IDLE:
 			next_workstation = 2 if next_workstation == 1 else 1

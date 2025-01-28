@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cn17onbstpquf"]
+
+[ext_resource type="Texture2D" uid="uid://ckekr3x1ifr17" path="res://Assets/Floor3/F3BottomRight.png" id="1_1cmfs"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_3k4jr"]
+vertices = PackedVector2Array(347.5, -244, 353.5, -176, 355.5, 174, -360.5, 175, -424.5, 166, -429.5, -174, -369.5, -246)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(355.5, 174, -360.5, 175, -424.5, 166, -429.5, -174, -369.5, -246, 347.5, -244, 353.5, -176)])
+agent_radius = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_npjec"]
+texture = ExtResource("1_1cmfs")
+7:16/size_in_atlas = Vector2i(48, 25)
+7:16/0 = 0
+7:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(356.5, -181, 366.5, -181, 367.5, 189, -362.5, 187, -362.5, 176, 353.5, 176)
+7:16/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_3k4jr")
+
+[sub_resource type="TileSet" id="TileSet_4yebh"]
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_npjec")
+
+[node name="F3BottomRight" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 16, 0, 0, 0)
+tile_set = SubResource("TileSet_4yebh")

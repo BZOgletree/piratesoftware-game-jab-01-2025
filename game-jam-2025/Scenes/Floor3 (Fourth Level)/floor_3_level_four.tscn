@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://baar41hya7pwn"]
+
+[ext_resource type="PackedScene" uid="uid://bf6lj1kfphkrd" path="res://Scenes/Floor3 (Fourth Level)/floor_3_map.tscn" id="1_rbml6"]
+[ext_resource type="PackedScene" uid="uid://6s2y2bkxqfef" path="res://Scenes/hud.tscn" id="2_602wy"]
+[ext_resource type="PackedScene" uid="uid://bcosepain78m5" path="res://Scenes/stopwatch.tscn" id="3_3ualn"]
+[ext_resource type="PackedScene" uid="uid://budn5kngr202o" path="res://Scenes/player.tscn" id="4_nvdbn"]
+[ext_resource type="PackedScene" uid="uid://ua7jj7xp0xja" path="res://Scenes/target.tscn" id="5_craxh"]
+
+[node name="floor_3_level four" type="Node2D"]
+
+[node name="Floor 3 Map" parent="." instance=ExtResource("1_rbml6")]
+position = Vector2(-158.79, -148.854)
+
+[node name="HUD" parent="." instance=ExtResource("2_602wy")]
+
+[node name="Stopwatch" parent="." instance=ExtResource("3_3ualn")]
+
+[node name="Player" parent="." instance=ExtResource("4_nvdbn")]
+position = Vector2(-830.09, -361.548)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
+
+[node name="Target" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") instance=ExtResource("5_craxh")]
+position = Vector2(-1000.77, -297.016)
+player = NodePath("../Player")
+speed = 150
+escape_location = NodePath("../Player")
+escape_waypoint_1 = NodePath("../Player")
+escape_waypoint_2 = NodePath("../Player")
+escape_waypoint_3 = NodePath("../Player")
+escape_waypoint_4 = NodePath("../Player")
+escape_waypoint_5 = NodePath("../Player")
+workstation_waypoint_1 = NodePath("../Player")
+workstation_waypoint_2 = NodePath("../Player")

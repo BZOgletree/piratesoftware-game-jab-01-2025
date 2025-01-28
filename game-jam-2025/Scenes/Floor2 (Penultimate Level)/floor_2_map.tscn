@@ -1,0 +1,109 @@
+[gd_scene load_steps=14 format=3 uid="uid://dmaud01psrrrp"]
+
+[ext_resource type="Texture2D" uid="uid://cqxu14sroltge" path="res://Assets/ZombZomb/JustWall.png" id="1_160di"]
+[ext_resource type="PackedScene" uid="uid://bulsgc2qungov" path="res://Scenes/Floor2 (Penultimate Level)/f_2bl_middle_room.tscn" id="1_edc6t"]
+[ext_resource type="PackedScene" uid="uid://42mn1h5pkh0o" path="res://Scenes/Floor2 (Penultimate Level)/f_2br_middle_room.tscn" id="2_jmby2"]
+[ext_resource type="PackedScene" uid="uid://nl74r48qyygi" path="res://Scenes/Floor2 (Penultimate Level)/f_2tl_middle_room.tscn" id="3_18jgq"]
+[ext_resource type="PackedScene" uid="uid://brp10tpucyp5n" path="res://Scenes/Floor2 (Penultimate Level)/f_2tr_middle_room.tscn" id="4_sn86l"]
+[ext_resource type="PackedScene" uid="uid://dy7hcgekmpkpy" path="res://Scenes/Floor2 (Penultimate Level)/f_2_bot_outside_room.tscn" id="5_e27gr"]
+[ext_resource type="PackedScene" uid="uid://4ghi0o2pcsfv" path="res://Scenes/Floor2 (Penultimate Level)/f_2_bot_outside_room_2.tscn" id="6_0l5r7"]
+[ext_resource type="PackedScene" uid="uid://cmnnfqmyoexyy" path="res://Scenes/Floor2 (Penultimate Level)/f_2_mid_outside_room2.tscn" id="7_6i586"]
+[ext_resource type="PackedScene" uid="uid://bjvwdwcsuhdeh" path="res://Scenes/Floor2 (Penultimate Level)/f_2_mid_outside_room.tscn" id="8_gm15q"]
+[ext_resource type="PackedScene" uid="uid://dkuy4v0yld7c7" path="res://Scenes/Floor2 (Penultimate Level)/f_2_top_outside_room_1.tscn" id="9_kgbm4"]
+[ext_resource type="PackedScene" uid="uid://c2176ep7wj4uq" path="res://Scenes/Floor2 (Penultimate Level)/f_2_top_outside_room_2.tscn" id="10_p1mao"]
+[ext_resource type="PackedScene" uid="uid://25mfl3al08m6" path="res://Scenes/Floor2 (Penultimate Level)/f_2_peak_outside_room.tscn" id="11_vfbfs"]
+[ext_resource type="PackedScene" uid="uid://id6ffqyhae6e" path="res://Scenes/Floor2 (Penultimate Level)/f_2_circle.tscn" id="12_udnu1"]
+
+[node name="Floor2 Map" type="Node2D"]
+
+[node name="JustWall" type="Sprite2D" parent="."]
+position = Vector2(342.436, 511.103)
+scale = Vector2(0.3, 1)
+texture = ExtResource("1_160di")
+
+[node name="JustWall2" type="Sprite2D" parent="."]
+position = Vector2(448.531, 282.342)
+scale = Vector2(0.3, 1)
+texture = ExtResource("1_160di")
+
+[node name="JustWall3" type="Sprite2D" parent="."]
+position = Vector2(1084.93, 288.522)
+scale = Vector2(0.3, 1)
+texture = ExtResource("1_160di")
+
+[node name="JustWall4" type="Sprite2D" parent="."]
+position = Vector2(1192.34, 499.907)
+scale = Vector2(0.3, 1)
+texture = ExtResource("1_160di")
+
+[node name="F2BLMiddleRoom" parent="." instance=ExtResource("1_edc6t")]
+position = Vector2(548.82, 962.887)
+
+[node name="F2BRMiddleRoom" parent="." instance=ExtResource("2_jmby2")]
+position = Vector2(976.796, 970.799)
+
+[node name="F2TLMiddleRoom" parent="." instance=ExtResource("3_18jgq")]
+position = Vector2(547.938, 715.166)
+
+[node name="F2TRMiddleRoom" parent="." instance=ExtResource("4_sn86l")]
+position = Vector2(968.487, 715.066)
+
+[node name="F2BotOutsideRoom" parent="." instance=ExtResource("5_e27gr")]
+position = Vector2(-296.461, 967.357)
+metadata/_edit_group_ = true
+
+[node name="F2BotOutsideRoom2" parent="." instance=ExtResource("6_0l5r7")]
+position = Vector2(123.093, 959.798)
+metadata/_edit_group_ = true
+
+[node name="F2MidOutsideRoom" parent="." instance=ExtResource("7_6i586")]
+position = Vector2(-304.02, 721.672)
+metadata/_edit_group_ = true
+
+[node name="F2MidOutsideRoom2" parent="." instance=ExtResource("8_gm15q")]
+position = Vector2(123.093, 721.672)
+metadata/_edit_group_ = true
+
+[node name="F2TopOutsideRoom1" parent="." instance=ExtResource("9_kgbm4")]
+position = Vector2(-304.02, 482.288)
+metadata/_edit_group_ = true
+
+[node name="F2TopOutsideRoom2" parent="." instance=ExtResource("10_p1mao")]
+position = Vector2(123.093, 482.288)
+metadata/_edit_group_ = true
+
+[node name="F2PeakOutsideRoom" parent="." instance=ExtResource("11_vfbfs")]
+position = Vector2(-296.461, 242.903)
+metadata/_edit_group_ = true
+
+[node name="F2BotOutsideRoom3" parent="." instance=ExtResource("5_e27gr")]
+position = Vector2(1830.32, 968.136)
+scale = Vector2(-1, 1)
+
+[node name="F2BotOutsideRoom4" parent="." instance=ExtResource("6_0l5r7")]
+position = Vector2(1411.45, 959.958)
+scale = Vector2(-1, 1)
+
+[node name="F2MidOutsideRoom3" parent="." instance=ExtResource("7_6i586")]
+position = Vector2(1838.2, 721.722)
+scale = Vector2(-1, 1)
+
+[node name="F2MidOutsideRoom4" parent="." instance=ExtResource("8_gm15q")]
+position = Vector2(1411.45, 721.833)
+scale = Vector2(-1, 1)
+
+[node name="F2TopOutsideRoom3" parent="." instance=ExtResource("9_kgbm4")]
+position = Vector2(1838.2, 482.337)
+scale = Vector2(-1, 1)
+
+[node name="F2TopOutsideRoom4" parent="." instance=ExtResource("10_p1mao")]
+position = Vector2(1411.45, 482.448)
+scale = Vector2(-1, 1)
+
+[node name="F2PeakOutsideRoom2" parent="." instance=ExtResource("11_vfbfs")]
+position = Vector2(1829.78, 242.952)
+scale = Vector2(-1, 1)
+
+[node name="F2Circle" parent="." instance=ExtResource("12_udnu1")]
+position = Vector2(759.619, 282.253)
+scale = Vector2(0.75, 0.75)

@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxg5ypb0fsmvh"]
+
+[ext_resource type="Texture2D" uid="uid://dsme0vspyt4jv" path="res://Assets/Floor3/F3TopLeft.png" id="1_fmn7v"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_5nawk"]
+vertices = PackedVector2Array(364.5, -172, 414.5, -181, 408.5, 183, 363.5, 183, -237.5, -170, -353.5, 184, -261.5, -237, -246.5, -239, -261.5, -170, -352.5, -170)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 7, 4, 8), PackedInt32Array(8, 4, 5), PackedInt32Array(8, 5, 9)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-352.5, -170, -261.5, -170, -261.5, -237, -246.5, -239, -237.5, -170, 364.5, -172, 414.5, -181, 408.5, 183, 363.5, 183, -353.5, 184)])
+agent_radius = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e1n55"]
+texture = ExtResource("1_fmn7v")
+7:16/size_in_atlas = Vector2i(47, 24)
+7:16/0 = 0
+7:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-265.5, -172, -354.5, -172, -352.5, 184, -365.5, 184, -365.5, -183, -265.5, -183)
+7:16/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_5nawk")
+
+[sub_resource type="TileSet" id="TileSet_ofngy"]
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_e1n55")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_okpns"]
+size = Vector2(598, 8)
+
+[node name="F3TopLeft" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 16, 0, 0, 0)
+tile_set = SubResource("TileSet_ofngy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(74, -170)
+shape = SubResource("RectangleShape2D_okpns")
