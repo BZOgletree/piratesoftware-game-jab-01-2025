@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://de81iti328gc3"]
+[gd_scene load_steps=7 format=3 uid="uid://de81iti328gc3"]
 
 [ext_resource type="PackedScene" uid="uid://hwmbi4chg6lj" path="res://Scenes/Floor4 (Third Level)/floor_4_map.tscn" id="1_1hq5q"]
 [ext_resource type="PackedScene" uid="uid://budn5kngr202o" path="res://Scenes/player.tscn" id="2_y8lp6"]
 [ext_resource type="PackedScene" uid="uid://bcosepain78m5" path="res://Scenes/stopwatch.tscn" id="4_5xomb"]
+[ext_resource type="PackedScene" uid="uid://qqs6ysaoacew" path="res://Scenes/stairs.tscn" id="5_p3lmg"]
 [ext_resource type="PackedScene" uid="uid://6s2y2bkxqfef" path="res://Scenes/hud.tscn" id="5_w0gm7"]
+[ext_resource type="PackedScene" uid="uid://wolgs7r05dfi" path="res://Scenes/elevator.tscn" id="6_he172"]
 
 [node name="Floor4Level3" type="Node2D"]
 
@@ -11,7 +13,7 @@
 position = Vector2(2.55066, -4.08521)
 
 [node name="Player" parent="." instance=ExtResource("2_y8lp6")]
-position = Vector2(-3.8064, 364.438)
+position = Vector2(1291.39, -512.467)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
@@ -19,3 +21,9 @@ zoom = Vector2(2, 2)
 [node name="Stopwatch" parent="." instance=ExtResource("4_5xomb")]
 
 [node name="HUD" parent="." instance=ExtResource("5_w0gm7")]
+
+[node name="Stairs" parent="." instance=ExtResource("5_p3lmg")]
+position = Vector2(-1208.3, -709.775)
+
+[node name="Elevator" parent="." instance=ExtResource("6_he172")]
+position = Vector2(1200.67, -750.092)

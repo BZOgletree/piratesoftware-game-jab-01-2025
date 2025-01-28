@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://fudlq50gl4a4"]
+[gd_scene load_steps=8 format=3 uid="uid://fudlq50gl4a4"]
 
 [ext_resource type="PackedScene" uid="uid://dmaud01psrrrp" path="res://Scenes/Floor2 (Penultimate Level)/floor_2_map.tscn" id="1_oc6xw"]
 [ext_resource type="PackedScene" uid="uid://bcosepain78m5" path="res://Scenes/stopwatch.tscn" id="2_0idxf"]
 [ext_resource type="PackedScene" uid="uid://budn5kngr202o" path="res://Scenes/player.tscn" id="3_uf0rr"]
 [ext_resource type="PackedScene" uid="uid://ua7jj7xp0xja" path="res://Scenes/target.tscn" id="4_igwew"]
 [ext_resource type="PackedScene" uid="uid://6s2y2bkxqfef" path="res://Scenes/hud.tscn" id="5_h2ekm"]
+[ext_resource type="PackedScene" uid="uid://qqs6ysaoacew" path="res://Scenes/stairs.tscn" id="6_1855v"]
+[ext_resource type="PackedScene" uid="uid://wolgs7r05dfi" path="res://Scenes/elevator.tscn" id="7_s4ila"]
 
 [node name="Floor 2" type="Node2D"]
 
@@ -14,6 +16,7 @@ position = Vector2(-768.863, -407.864)
 [node name="Stopwatch" parent="." instance=ExtResource("2_0idxf")]
 
 [node name="Player" parent="." instance=ExtResource("3_uf0rr")]
+position = Vector2(998.46, -176.199)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
@@ -31,3 +34,9 @@ workstation_waypoint_1 = NodePath("../Player")
 workstation_waypoint_2 = NodePath("../Player")
 
 [node name="HUD" parent="." instance=ExtResource("5_h2ekm")]
+
+[node name="Stairs" parent="." instance=ExtResource("6_1855v")]
+position = Vector2(-1131.91, -185.958)
+
+[node name="Elevator" parent="." instance=ExtResource("7_s4ila")]
+position = Vector2(1180.04, -260.709)

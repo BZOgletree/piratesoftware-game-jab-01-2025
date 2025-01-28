@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bhbkpprxcjpbs"]
+[gd_scene load_steps=10 format=3 uid="uid://bhbkpprxcjpbs"]
 
 [ext_resource type="PackedScene" uid="uid://x4ystqk34ocr" path="res://Scenes/Floor6 (First level)/floor_6_map.tscn" id="1_sjgvh"]
 [ext_resource type="PackedScene" uid="uid://bcosepain78m5" path="res://Scenes/stopwatch.tscn" id="2_03adn"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b5onfjpq3c8uj" path="res://Scenes/escape_location.tscn" id="5_psj5r"]
 [ext_resource type="PackedScene" uid="uid://ua7jj7xp0xja" path="res://Scenes/target.tscn" id="6_moxcc"]
 [ext_resource type="PackedScene" uid="uid://3qcwmqyv03uy" path="res://Justins work/doorway_waypoint.tscn" id="7_31nix"]
+[ext_resource type="PackedScene" uid="uid://qqs6ysaoacew" path="res://Scenes/stairs.tscn" id="8_6ef2n"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_q3hmo"]
 
@@ -27,8 +28,8 @@ hud = NodePath("../HUD")
 zoom = Vector2(2, 2)
 
 [node name="EscapeLocation" parent="." instance=ExtResource("5_psj5r")]
-position = Vector2(924.997, 547.447)
-rotation = -0.473038
+position = Vector2(1055.1, 567.246)
+rotation = -3.13769
 
 [node name="Clark" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["Targets"] instance=ExtResource("6_moxcc")]
 position = Vector2(-716, -600)
@@ -326,3 +327,6 @@ position = Vector2(-468, 182)
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Doorway Waypoint30"]
 scale = Vector2(1e-05, 1e-05)
 shape = SubResource("SegmentShape2D_q3hmo")
+
+[node name="Stairs" parent="." instance=ExtResource("8_6ef2n")]
+position = Vector2(-1022.8, 605.617)

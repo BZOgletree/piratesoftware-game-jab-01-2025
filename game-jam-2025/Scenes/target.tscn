@@ -1465,7 +1465,7 @@ animations = [{
 [node name="Target" type="CharacterBody2D" node_paths=PackedStringArray("target_skin_blue_hair", "target_skin_blue", "target_skin_red_hair", "target_skin_red", "target_skin_green_hair", "target_skin_green", "target_skin_teal_hair", "target_skin_teal", "target_skin_doc", "target_skin_army")]
 scale = Vector2(0.6, 0.6)
 collision_layer = 11
-collision_mask = 27
+collision_mask = 11
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_w0enk")

@@ -92,7 +92,6 @@ func _on_alert_radius_area_entered(area: Area2D) -> void:
 		self.speed = state.ALERT if self.speed == state.IDLE else state.PANIC
 	if escape_location == area:
 		speed = 0
-		await get_tree().create_timer(2.0).timeout
 		queue_free()
 
 func pickSkin():
@@ -153,7 +152,6 @@ func pickSkin():
 		currently_selected_skin = target_skin_blue
 
 func get_sprite_position(velocity):
-	print(currently_selected_skin.animation)
 	pickSkin()
 	if velocity.x > 0:
 		currently_selected_skin.rotation_degrees = 90
