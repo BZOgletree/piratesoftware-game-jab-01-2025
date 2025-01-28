@@ -149,6 +149,7 @@ zoom = Vector2(2, 2)
 [node name="Mark" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("3_pycy6")]
 position = Vector2(2120, 328)
 collision_mask = 11
+next_workstation = 1
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
 escape_waypoint_1 = NodePath("../DoorwayWaypoint5")
@@ -158,7 +159,6 @@ escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Mark1")
 workstation_waypoint_2 = NodePath("../Mark2")
-next_workstation = 1
 
 [node name="Mitch" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("3_pycy6")]
 position = Vector2(313, -285)
@@ -405,7 +405,6 @@ escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Geoff1")
 workstation_waypoint_2 = NodePath("../Geoff2")
-current_skin = 0
 
 [node name="EscapeLocation" parent="." instance=ExtResource("9_b3ht4")]
 position = Vector2(919.617, -593.329)

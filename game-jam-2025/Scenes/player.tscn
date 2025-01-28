@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://budn5kngr202o"]
+[gd_scene load_steps=26 format=3 uid="uid://budn5kngr202o"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_agtxk"]
 [ext_resource type="Texture2D" uid="uid://c3ad6p4gcgclq" path="res://Assets/PlayerCharacter.png" id="2_orlru"]
+[ext_resource type="Texture2D" uid="uid://t1mjq4obdmvk" path="res://Assets/SpriteSheets/Bite.png" id="3_o2dka"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4pis"]
 atlas = ExtResource("2_orlru")
@@ -93,12 +94,77 @@ size = Vector2(39, 39)
 radius = 16.0
 height = 34.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dkxh"]
+atlas = ExtResource("3_o2dka")
+region = Rect2(0, 0, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uihsh"]
+atlas = ExtResource("3_o2dka")
+region = Rect2(32, 0, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tp2f"]
+atlas = ExtResource("3_o2dka")
+region = Rect2(64, 0, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuj1v"]
+atlas = ExtResource("3_o2dka")
+region = Rect2(0, 30, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdpis"]
+atlas = ExtResource("3_o2dka")
+region = Rect2(32, 30, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpwsc"]
+atlas = ExtResource("3_o2dka")
+region = Rect2(64, 30, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0by0"]
+atlas = ExtResource("3_o2dka")
+region = Rect2(0, 60, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihknw"]
+atlas = ExtResource("3_o2dka")
+region = Rect2(32, 60, 32, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nt32b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dkxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uihsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tp2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuj1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdpis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpwsc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0by0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihknw")
+}],
+"loop": false,
+"name": &"Bite",
+"speed": 8.0
+}]
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "bite")]
 scale = Vector2(0.75, 0.75)
 collision_layer = 15
 collision_mask = 15
 script = ExtResource("1_agtxk")
 sprite = NodePath("Sprite2D")
+bite = NodePath("Bite")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gppge")
@@ -119,5 +185,13 @@ shape = SubResource("RectangleShape2D_w8o5c")
 scale = Vector2(0.75, 0.75)
 shape = SubResource("CapsuleShape2D_a5cg4")
 
+[node name="Bite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_nt32b")
+animation = &"Bite"
+frame = 7
+frame_progress = 1.0
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="animation_finished" from="Bite" to="." method="_on_bite_animation_finished"]
