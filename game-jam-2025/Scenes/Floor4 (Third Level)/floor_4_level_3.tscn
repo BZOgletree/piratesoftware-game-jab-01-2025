@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://de81iti328gc3"]
+[gd_scene load_steps=13 format=3 uid="uid://de81iti328gc3"]
 
 [ext_resource type="PackedScene" uid="uid://hwmbi4chg6lj" path="res://Scenes/Floor4 (Third Level)/floor_4_map.tscn" id="1_1hq5q"]
 [ext_resource type="PackedScene" uid="uid://budn5kngr202o" path="res://Scenes/player.tscn" id="2_y8lp6"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://b7rvckgvlp71l" path="res://Scenes/scene_transition.tscn" id="10_mge56"]
 [ext_resource type="PackedScene" uid="uid://dqwje5mbu8xka" path="res://Scenes/finish_level.tscn" id="11_mnln8"]
 [ext_resource type="PackedScene" uid="uid://6kaaeumlndc1" path="res://Scenes/chair_shitty.tscn" id="12_6ifln"]
-[ext_resource type="PackedScene" uid="uid://i6f3rqocfjek" path="res://Scenes/workstation_waypoint.tscn" id="13_mjgfw"]
 
 [node name="Floor4Level3" type="Node2D"]
 
@@ -58,9 +57,10 @@ escape_waypoint_4 = NodePath("../EscapeLocation3")
 escape_waypoint_5 = NodePath("../EscapeLocation3")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint18")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint16")
+current_skin = 8
 
 [node name="Lich" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(59, -86)
+position = Vector2(155, -188)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation3")
 escape_waypoint_1 = NodePath("../EscapeLocation3")
@@ -68,8 +68,9 @@ escape_waypoint_2 = NodePath("../EscapeLocation3")
 escape_waypoint_3 = NodePath("../EscapeLocation3")
 escape_waypoint_4 = NodePath("../EscapeLocation3")
 escape_waypoint_5 = NodePath("../EscapeLocation3")
-workstation_waypoint_1 = NodePath("../Doorway Waypoint6")
+workstation_waypoint_1 = NodePath("../Doorway Waypoint17")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint18")
+next_workstation = 2
 
 [node name="Rich" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(88, -518)
@@ -82,6 +83,7 @@ escape_waypoint_4 = NodePath("../EscapeLocation3")
 escape_waypoint_5 = NodePath("../EscapeLocation3")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint18")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint16")
+current_skin = 1
 
 [node name="Stich" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(341, -606)
@@ -94,6 +96,7 @@ escape_waypoint_4 = NodePath("../EscapeLocation3")
 escape_waypoint_5 = NodePath("../EscapeLocation3")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint18")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint17")
+current_skin = 7
 
 [node name="Mitch" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(221, -385)
@@ -106,6 +109,7 @@ escape_waypoint_4 = NodePath("../EscapeLocation3")
 escape_waypoint_5 = NodePath("../EscapeLocation3")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint6")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint16")
+current_skin = 2
 
 [node name="Rick" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(-129, -441)
@@ -143,7 +147,7 @@ escape_waypoint_3 = NodePath("../EscapeLocation3")
 escape_waypoint_4 = NodePath("../EscapeLocation3")
 escape_waypoint_5 = NodePath("../EscapeLocation3")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint15")
-workstation_waypoint_2 = NodePath("../Doorway Waypoint6")
+workstation_waypoint_2 = NodePath("../Doorway Waypoint18")
 current_skin = 5
 
 [node name="Beth" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
@@ -156,7 +160,7 @@ escape_waypoint_3 = NodePath("../EscapeLocation3")
 escape_waypoint_4 = NodePath("../EscapeLocation3")
 escape_waypoint_5 = NodePath("../EscapeLocation3")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint16")
-workstation_waypoint_2 = NodePath("../Doorway Waypoint6")
+workstation_waypoint_2 = NodePath("../Doorway Waypoint17")
 current_skin = 7
 
 [node name="Jerry" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
@@ -196,7 +200,7 @@ escape_waypoint_4 = NodePath("../EscapeLocation2")
 escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint21")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint22")
-current_skin = 4
+current_skin = 2
 
 [node name="Carry" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(-1212, -213)
@@ -209,7 +213,6 @@ escape_waypoint_4 = NodePath("../EscapeLocation2")
 escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint22")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint21")
-current_skin = 4
 
 [node name="Naomi" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(-1023, -213)
@@ -235,7 +238,7 @@ escape_waypoint_4 = NodePath("../EscapeLocation2")
 escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint22")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint21")
-current_skin = 4
+current_skin = 8
 
 [node name="Mary" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(-1063, -81)
@@ -248,7 +251,7 @@ escape_waypoint_4 = NodePath("../EscapeLocation2")
 escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint21")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint22")
-current_skin = 4
+current_skin = 5
 
 [node name="Perry" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(-1070, 144)
@@ -261,7 +264,7 @@ escape_waypoint_4 = NodePath("../EscapeLocation2")
 escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint22")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint21")
-current_skin = 4
+current_skin = 5
 
 [node name="Terry" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(-1248, 158)
@@ -274,7 +277,7 @@ escape_waypoint_4 = NodePath("../EscapeLocation2")
 escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint21")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint22")
-current_skin = 4
+current_skin = 1
 
 [node name="Mel" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(-1052, 354)
@@ -287,7 +290,7 @@ escape_waypoint_4 = NodePath("../EscapeLocation2")
 escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint22")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint21")
-current_skin = 4
+current_skin = 1
 
 [node name="Wright" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(-1226, 571)
@@ -301,7 +304,7 @@ escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint21")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint22")
 next_workstation = 1
-current_skin = 4
+current_skin = 7
 
 [node name="Knight" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(-1241, 350)
@@ -314,7 +317,7 @@ escape_waypoint_4 = NodePath("../EscapeLocation2")
 escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint21")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint22")
-current_skin = 4
+current_skin = 6
 
 [node name="Phoenix" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(-1045, 564)
@@ -339,7 +342,7 @@ escape_waypoint_2 = NodePath("../EscapeLocation3")
 escape_waypoint_3 = NodePath("../EscapeLocation3")
 escape_waypoint_4 = NodePath("../EscapeLocation3")
 escape_waypoint_5 = NodePath("../EscapeLocation3")
-workstation_waypoint_1 = NodePath("../Doorway Waypoint6")
+workstation_waypoint_1 = NodePath("../Doorway Waypoint16")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint17")
 current_skin = 4
 
@@ -354,10 +357,10 @@ escape_waypoint_4 = NodePath("../EscapeLocation3")
 escape_waypoint_5 = NodePath("../EscapeLocation3")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint18")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint17")
-current_skin = 4
+current_skin = 9
 
 [node name="Betty" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(-641, 239)
+position = Vector2(-652, 292)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation2")
 escape_waypoint_1 = NodePath("../Doorway Waypoint14")
@@ -367,10 +370,10 @@ escape_waypoint_4 = NodePath("../EscapeLocation2")
 escape_waypoint_5 = NodePath("../EscapeLocation2")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint14")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint13")
-current_skin = 4
+current_skin = 9
 
 [node name="Michelle" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(-641, 451)
+position = Vector2(-652, 504)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
 escape_waypoint_1 = NodePath("../Doorway Waypoint2")
@@ -378,10 +381,10 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint")
 escape_waypoint_3 = NodePath("../EscapeLocation2")
 escape_waypoint_4 = NodePath("../EscapeLocation2")
 escape_waypoint_5 = NodePath("../EscapeLocation2")
-current_skin = 4
+current_skin = 9
 
 [node name="Kirito" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(-637, 671)
+position = Vector2(-648, 724)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation2")
 escape_waypoint_1 = NodePath("../Doorway Waypoint12")
@@ -389,10 +392,10 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint2")
 escape_waypoint_3 = NodePath("../Doorway Waypoint")
 escape_waypoint_4 = NodePath("../EscapeLocation2")
 escape_waypoint_5 = NodePath("../EscapeLocation2")
-current_skin = 4
+current_skin = 9
 
 [node name="Kazuto" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(-637, 891)
+position = Vector2(-637, 907)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation2")
 escape_waypoint_1 = NodePath("../Doorway Waypoint11")
@@ -400,10 +403,10 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint12")
 escape_waypoint_3 = NodePath("../Doorway Waypoint2")
 escape_waypoint_4 = NodePath("../Doorway Waypoint")
 escape_waypoint_5 = NodePath("../EscapeLocation2")
-current_skin = 4
+current_skin = 10
 
 [node name="Helan" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(-370, 895)
+position = Vector2(-370, 911)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation2")
 escape_waypoint_1 = NodePath("../Doorway Waypoint11")
@@ -411,10 +414,10 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint12")
 escape_waypoint_3 = NodePath("../Doorway Waypoint2")
 escape_waypoint_4 = NodePath("../Doorway Waypoint")
 escape_waypoint_5 = NodePath("../EscapeLocation2")
-current_skin = 4
+current_skin = 5
 
 [node name="Brooke" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(-387, 675)
+position = Vector2(-398, 728)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation2")
 escape_waypoint_1 = NodePath("../Doorway Waypoint12")
@@ -422,10 +425,10 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint2")
 escape_waypoint_3 = NodePath("../Doorway Waypoint")
 escape_waypoint_4 = NodePath("../EscapeLocation2")
 escape_waypoint_5 = NodePath("../EscapeLocation2")
-current_skin = 4
+current_skin = 2
 
 [node name="Morgan" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(-374, 450)
+position = Vector2(-385, 503)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation2")
 escape_waypoint_1 = NodePath("../Doorway Waypoint2")
@@ -433,10 +436,10 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint")
 escape_waypoint_3 = NodePath("../EscapeLocation2")
 escape_waypoint_4 = NodePath("../EscapeLocation2")
 escape_waypoint_5 = NodePath("../EscapeLocation2")
-current_skin = 4
+current_skin = 2
 
 [node name="Tip" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(-382, 242)
+position = Vector2(-393, 295)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation2")
 escape_waypoint_1 = NodePath("../Doorway Waypoint13")
@@ -446,10 +449,10 @@ escape_waypoint_4 = NodePath("../Doorway Waypoint")
 escape_waypoint_5 = NodePath("../EscapeLocation2")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint13")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint5")
-current_skin = 4
+current_skin = 5
 
 [node name="Glenn" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(-111, 238)
+position = Vector2(-111, 294)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation2")
 escape_waypoint_1 = NodePath("../Doorway Waypoint13")
@@ -457,10 +460,10 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint2")
 escape_waypoint_3 = NodePath("../Doorway Waypoint")
 escape_waypoint_4 = NodePath("../EscapeLocation2")
 escape_waypoint_5 = NodePath("../EscapeLocation2")
-current_skin = 4
+current_skin = 5
 
 [node name="Ellie" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(-115, 467)
+position = Vector2(-126, 520)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation2")
 escape_waypoint_1 = NodePath("../Doorway Waypoint2")
@@ -468,10 +471,10 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint")
 escape_waypoint_3 = NodePath("../EscapeLocation2")
 escape_waypoint_4 = NodePath("../EscapeLocation2")
 escape_waypoint_5 = NodePath("../EscapeLocation2")
-current_skin = 4
+current_skin = 7
 
 [node name="Sean" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(-123, 683)
+position = Vector2(-134, 736)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation2")
 escape_waypoint_1 = NodePath("../Doorway Waypoint12")
@@ -479,10 +482,10 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint2")
 escape_waypoint_3 = NodePath("../Doorway Waypoint")
 escape_waypoint_4 = NodePath("../EscapeLocation2")
 escape_waypoint_5 = NodePath("../EscapeLocation2")
-current_skin = 4
+current_skin = 2
 
 [node name="Jacob" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(-131, 899)
+position = Vector2(-131, 910)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation2")
 escape_waypoint_1 = NodePath("../Doorway Waypoint11")
@@ -493,7 +496,7 @@ escape_waypoint_5 = NodePath("../EscapeLocation2")
 current_skin = 4
 
 [node name="Matthew" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(217, 217)
+position = Vector2(217, 291)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
 escape_waypoint_1 = NodePath("../Doorway Waypoint9")
@@ -504,7 +507,7 @@ escape_waypoint_5 = NodePath("../EscapeLocation")
 current_skin = 4
 
 [node name="Tristan" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(221, 463)
+position = Vector2(221, 508)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
 escape_waypoint_1 = NodePath("../Doorway Waypoint3")
@@ -512,10 +515,10 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint4")
 escape_waypoint_3 = NodePath("../EscapeLocation")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-current_skin = 4
+current_skin = 8
 
 [node name="Steven" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(213, 688)
+position = Vector2(213, 733)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
 escape_waypoint_1 = NodePath("../Doorway Waypoint3")
@@ -523,7 +526,7 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint4")
 escape_waypoint_3 = NodePath("../EscapeLocation")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-current_skin = 4
+current_skin = 8
 
 [node name="Chris" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(221, 921)
@@ -534,7 +537,7 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint3")
 escape_waypoint_3 = NodePath("../Doorway Waypoint4")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-current_skin = 4
+current_skin = 1
 
 [node name="Aaron" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(513, 925)
@@ -545,10 +548,10 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint3")
 escape_waypoint_3 = NodePath("../Doorway Waypoint4")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-current_skin = 4
+current_skin = 1
 
 [node name="Tom" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(513, 705)
+position = Vector2(513, 750)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
 escape_waypoint_1 = NodePath("../Doorway Waypoint3")
@@ -556,10 +559,10 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint4")
 escape_waypoint_3 = NodePath("../EscapeLocation")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-current_skin = 4
+current_skin = 1
 
 [node name="Jhin" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(509, 467)
+position = Vector2(509, 512)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
 escape_waypoint_1 = NodePath("../Doorway Waypoint3")
@@ -567,10 +570,10 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint4")
 escape_waypoint_3 = NodePath("../EscapeLocation")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-current_skin = 4
+current_skin = 5
 
 [node name="Naut" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(523, 225)
+position = Vector2(510, 294)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
 escape_waypoint_1 = NodePath("../Doorway Waypoint9")
@@ -581,7 +584,7 @@ escape_waypoint_5 = NodePath("../EscapeLocation")
 current_skin = 4
 
 [node name="Truly" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(801, 225)
+position = Vector2(801, 270)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
 escape_waypoint_1 = NodePath("../Doorway Waypoint9")
@@ -589,10 +592,10 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint3")
 escape_waypoint_3 = NodePath("../Doorway Waypoint4")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-current_skin = 4
+current_skin = 9
 
 [node name="Nue" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(810, 472)
+position = Vector2(810, 517)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
 escape_waypoint_1 = NodePath("../Doorway Waypoint3")
@@ -600,10 +603,10 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint4")
 escape_waypoint_3 = NodePath("../EscapeLocation")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-current_skin = 4
+current_skin = 9
 
 [node name="Pro" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(788, 696)
+position = Vector2(788, 741)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
 escape_waypoint_1 = NodePath("../Doorway Waypoint3")
@@ -611,7 +614,7 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint4")
 escape_waypoint_3 = NodePath("../EscapeLocation")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-current_skin = 4
+current_skin = 9
 
 [node name="Wreck" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(788, 925)
@@ -622,7 +625,7 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint3")
 escape_waypoint_3 = NodePath("../Doorway Waypoint4")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-current_skin = 4
+current_skin = 8
 
 [node name="Po" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(1100, 916)
@@ -635,7 +638,7 @@ escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint19")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint20")
-current_skin = 4
+current_skin = 6
 
 [node name="Jinx" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(1304, 856)
@@ -648,7 +651,6 @@ escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint20")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint19")
-current_skin = 4
 
 [node name="Catilyn" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(1091, 742)
@@ -674,7 +676,7 @@ escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint19")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint20")
-current_skin = 4
+current_skin = 2
 
 [node name="Renta" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(1091, 571)
@@ -687,7 +689,7 @@ escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint20")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint19")
-current_skin = 4
+current_skin = 9
 
 [node name="Wasabi" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(1316, 463)
@@ -700,7 +702,7 @@ escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint19")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint20")
-current_skin = 4
+current_skin = 6
 
 [node name="Vex" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(1094, 358)
@@ -713,7 +715,7 @@ escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint19")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint20")
-current_skin = 4
+current_skin = 1
 
 [node name="Garen" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(1301, 268)
@@ -726,7 +728,7 @@ escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint20")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint19")
-current_skin = 4
+current_skin = 2
 
 [node name="Joe" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(1316, 109)
@@ -739,7 +741,7 @@ escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Doorway Waypoint20")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint19")
-current_skin = 4
+current_skin = 7
 
 [node name="Doorway Waypoint" parent="." instance=ExtResource("9_eo5ar")]
 position = Vector2(-898, 567)
@@ -1158,9 +1160,6 @@ position = Vector2(798.683, 975.208)
 
 [node name="chair_shitty128" parent="." instance=ExtResource("12_6ifln")]
 position = Vector2(751.54, 972.963)
-
-[node name="Stop Spasming plz" parent="." instance=ExtResource("13_mjgfw")]
-position = Vector2(48, 256)
 
 [node name="Doorway Waypoint8" parent="." instance=ExtResource("9_eo5ar")]
 position = Vector2(332, 99)

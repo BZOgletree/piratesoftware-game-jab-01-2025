@@ -179,6 +179,7 @@ escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Dr Mundo_")
 workstation_waypoint_2 = NodePath("../Patient M")
 next_workstation = 1
+current_skin = 9
 
 [node name="Dr Squash" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("4_igwew")]
 position = Vector2(85, 604)
@@ -192,6 +193,7 @@ escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Dr Squash_")
 workstation_waypoint_2 = NodePath("../Patient SQ")
 next_workstation = 1
+current_skin = 9
 
 [node name="Dr Sarah" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("4_igwew")]
 position = Vector2(-65, 359)
@@ -205,6 +207,7 @@ escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Dr Sarah_")
 workstation_waypoint_2 = NodePath("../Patient S")
 next_workstation = 1
+current_skin = 9
 
 [node name="Dr Nunu" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("4_igwew")]
 position = Vector2(-321, 593)
@@ -218,6 +221,7 @@ escape_waypoint_5 = NodePath("../EscapeLocation")
 workstation_waypoint_1 = NodePath("../Dr Nunu_")
 workstation_waypoint_2 = NodePath("../Patient N")
 next_workstation = 1
+current_skin = 9
 
 [node name="Vice" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("4_igwew")]
 position = Vector2(-313, 505)

@@ -56,7 +56,7 @@ escape_waypoint_5 = NodePath("../Doorway Waypoint9")
 workstation_waypoint_1 = NodePath("../Player")
 workstation_waypoint_2 = NodePath("../Doorway Waypoint2")
 next_workstation = 1
-current_skin = 8
+current_skin = 9
 
 [node name="Jon" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("6_moxcc")]
 position = Vector2(-277, -582)
