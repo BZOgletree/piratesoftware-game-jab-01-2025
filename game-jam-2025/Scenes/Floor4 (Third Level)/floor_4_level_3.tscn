@@ -22,7 +22,7 @@ position = Vector2(2.55066, -4.08521)
 position = Vector2(-1208.3, -709.775)
 
 [node name="Player" parent="." node_paths=PackedStringArray("hud", "stairs", "scene_transition", "finish_level_screen") instance=ExtResource("2_y8lp6")]
-position = Vector2(-743.603, 420.081)
+position = Vector2(1192, -364)
 hud = NodePath("../HUD")
 stairs = NodePath("../Stairs")
 scene_transition = NodePath("../SceneTransition")
@@ -97,7 +97,7 @@ escape_waypoint_4 = NodePath("../Doorway Waypoint4")
 escape_waypoint_5 = NodePath("../EscapeLocation")
 
 [node name="Rick" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(168, -454)
+position = Vector2(-100, -609)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
 escape_waypoint_1 = NodePath("../Doorway Waypoint5")
@@ -119,7 +119,7 @@ escape_waypoint_5 = NodePath("../EscapeLocation")
 current_skin = 5
 
 [node name="Summer" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(39, -370)
+position = Vector2(-78, -287)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
 escape_waypoint_1 = NodePath("../Doorway Waypoint5")

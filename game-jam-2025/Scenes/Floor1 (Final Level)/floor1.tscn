@@ -139,9 +139,10 @@ scale = Vector2(0.64, 0.5)
 [node name="f1fl" parent="." instance=ExtResource("10_yp5ah")]
 position = Vector2(2041.16, 6.57843)
 
-[node name="Player" parent="." node_paths=PackedStringArray("hud") instance=ExtResource("2_ad7us")]
+[node name="Player" parent="." node_paths=PackedStringArray("hud", "stairs") instance=ExtResource("2_ad7us")]
 position = Vector2(-196.687, -379.305)
 hud = NodePath("../HUD")
+stairs = NodePath("../EscapeLocation")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://fudlq50gl4a4"]
+[gd_scene load_steps=10 format=3 uid="uid://fudlq50gl4a4"]
 
 [ext_resource type="PackedScene" uid="uid://dmaud01psrrrp" path="res://Scenes/Floor2 (Penultimate Level)/floor_2_map.tscn" id="1_oc6xw"]
 [ext_resource type="PackedScene" uid="uid://bcosepain78m5" path="res://Scenes/stopwatch.tscn" id="2_0idxf"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://6s2y2bkxqfef" path="res://Scenes/hud.tscn" id="5_h2ekm"]
 [ext_resource type="PackedScene" uid="uid://qqs6ysaoacew" path="res://Scenes/stairs.tscn" id="6_1855v"]
 [ext_resource type="PackedScene" uid="uid://wolgs7r05dfi" path="res://Scenes/elevator.tscn" id="7_s4ila"]
+[ext_resource type="PackedScene" uid="uid://b7rvckgvlp71l" path="res://Scenes/scene_transition.tscn" id="8_5qb63"]
+[ext_resource type="PackedScene" uid="uid://dqwje5mbu8xka" path="res://Scenes/finish_level.tscn" id="9_g8g7m"]
 
 [node name="Floor 2" type="Node2D"]
 
@@ -15,8 +17,15 @@ position = Vector2(-768.863, -407.864)
 
 [node name="Stopwatch" parent="." instance=ExtResource("2_0idxf")]
 
-[node name="Player" parent="." instance=ExtResource("3_uf0rr")]
+[node name="Stairs" parent="." instance=ExtResource("6_1855v")]
+position = Vector2(-1131.91, -185.958)
+
+[node name="Player" parent="." node_paths=PackedStringArray("hud", "stairs", "scene_transition", "finish_level_screen") instance=ExtResource("3_uf0rr")]
 position = Vector2(998.46, -176.199)
+hud = NodePath("../HUD")
+stairs = NodePath("../Stairs")
+scene_transition = NodePath("../SceneTransition")
+finish_level_screen = NodePath("../FinishLevel")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
@@ -35,8 +44,15 @@ workstation_waypoint_2 = NodePath("../Player")
 
 [node name="HUD" parent="." instance=ExtResource("5_h2ekm")]
 
-[node name="Stairs" parent="." instance=ExtResource("6_1855v")]
-position = Vector2(-1131.91, -185.958)
-
 [node name="Elevator" parent="." instance=ExtResource("7_s4ila")]
 position = Vector2(1180.04, -260.709)
+
+[node name="SceneTransition" parent="." node_paths=PackedStringArray("finished_level") instance=ExtResource("8_5qb63")]
+finished_level = NodePath("../FinishLevel")
+
+[node name="FinishLevel" parent="." node_paths=PackedStringArray("player", "hud", "stopwatch") instance=ExtResource("9_g8g7m")]
+visible = false
+current_level = 5
+player = NodePath("../Player")
+hud = NodePath("../HUD")
+stopwatch = NodePath("../Stopwatch")

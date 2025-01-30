@@ -38,7 +38,6 @@ func _process(delta: float) -> void:
 		scene_transition.scene_transition('level_complete')
 
 func get_input(): 
-	print(nav_agent.distance_to_target())
 	var input_direction = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = input_direction * speed
 	if input_direction != Vector2(0,0):
