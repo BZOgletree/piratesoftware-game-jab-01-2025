@@ -3,6 +3,7 @@ class_name Stopwatch
 
 var time = 0.0
 var stopped = false
+var level_complete_time
 
 func _process(delta: float) -> void:
 	if stopped:

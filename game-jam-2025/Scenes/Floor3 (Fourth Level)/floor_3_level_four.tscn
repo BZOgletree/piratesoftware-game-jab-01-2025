@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://baar41hya7pwn"]
+[gd_scene load_steps=10 format=3 uid="uid://baar41hya7pwn"]
 
 [ext_resource type="PackedScene" uid="uid://bf6lj1kfphkrd" path="res://Scenes/Floor3 (Fourth Level)/floor_3_map.tscn" id="1_rbml6"]
 [ext_resource type="PackedScene" uid="uid://6s2y2bkxqfef" path="res://Scenes/hud.tscn" id="2_602wy"]
@@ -7,18 +7,27 @@
 [ext_resource type="PackedScene" uid="uid://ua7jj7xp0xja" path="res://Scenes/target.tscn" id="5_craxh"]
 [ext_resource type="PackedScene" uid="uid://qqs6ysaoacew" path="res://Scenes/stairs.tscn" id="6_hptrb"]
 [ext_resource type="PackedScene" uid="uid://b5onfjpq3c8uj" path="res://Scenes/escape_location.tscn" id="7_qehne"]
+[ext_resource type="PackedScene" uid="uid://b7rvckgvlp71l" path="res://Scenes/scene_transition.tscn" id="8_315n3"]
+[ext_resource type="PackedScene" uid="uid://dqwje5mbu8xka" path="res://Scenes/finish_level.tscn" id="9_6qabc"]
 
 [node name="floor_3_level four" type="Node2D"]
 
 [node name="Floor 3 Map" parent="." instance=ExtResource("1_rbml6")]
 position = Vector2(-158.79, -148.854)
 
+[node name="Stairs" parent="." instance=ExtResource("6_hptrb")]
+position = Vector2(883.595, -336.971)
+
 [node name="HUD" parent="." instance=ExtResource("2_602wy")]
 
 [node name="Stopwatch" parent="." instance=ExtResource("3_3ualn")]
 
-[node name="Player" parent="." instance=ExtResource("4_nvdbn")]
+[node name="Player" parent="." node_paths=PackedStringArray("hud", "stairs", "scene_transition", "finish_level_screen") instance=ExtResource("4_nvdbn")]
 position = Vector2(-851.447, -308.154)
+hud = NodePath("../HUD")
+stairs = NodePath("../Stairs")
+scene_transition = NodePath("../SceneTransition")
+finish_level_screen = NodePath("../FinishLevel")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
@@ -36,8 +45,10 @@ escape_waypoint_5 = NodePath("../Player")
 workstation_waypoint_1 = NodePath("../Player")
 workstation_waypoint_2 = NodePath("../Player")
 
-[node name="Stairs" parent="." instance=ExtResource("6_hptrb")]
-position = Vector2(883.595, -336.971)
-
 [node name="EscapeLocation" parent="." instance=ExtResource("7_qehne")]
 position = Vector2(-1041.24, -457.106)
+
+[node name="SceneTransition" parent="." instance=ExtResource("8_315n3")]
+
+[node name="FinishLevel" parent="." instance=ExtResource("9_6qabc")]
+visible = false

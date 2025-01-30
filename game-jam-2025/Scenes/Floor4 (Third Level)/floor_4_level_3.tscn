@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://de81iti328gc3"]
+[gd_scene load_steps=13 format=3 uid="uid://de81iti328gc3"]
 
 [ext_resource type="PackedScene" uid="uid://hwmbi4chg6lj" path="res://Scenes/Floor4 (Third Level)/floor_4_map.tscn" id="1_1hq5q"]
 [ext_resource type="PackedScene" uid="uid://budn5kngr202o" path="res://Scenes/player.tscn" id="2_y8lp6"]
@@ -9,14 +9,25 @@
 [ext_resource type="PackedScene" uid="uid://b5onfjpq3c8uj" path="res://Scenes/escape_location.tscn" id="7_n8k4d"]
 [ext_resource type="PackedScene" uid="uid://ua7jj7xp0xja" path="res://Scenes/target.tscn" id="8_6eec8"]
 [ext_resource type="PackedScene" uid="uid://3qcwmqyv03uy" path="res://Justins work/doorway_waypoint.tscn" id="9_eo5ar"]
+[ext_resource type="PackedScene" uid="uid://b7rvckgvlp71l" path="res://Scenes/scene_transition.tscn" id="10_mge56"]
+[ext_resource type="PackedScene" uid="uid://dqwje5mbu8xka" path="res://Scenes/finish_level.tscn" id="11_mnln8"]
+[ext_resource type="PackedScene" uid="uid://6kaaeumlndc1" path="res://Scenes/chair_shitty.tscn" id="12_6ifln"]
 
 [node name="Floor4Level3" type="Node2D"]
 
 [node name="Floor4Map" parent="." instance=ExtResource("1_1hq5q")]
 position = Vector2(2.55066, -4.08521)
 
-[node name="Player" parent="." instance=ExtResource("2_y8lp6")]
-position = Vector2(1291.39, -512.467)
+[node name="Stairs" parent="." instance=ExtResource("5_p3lmg")]
+position = Vector2(-1208.3, -709.775)
+
+[node name="Player" parent="." node_paths=PackedStringArray("hud", "stairs", "scene_transition", "finish_level_screen") instance=ExtResource("2_y8lp6")]
+position = Vector2(-743.603, 420.081)
+hud = NodePath("../HUD")
+stairs = NodePath("../Stairs")
+scene_transition = NodePath("../SceneTransition")
+finish_level_screen = NodePath("../FinishLevel")
+allowed_remaining = 7
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
@@ -25,14 +36,15 @@ zoom = Vector2(2, 2)
 
 [node name="HUD" parent="." instance=ExtResource("5_w0gm7")]
 
-[node name="Stairs" parent="." instance=ExtResource("5_p3lmg")]
-position = Vector2(-1208.3, -709.775)
-
 [node name="Elevator" parent="." instance=ExtResource("6_he172")]
 position = Vector2(1200.67, -750.092)
 
 [node name="EscapeLocation" parent="." instance=ExtResource("7_n8k4d")]
 position = Vector2(1187, -754)
+
+[node name="EscapeLocation2" parent="." instance=ExtResource("7_n8k4d")]
+position = Vector2(-1146.26, 907.219)
+rotation = 3.14009
 
 [node name="Hitch" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
 position = Vector2(237, -727)
@@ -272,7 +284,7 @@ escape_waypoint_5 = NodePath("../EscapeLocation")
 current_skin = 4
 
 [node name="Phoenix" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(-1243, 820)
+position = Vector2(-216.065, -180.507)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
 escape_waypoint_1 = NodePath("../Doorway Waypoint")
@@ -283,7 +295,7 @@ escape_waypoint_5 = NodePath("../EscapeLocation")
 current_skin = 4
 
 [node name="Heath" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
-position = Vector2(-1044, 832)
+position = Vector2(-262.472, -478.097)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
 escape_waypoint_1 = NodePath("../Doorway Waypoint")
@@ -566,7 +578,6 @@ escape_waypoint_2 = NodePath("../EscapeLocation")
 escape_waypoint_3 = NodePath("../EscapeLocation")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-workstation_waypoint_1 = NodePath("")
 current_skin = 4
 
 [node name="Jinx" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
@@ -578,7 +589,6 @@ escape_waypoint_2 = NodePath("../EscapeLocation")
 escape_waypoint_3 = NodePath("../EscapeLocation")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-workstation_waypoint_1 = NodePath("")
 current_skin = 4
 
 [node name="Catilyn" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
@@ -590,7 +600,6 @@ escape_waypoint_2 = NodePath("../EscapeLocation")
 escape_waypoint_3 = NodePath("../EscapeLocation")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-workstation_waypoint_1 = NodePath("")
 current_skin = 4
 
 [node name="Vi" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
@@ -602,7 +611,6 @@ escape_waypoint_2 = NodePath("../EscapeLocation")
 escape_waypoint_3 = NodePath("../EscapeLocation")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-workstation_waypoint_1 = NodePath("")
 current_skin = 4
 
 [node name="Renta" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
@@ -614,7 +622,6 @@ escape_waypoint_2 = NodePath("../EscapeLocation")
 escape_waypoint_3 = NodePath("../EscapeLocation")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-workstation_waypoint_1 = NodePath("")
 current_skin = 4
 
 [node name="Wasabi" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
@@ -626,7 +633,6 @@ escape_waypoint_2 = NodePath("../EscapeLocation")
 escape_waypoint_3 = NodePath("../EscapeLocation")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-workstation_waypoint_1 = NodePath("")
 current_skin = 4
 
 [node name="Vex" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
@@ -638,7 +644,6 @@ escape_waypoint_2 = NodePath("../EscapeLocation")
 escape_waypoint_3 = NodePath("../EscapeLocation")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-workstation_waypoint_1 = NodePath("")
 current_skin = 4
 
 [node name="Garen" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
@@ -650,7 +655,6 @@ escape_waypoint_2 = NodePath("../EscapeLocation")
 escape_waypoint_3 = NodePath("../EscapeLocation")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-workstation_waypoint_1 = NodePath("")
 current_skin = 4
 
 [node name="Joe" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("8_6eec8")]
@@ -662,7 +666,6 @@ escape_waypoint_2 = NodePath("../EscapeLocation")
 escape_waypoint_3 = NodePath("../EscapeLocation")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-workstation_waypoint_1 = NodePath("")
 current_skin = 4
 
 [node name="Doorway Waypoint" parent="." instance=ExtResource("9_eo5ar")]
@@ -672,7 +675,7 @@ position = Vector2(-898, 567)
 position = Vector2(-819, 568)
 
 [node name="Doorway Waypoint3" parent="." instance=ExtResource("9_eo5ar")]
-position = Vector2(910, 565)
+position = Vector2(94.4927, 474.388)
 
 [node name="Doorway Waypoint4" parent="." instance=ExtResource("9_eo5ar")]
 position = Vector2(1193, 566)
@@ -685,3 +688,400 @@ position = Vector2(43, -36)
 
 [node name="Doorway Waypoint7" parent="." instance=ExtResource("9_eo5ar")]
 position = Vector2(45, 636)
+
+[node name="SceneTransition" parent="." node_paths=PackedStringArray("finished_level") instance=ExtResource("10_mge56")]
+visible = false
+finished_level = NodePath("../FinishLevel")
+
+[node name="FinishLevel" parent="." node_paths=PackedStringArray("player", "hud", "stopwatch") instance=ExtResource("11_mnln8")]
+visible = false
+current_level = 3
+target_time = "120"
+player = NodePath("../Player")
+hud = NodePath("../HUD")
+numberOfEnemies = 57
+stopwatch = NodePath("../Stopwatch")
+
+[node name="chair_shitty" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-646.927, 569.906)
+
+[node name="chair_shitty2" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-694.07, 567.661)
+
+[node name="chair_shitty3" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-550.395, 569.906)
+
+[node name="chair_shitty4" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-597.538, 567.661)
+
+[node name="chair_shitty5" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-456.108, 574.396)
+
+[node name="chair_shitty6" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-503.252, 572.151)
+
+[node name="chair_shitty7" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-359.577, 574.396)
+
+[node name="chair_shitty8" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-406.72, 572.151)
+
+[node name="chair_shitty9" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-267.535, 572.151)
+
+[node name="chair_shitty10" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-314.678, 569.906)
+
+[node name="chair_shitty11" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-171.003, 572.151)
+
+[node name="chair_shitty12" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-218.146, 569.906)
+
+[node name="chair_shitty13" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-76.7161, 576.641)
+
+[node name="chair_shitty14" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-123.859, 574.396)
+
+[node name="chair_shitty15" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(19.8156, 576.641)
+
+[node name="chair_shitty16" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-27.3278, 574.396)
+
+[node name="chair_shitty17" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(114.102, 578.886)
+
+[node name="chair_shitty18" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(66.959, 576.641)
+
+[node name="chair_shitty19" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(210.634, 578.886)
+
+[node name="chair_shitty20" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(163.491, 576.641)
+
+[node name="chair_shitty21" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(304.921, 583.376)
+
+[node name="chair_shitty22" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(257.778, 581.131)
+
+[node name="chair_shitty23" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(401.453, 583.376)
+
+[node name="chair_shitty24" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(354.309, 581.131)
+
+[node name="chair_shitty25" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(493.495, 581.131)
+
+[node name="chair_shitty26" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(446.351, 578.886)
+
+[node name="chair_shitty27" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(590.026, 581.131)
+
+[node name="chair_shitty28" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(542.883, 578.886)
+
+[node name="chair_shitty29" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(684.313, 585.621)
+
+[node name="chair_shitty30" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(637.17, 583.376)
+
+[node name="chair_shitty31" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(780.845, 585.621)
+
+[node name="chair_shitty32" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(733.701, 583.376)
+
+[node name="chair_shitty33" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-635.702, 345.414)
+
+[node name="chair_shitty34" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-682.846, 343.169)
+
+[node name="chair_shitty35" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-539.17, 345.414)
+
+[node name="chair_shitty36" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-586.314, 343.169)
+
+[node name="chair_shitty37" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-444.884, 349.903)
+
+[node name="chair_shitty38" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-492.027, 347.659)
+
+[node name="chair_shitty39" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-348.352, 349.903)
+
+[node name="chair_shitty40" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-395.495, 347.659)
+
+[node name="chair_shitty41" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-256.31, 347.659)
+
+[node name="chair_shitty42" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-303.453, 345.414)
+
+[node name="chair_shitty43" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-159.778, 347.659)
+
+[node name="chair_shitty44" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-206.922, 345.414)
+
+[node name="chair_shitty45" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-65.4915, 352.148)
+
+[node name="chair_shitty46" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-112.635, 349.904)
+
+[node name="chair_shitty47" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(31.0402, 352.148)
+
+[node name="chair_shitty48" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-16.1031, 349.904)
+
+[node name="chair_shitty49" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(125.327, 354.393)
+
+[node name="chair_shitty50" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(78.1836, 352.148)
+
+[node name="chair_shitty51" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(221.859, 354.393)
+
+[node name="chair_shitty52" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(174.715, 352.148)
+
+[node name="chair_shitty53" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(316.146, 358.883)
+
+[node name="chair_shitty54" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(269.002, 356.638)
+
+[node name="chair_shitty55" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(412.677, 358.883)
+
+[node name="chair_shitty56" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(365.534, 356.638)
+
+[node name="chair_shitty57" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(504.719, 356.638)
+
+[node name="chair_shitty58" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(457.576, 354.393)
+
+[node name="chair_shitty59" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(601.251, 356.638)
+
+[node name="chair_shitty60" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(554.107, 354.393)
+
+[node name="chair_shitty61" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(695.538, 361.128)
+
+[node name="chair_shitty62" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(648.394, 358.883)
+
+[node name="chair_shitty63" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(792.069, 361.128)
+
+[node name="chair_shitty64" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(744.926, 358.883)
+
+[node name="chair_shitty65" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-642.437, 796.643)
+
+[node name="chair_shitty66" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-689.58, 794.398)
+
+[node name="chair_shitty67" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-545.905, 796.643)
+
+[node name="chair_shitty68" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-593.049, 794.398)
+
+[node name="chair_shitty69" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-451.618, 801.133)
+
+[node name="chair_shitty70" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-498.762, 798.888)
+
+[node name="chair_shitty71" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-355.087, 801.133)
+
+[node name="chair_shitty72" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-402.23, 798.888)
+
+[node name="chair_shitty73" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-263.045, 798.888)
+
+[node name="chair_shitty74" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-310.188, 796.643)
+
+[node name="chair_shitty75" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-166.513, 798.888)
+
+[node name="chair_shitty76" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-213.656, 796.643)
+
+[node name="chair_shitty77" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-72.2263, 803.378)
+
+[node name="chair_shitty78" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-119.37, 801.133)
+
+[node name="chair_shitty79" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(24.3055, 803.378)
+
+[node name="chair_shitty80" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-22.8379, 801.133)
+
+[node name="chair_shitty81" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(118.592, 805.623)
+
+[node name="chair_shitty82" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(71.4489, 803.378)
+
+[node name="chair_shitty83" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(215.124, 805.623)
+
+[node name="chair_shitty84" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(167.981, 803.378)
+
+[node name="chair_shitty85" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(309.411, 810.113)
+
+[node name="chair_shitty86" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(262.267, 807.868)
+
+[node name="chair_shitty87" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(405.943, 810.113)
+
+[node name="chair_shitty88" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(358.799, 807.868)
+
+[node name="chair_shitty89" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(497.984, 807.868)
+
+[node name="chair_shitty90" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(450.841, 805.623)
+
+[node name="chair_shitty91" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(594.516, 807.868)
+
+[node name="chair_shitty92" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(547.373, 805.623)
+
+[node name="chair_shitty93" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(688.803, 812.358)
+
+[node name="chair_shitty94" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(641.66, 810.113)
+
+[node name="chair_shitty95" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(785.335, 812.358)
+
+[node name="chair_shitty96" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(738.191, 810.113)
+
+[node name="chair_shitty97" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-629.089, 959.494)
+
+[node name="chair_shitty98" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-676.232, 957.249)
+
+[node name="chair_shitty99" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-532.557, 959.494)
+
+[node name="chair_shitty100" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-579.7, 957.249)
+
+[node name="chair_shitty101" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-438.27, 963.984)
+
+[node name="chair_shitty102" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-485.413, 961.739)
+
+[node name="chair_shitty103" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-341.738, 963.984)
+
+[node name="chair_shitty104" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-388.882, 961.739)
+
+[node name="chair_shitty105" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-249.696, 961.739)
+
+[node name="chair_shitty106" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-296.84, 959.494)
+
+[node name="chair_shitty107" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-153.165, 961.739)
+
+[node name="chair_shitty108" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-200.308, 959.494)
+
+[node name="chair_shitty109" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-58.8779, 966.229)
+
+[node name="chair_shitty110" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-106.021, 963.984)
+
+[node name="chair_shitty111" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(37.6539, 966.229)
+
+[node name="chair_shitty112" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(-9.4895, 963.984)
+
+[node name="chair_shitty113" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(131.941, 968.474)
+
+[node name="chair_shitty114" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(84.7972, 966.229)
+
+[node name="chair_shitty115" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(228.472, 968.474)
+
+[node name="chair_shitty116" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(181.329, 966.229)
+
+[node name="chair_shitty117" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(322.759, 972.963)
+
+[node name="chair_shitty118" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(275.616, 970.719)
+
+[node name="chair_shitty119" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(419.291, 972.963)
+
+[node name="chair_shitty120" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(372.148, 970.719)
+
+[node name="chair_shitty121" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(511.333, 970.718)
+
+[node name="chair_shitty122" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(464.189, 968.474)
+
+[node name="chair_shitty123" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(607.865, 970.718)
+
+[node name="chair_shitty124" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(560.721, 968.474)
+
+[node name="chair_shitty125" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(702.151, 975.208)
+
+[node name="chair_shitty126" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(655.008, 972.963)
+
+[node name="chair_shitty127" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(798.683, 975.208)
+
+[node name="chair_shitty128" parent="." instance=ExtResource("12_6ifln")]
+position = Vector2(751.54, 972.963)

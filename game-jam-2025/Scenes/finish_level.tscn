@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dqwje5mbu8xka"]
 
-[ext_resource type="Script" path="res://Scenes/finish_level.gd" id="1_sfeqs"]
+[ext_resource type="Script" path="res://Scripts/finish_level.gd" id="1_sfeqs"]
 [ext_resource type="PackedScene" uid="uid://b7rvckgvlp71l" path="res://Scenes/scene_transition.tscn" id="2_i3aot"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_deyqh"]
@@ -16,9 +16,13 @@ font_size = 60
 [sub_resource type="LabelSettings" id="LabelSettings_j2dat"]
 font_size = 30
 
-[node name="FinishLevel" type="CanvasLayer" node_paths=PackedStringArray("scene_transition")]
+[node name="FinishLevel" type="CanvasLayer" node_paths=PackedStringArray("scene_transition", "next_level_button", "level_complete", "time", "rank")]
 script = ExtResource("1_sfeqs")
 scene_transition = NodePath("SceneTransition")
+next_level_button = NodePath("Button2")
+level_complete = NodePath("Label")
+time = NodePath("Label2")
+rank = NodePath("Label3")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -676.0

@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://wtad73kdqo2m" path="res://Assets/Floor4/F4Bottompart3-4.png" id="1_130wu"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_325jf"]
-vertices = PackedVector2Array(-436.5, -184, -518.5, -186, -516.5, -206, -435.5, -205, -438.5, -263, 485.5, -267, 488.5, 240, -438.5, 238)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(3, 6, 7, 0)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-438.5, 238, -436.5, -184, -518.5, -186, -516.5, -206, -435.5, -205, -438.5, -263, 485.5, -267, 488.5, 240)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_c1lbd"]
+vertices = PackedVector2Array(479, -324, 583, 242, -438.5, 238, -436.5, -184, -435.5, -205, -518.5, -186, -516.5, -206, -439, -324)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(3, 5, 6, 4), PackedInt32Array(0, 4, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-438.5, 238, -436.5, -184, -518.5, -186, -516.5, -206, -435.5, -205, -439, -324, 479, -324, 583, 242)])
 agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hmqk"]
@@ -13,7 +13,7 @@ texture = ExtResource("1_130wu")
 2:2/size_in_atlas = Vector2i(59, 32)
 2:2/0 = 0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-438.5, -178, -450.5, -179, -449.5, 251, 460.5, 252, 459.5, 240, -440.5, 240)
-2:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_325jf")
+2:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_c1lbd")
 
 [sub_resource type="TileSet" id="TileSet_5d1v7"]
 physics_layer_0/collision_layer = 1

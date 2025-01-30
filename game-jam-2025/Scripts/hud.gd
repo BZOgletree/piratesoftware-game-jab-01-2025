@@ -3,12 +3,14 @@ extends CanvasLayer
 @export var stopwatch_label: Label
 @export var health_label: Label
 @export var target_label: Label
+@export var warning_label: Label
 
 var stopwatch: Stopwatch
 var time = 0.0
 var health = 100
 var previous_sec = 0
 var number_of_targets_remaining: int
+var stopped = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,7 +23,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	update_stopwatch_label()
 	update_number_of_targets_remaining()
-	time += delta
+	if stopped:
+		pass
+	else:
+		time += delta
 	var sec = fmod(time, 60)
 	if int(previous_sec) != int(sec):
 		update_health_label(sec)
@@ -38,4 +43,5 @@ func update_health_label(sec):
 	health_label.text = 'Health: ' + str(health)
 
 func update_number_of_targets_remaining():
+	number_of_targets_remaining = get_tree().get_node_count_in_group("targets")
 	target_label.text = "Remaining: " + str(get_tree().get_node_count_in_group("targets"))

@@ -192,6 +192,8 @@ animation = &"Bite"
 frame = 7
 frame_progress = 1.0
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="animation_finished" from="Bite" to="." method="_on_bite_animation_finished"]

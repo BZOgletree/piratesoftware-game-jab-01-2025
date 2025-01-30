@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b1ikol6t4hejh"]
 
-[ext_resource type="Script" path="res://Scenes/thanks_for_playing.gd" id="1_4do15"]
+[ext_resource type="Script" path="res://Scripts/thanks_for_playing.gd" id="1_4do15"]
 [ext_resource type="PackedScene" uid="uid://b7rvckgvlp71l" path="res://Scenes/scene_transition.tscn" id="2_rvma4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_581np"]

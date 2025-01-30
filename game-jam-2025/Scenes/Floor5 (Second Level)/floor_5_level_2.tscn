@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://crp6snhlaouel"]
+[gd_scene load_steps=13 format=3 uid="uid://crp6snhlaouel"]
 
 [ext_resource type="PackedScene" uid="uid://dxr2c2s06ssrf" path="res://Scenes/Floor5 (Second Level)/floor_5_(second_level).tscn" id="1_ax2td"]
 [ext_resource type="PackedScene" uid="uid://budn5kngr202o" path="res://Scenes/player.tscn" id="2_6bwcw"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://qqs6ysaoacew" path="res://Scenes/stairs.tscn" id="7_7731p"]
 [ext_resource type="PackedScene" uid="uid://i6f3rqocfjek" path="res://Scenes/workstation_waypoint.tscn" id="8_p4ngr"]
 [ext_resource type="PackedScene" uid="uid://3qcwmqyv03uy" path="res://Justins work/doorway_waypoint.tscn" id="9_bvmqi"]
+[ext_resource type="PackedScene" uid="uid://dqwje5mbu8xka" path="res://Scenes/finish_level.tscn" id="10_owphe"]
+[ext_resource type="PackedScene" uid="uid://b7rvckgvlp71l" path="res://Scenes/scene_transition.tscn" id="11_b5ymg"]
+[ext_resource type="PackedScene" uid="uid://dmry15e2202po" path="res://Scenes/bed.tscn" id="12_1jhuv"]
 
 [node name="floor-2-level" type="Node2D"]
 position = Vector2(-720.814, -352.398)
@@ -16,8 +19,17 @@ position = Vector2(-720.814, -352.398)
 [node name="Floor 2 Layout" parent="." instance=ExtResource("1_ax2td")]
 position = Vector2(710, -4)
 
-[node name="Player" parent="." instance=ExtResource("2_6bwcw")]
+[node name="Stairs" parent="." instance=ExtResource("7_7731p")]
+position = Vector2(1327.02, 7.9801)
+scale = Vector2(0.8, 0.8)
+
+[node name="Player" parent="." node_paths=PackedStringArray("hud", "stairs", "scene_transition", "finish_level_screen") instance=ExtResource("2_6bwcw")]
 position = Vector2(-4.49744, 581.299)
+hud = NodePath("../HUD")
+stairs = NodePath("../Stairs")
+scene_transition = NodePath("../SceneTransition")
+finish_level_screen = NodePath("../FinishLevel")
+allowed_remaining = 3
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
@@ -152,10 +164,6 @@ escape_waypoint_3 = NodePath("../Doorway Waypoint2")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
 
-[node name="Stairs" parent="." instance=ExtResource("7_7731p")]
-position = Vector2(1327.02, 7.9801)
-scale = Vector2(0.8, 0.8)
-
 [node name="Crazy? i was crazy once" parent="." instance=ExtResource("8_p4ngr")]
 position = Vector2(747.814, 334.398)
 
@@ -221,3 +229,76 @@ position = Vector2(645.814, 264.398)
 
 [node name="Doorway Waypoint20" parent="." instance=ExtResource("9_bvmqi")]
 position = Vector2(199.814, 548.398)
+
+[node name="FinishLevel" parent="." node_paths=PackedStringArray("player", "hud", "stopwatch") instance=ExtResource("10_owphe")]
+visible = false
+current_level = 2
+target_time = "60"
+player = NodePath("../Player")
+hud = NodePath("../HUD")
+numberOfEnemies = 12
+stopwatch = NodePath("../Stopwatch")
+
+[node name="SceneTransition" parent="." node_paths=PackedStringArray("finished_level") instance=ExtResource("11_b5ymg")]
+visible = false
+finished_level = NodePath("../FinishLevel")
+
+[node name="Bed" parent="." instance=ExtResource("12_1jhuv")]
+position = Vector2(223.584, 249.755)
+scale = Vector2(0.75, 0.75)
+
+[node name="Bed2" parent="." instance=ExtResource("12_1jhuv")]
+position = Vector2(535.157, 256.89)
+scale = Vector2(0.75, 0.75)
+
+[node name="Bed3" parent="." instance=ExtResource("12_1jhuv")]
+position = Vector2(689.754, 145.105)
+scale = Vector2(0.75, 0.75)
+
+[node name="Bed4" parent="." instance=ExtResource("12_1jhuv")]
+position = Vector2(753.971, 256.89)
+scale = Vector2(0.75, 0.75)
+
+[node name="Bed5" parent="." instance=ExtResource("12_1jhuv")]
+position = Vector2(989.434, 140.348)
+scale = Vector2(0.75, 0.75)
+
+[node name="Bed6" parent="." instance=ExtResource("12_1jhuv")]
+position = Vector2(1139.27, 252.134)
+scale = Vector2(0.75, 0.75)
+
+[node name="Bed7" parent="." instance=ExtResource("12_1jhuv")]
+position = Vector2(1139.27, 451.921)
+scale = Vector2(0.75, 0.75)
+
+[node name="Bed8" parent="." instance=ExtResource("12_1jhuv")]
+position = Vector2(987.056, 454.299)
+scale = Vector2(0.75, 0.75)
+
+[node name="Bed9" parent="." instance=ExtResource("12_1jhuv")]
+position = Vector2(749.214, 459.056)
+scale = Vector2(0.75, 0.75)
+
+[node name="Bed10" parent="." instance=ExtResource("12_1jhuv")]
+position = Vector2(601.752, 454.299)
+scale = Vector2(0.75, 0.75)
+
+[node name="Bed11" parent="." instance=ExtResource("12_1jhuv")]
+position = Vector2(532.778, 454.299)
+scale = Vector2(0.75, 0.75)
+
+[node name="Bed12" parent="." instance=ExtResource("12_1jhuv")]
+position = Vector2(382.938, 456.677)
+scale = Vector2(0.75, 0.75)
+
+[node name="Bed13" parent="." instance=ExtResource("12_1jhuv")]
+position = Vector2(230.719, 456.677)
+scale = Vector2(0.75, 0.75)
+
+[node name="Bed14" parent="." instance=ExtResource("12_1jhuv")]
+position = Vector2(382.938, 254.512)
+scale = Vector2(0.75, 0.75)
+
+[node name="Bed15" parent="." instance=ExtResource("12_1jhuv")]
+position = Vector2(1284.36, 252.134)
+scale = Vector2(0.75, 0.75)

@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://qqs6ysaoacew"]
+[gd_scene load_steps=5 format=3 uid="uid://qqs6ysaoacew"]
 
 [ext_resource type="Texture2D" uid="uid://cbp65wr20tili" path="res://Assets/Stairs.png" id="1_utkp7"]
+
+[sub_resource type="GDScript" id="GDScript_6fhdl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjhmy"]
 size = Vector2(169, 103)
@@ -9,6 +11,7 @@ size = Vector2(169, 103)
 size = Vector2(273, 156)
 
 [node name="Stairs" type="Node2D"]
+script = SubResource("GDScript_6fhdl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_utkp7")
@@ -28,3 +31,5 @@ collision_mask = 64
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(2.5, -12)
 shape = SubResource("RectangleShape2D_fwre1")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

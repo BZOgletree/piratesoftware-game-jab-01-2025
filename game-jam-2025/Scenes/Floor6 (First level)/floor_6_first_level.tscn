@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bhbkpprxcjpbs"]
+[gd_scene load_steps=14 format=3 uid="uid://bhbkpprxcjpbs"]
 
 [ext_resource type="PackedScene" uid="uid://x4ystqk34ocr" path="res://Scenes/Floor6 (First level)/floor_6_map.tscn" id="1_sjgvh"]
 [ext_resource type="PackedScene" uid="uid://bcosepain78m5" path="res://Scenes/stopwatch.tscn" id="2_03adn"]
@@ -8,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://ua7jj7xp0xja" path="res://Scenes/target.tscn" id="6_moxcc"]
 [ext_resource type="PackedScene" uid="uid://3qcwmqyv03uy" path="res://Justins work/doorway_waypoint.tscn" id="7_31nix"]
 [ext_resource type="PackedScene" uid="uid://qqs6ysaoacew" path="res://Scenes/stairs.tscn" id="8_6ef2n"]
+[ext_resource type="PackedScene" uid="uid://b7rvckgvlp71l" path="res://Scenes/scene_transition.tscn" id="9_07ypf"]
+[ext_resource type="PackedScene" uid="uid://dqwje5mbu8xka" path="res://Scenes/finish_level.tscn" id="10_5erfu"]
+[ext_resource type="PackedScene" uid="uid://dmry15e2202po" path="res://Scenes/bed.tscn" id="11_0ix62"]
+[ext_resource type="PackedScene" uid="uid://d0jpm3cjyvik5" path="res://Scenes/chair_fancy.tscn" id="12_xijn5"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_q3hmo"]
 
@@ -16,13 +20,21 @@
 [node name="Floor6Map" parent="." instance=ExtResource("1_sjgvh")]
 position = Vector2(-227.153, 445.659)
 
+[node name="Stairs" parent="." instance=ExtResource("8_6ef2n")]
+position = Vector2(-1022.8, 605.617)
+
 [node name="Stopwatch" parent="." instance=ExtResource("2_03adn")]
 
 [node name="HUD" parent="." instance=ExtResource("3_fcwap")]
 
-[node name="Player" parent="." node_paths=PackedStringArray("hud") instance=ExtResource("4_48oll")]
-position = Vector2(-848.833, -513.468)
+[node name="Player" parent="." node_paths=PackedStringArray("hud", "stairs", "scene_transition", "finish_level_screen") instance=ExtResource("4_48oll")]
+position = Vector2(-1020.27, -584.901)
+collision_mask = 111
 hud = NodePath("../HUD")
+stairs = NodePath("../Stairs")
+scene_transition = NodePath("../SceneTransition")
+finish_level_screen = NodePath("../FinishLevel")
+allowed_remaining = 98
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
@@ -31,7 +43,7 @@ zoom = Vector2(2, 2)
 position = Vector2(1055.1, 567.246)
 rotation = -3.13769
 
-[node name="Clark" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["Targets"] instance=ExtResource("6_moxcc")]
+[node name="Clark" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("6_moxcc")]
 position = Vector2(-716, -600)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
@@ -41,7 +53,7 @@ escape_waypoint_3 = NodePath("../Doorway Waypoint5")
 escape_waypoint_4 = NodePath("../Doorway Waypoint8")
 escape_waypoint_5 = NodePath("../Doorway Waypoint9")
 
-[node name="Jon" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["Targets"] instance=ExtResource("6_moxcc")]
+[node name="Jon" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("6_moxcc")]
 position = Vector2(-277, -582)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
@@ -51,8 +63,8 @@ escape_waypoint_3 = NodePath("../Doorway Waypoint15")
 escape_waypoint_4 = NodePath("../Doorway Waypoint26")
 escape_waypoint_5 = NodePath("../Doorway Waypoint11")
 
-[node name="Alana" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["Targets"] instance=ExtResource("6_moxcc")]
-position = Vector2(297, -548)
+[node name="Alana" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("6_moxcc")]
+position = Vector2(116.036, -605.146)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
 escape_waypoint_1 = NodePath("../Doorway Waypoint20")
@@ -61,17 +73,17 @@ escape_waypoint_3 = NodePath("../Doorway Waypoint15")
 escape_waypoint_4 = NodePath("../Doorway Waypoint26")
 escape_waypoint_5 = NodePath("../Doorway Waypoint11")
 
-[node name="Victor" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["Targets"] instance=ExtResource("6_moxcc")]
+[node name="Victor" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("6_moxcc")]
 position = Vector2(901, -556)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
 escape_waypoint_1 = NodePath("../Doorway Waypoint23")
 escape_waypoint_2 = NodePath("../Doorway Waypoint25")
-escape_waypoint_3 = NodePath("../Doorway Waypoint22")
-escape_waypoint_4 = NodePath("../Doorway Waypoint25")
-escape_waypoint_5 = NodePath("../Doorway Waypoint11")
+escape_waypoint_3 = NodePath("../Doorway Waypoint11")
+escape_waypoint_4 = NodePath("../EscapeLocation")
+escape_waypoint_5 = NodePath("../EscapeLocation")
 
-[node name="Leon" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["Targets"] instance=ExtResource("6_moxcc")]
+[node name="Leon" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("6_moxcc")]
 position = Vector2(-285, -16)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
@@ -81,7 +93,7 @@ escape_waypoint_3 = NodePath("../Doorway Waypoint11")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
 
-[node name="Liam" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["Targets"] instance=ExtResource("6_moxcc")]
+[node name="Liam" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("6_moxcc")]
 position = Vector2(304, -20)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
@@ -91,7 +103,7 @@ escape_waypoint_3 = NodePath("../Doorway Waypoint12")
 escape_waypoint_4 = NodePath("../Doorway Waypoint26")
 escape_waypoint_5 = NodePath("../Doorway Waypoint11")
 
-[node name="Gollum" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["Targets"] instance=ExtResource("6_moxcc")]
+[node name="Gollum" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("6_moxcc")]
 position = Vector2(-300, 444)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
@@ -101,7 +113,7 @@ escape_waypoint_3 = NodePath("../Doorway Waypoint22")
 escape_waypoint_4 = NodePath("../Doorway Waypoint26")
 escape_waypoint_5 = NodePath("../Doorway Waypoint11")
 
-[node name="David" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["Targets"] instance=ExtResource("6_moxcc")]
+[node name="David" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("6_moxcc")]
 position = Vector2(-878, 444)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
@@ -111,7 +123,7 @@ escape_waypoint_3 = NodePath("../Doorway Waypoint28")
 escape_waypoint_4 = NodePath("../Doorway Waypoint26")
 escape_waypoint_5 = NodePath("../Doorway Waypoint11")
 
-[node name="Michelle" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["Targets"] instance=ExtResource("6_moxcc")]
+[node name="Michelle" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("6_moxcc")]
 position = Vector2(-852, -28)
 player = NodePath("../Player")
 escape_location = NodePath("../EscapeLocation")
@@ -331,5 +343,134 @@ position = Vector2(-468, 182)
 scale = Vector2(1e-05, 1e-05)
 shape = SubResource("SegmentShape2D_q3hmo")
 
-[node name="Stairs" parent="." instance=ExtResource("8_6ef2n")]
-position = Vector2(-1022.8, 605.617)
+[node name="SceneTransition" parent="." node_paths=PackedStringArray("finished_level") instance=ExtResource("9_07ypf")]
+finished_level = NodePath("../FinishLevel")
+
+[node name="FinishLevel" parent="." node_paths=PackedStringArray("player", "hud", "stopwatch") instance=ExtResource("10_5erfu")]
+visible = false
+current_level = 1
+target_time = "35"
+player = NodePath("../Player")
+hud = NodePath("../HUD")
+numberOfEnemies = 9
+stopwatch = NodePath("../Stopwatch")
+
+[node name="Bed" parent="." instance=ExtResource("11_0ix62")]
+position = Vector2(-1088.48, -563.94)
+scale = Vector2(1.25, 1.25)
+
+[node name="Bed3" parent="." instance=ExtResource("11_0ix62")]
+position = Vector2(75.3879, -453.464)
+scale = Vector2(1.25, 1.25)
+
+[node name="Bed4" parent="." instance=ExtResource("11_0ix62")]
+position = Vector2(77.2758, -23.0574)
+scale = Vector2(1.25, 1.25)
+
+[node name="Bed5" parent="." instance=ExtResource("11_0ix62")]
+position = Vector2(-507.926, -40.0472)
+scale = Vector2(1.25, 1.25)
+
+[node name="Bed6" parent="." instance=ExtResource("11_0ix62")]
+position = Vector2(-879.378, 150.441)
+scale = Vector2(1.25, 1.25)
+
+[node name="Bed7" parent="." instance=ExtResource("11_0ix62")]
+position = Vector2(-504.752, 455.222)
+scale = Vector2(1.25, 1.25)
+
+[node name="Bed8" parent="." instance=ExtResource("11_0ix62")]
+position = Vector2(266.725, 613.962)
+scale = Vector2(1.25, 1.25)
+
+[node name="Bed9" parent="." instance=ExtResource("11_0ix62")]
+position = Vector2(660.401, 10.7496)
+scale = Vector2(1.25, 1.25)
+
+[node name="Bed10" parent="." instance=ExtResource("11_0ix62")]
+position = Vector2(660.401, -459.121)
+scale = Vector2(1.25, 1.25)
+
+[node name="Bed2" parent="." instance=ExtResource("11_0ix62")]
+position = Vector2(-504.314, -571.877)
+scale = Vector2(1.25, 1.25)
+
+[node name="chair-fancy" parent="." instance=ExtResource("12_xijn5")]
+position = Vector2(-980.065, -384.752)
+rotation = 0.505768
+
+[node name="chair-fancy2" parent="." instance=ExtResource("12_xijn5")]
+position = Vector2(-922.919, -454.598)
+rotation = 0.505768
+
+[node name="chair-fancy3" parent="." instance=ExtResource("12_xijn5")]
+position = Vector2(-392.727, -391.102)
+rotation = 0.505768
+
+[node name="chair-fancy4" parent="." instance=ExtResource("12_xijn5")]
+position = Vector2(-332.406, -422.85)
+rotation = 0.505768
+
+[node name="chair-fancy5" parent="." instance=ExtResource("12_xijn5")]
+position = Vector2(213.66, -362.529)
+rotation = 0.505768
+
+[node name="chair-fancy6" parent="." instance=ExtResource("12_xijn5")]
+position = Vector2(226.359, -584.765)
+rotation = -0.731696
+
+[node name="chair-fancy7" parent="." instance=ExtResource("12_xijn5")]
+position = Vector2(766.076, -584.765)
+rotation = -0.731696
+
+[node name="chair-fancy8" parent="." instance=ExtResource("12_xijn5")]
+position = Vector2(800.999, -127.593)
+rotation = -0.731696
+
+[node name="chair-fancy9" parent="." instance=ExtResource("12_xijn5")]
+position = Vector2(223.185, -118.069)
+rotation = -0.731696
+
+[node name="chair-fancy10" parent="." instance=ExtResource("12_xijn5")]
+position = Vector2(-348.28, -124.419)
+rotation = -0.731696
+
+[node name="chair-fancy11" parent="." instance=ExtResource("12_xijn5")]
+position = Vector2(-941.968, -130.768)
+rotation = -1.98311
+
+[node name="chair-fancy12" parent="." instance=ExtResource("12_xijn5")]
+position = Vector2(162.864, 437.521)
+rotation = -1.98311
+
+[node name="chair-fancy13" parent="." instance=ExtResource("12_xijn5")]
+position = Vector2(-395.902, 285.131)
+rotation = -1.98311
+
+[node name="chair-fancy14" parent="." instance=ExtResource("12_xijn5")]
+position = Vector2(-230.812, 288.306)
+rotation = -0.852249
+
+[node name="chair-fancy15" parent="." instance=ExtResource("12_xijn5")]
+position = Vector2(369.226, 450.221)
+rotation = -0.852249
+
+[node name="chair-fancy16" parent="." instance=ExtResource("12_xijn5")]
+position = Vector2(359.701, 132.74)
+rotation = -0.852249
+
+[node name="chair-fancy17" parent="." instance=ExtResource("12_xijn5")]
+position = Vector2(931.165, -111.719)
+rotation = -0.852249
+
+[node name="chair-fancy18" parent="." instance=ExtResource("12_xijn5")]
+position = Vector2(880.369, -365.703)
+rotation = -0.852249
+
+[node name="chair-fancy19" parent="." instance=ExtResource("12_xijn5")]
+position = Vector2(-300.658, 97.8176)
+rotation = -0.852249
+
+[node name="chair-fancy20" parent="." instance=ExtResource("12_xijn5")]
+position = Vector2(-1008.64, 43.8459)
+rotation = -0.852249

@@ -20,11 +20,12 @@ outline_color = Color(0.0338533, 0.0338533, 0.0338533, 1)
 shadow_size = 9
 shadow_color = Color(0.308468, 0.297586, 0.288227, 0)
 
-[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("stopwatch_label", "health_label", "target_label")]
+[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("stopwatch_label", "health_label", "target_label", "warning_label")]
 script = ExtResource("1_20m51")
 stopwatch_label = NodePath("TimerLabel")
 health_label = NodePath("HealthLabel")
 target_label = NodePath("TargetLabel")
+warning_label = NodePath("WarningLabel")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 94.0
@@ -77,3 +78,18 @@ offset_right = 88.0
 offset_bottom = 23.0
 text = "Health: 100"
 label_settings = SubResource("LabelSettings_wgwva")
+
+[node name="WarningLabel" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Warning: "
