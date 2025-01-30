@@ -19,6 +19,7 @@ var next_level
 var number_of_enemies_killed = 0
 var passed
 var final_time
+var died = false
 
 func _on_button_pressed() -> void:
 	find_next_level()
@@ -54,7 +55,7 @@ func _on_button_2_pressed() -> void:
 func update_information() -> void:
 	number_of_enemies_killed = player.infected
 	passed = float(number_of_enemies_killed) / float(numberOfEnemies) >= 0.60
-	if !passed:
+	if !passed || died:
 		next_level_button.disabled = true
 		level_complete.text = 'Level Failed!'
 		time.text = final_time

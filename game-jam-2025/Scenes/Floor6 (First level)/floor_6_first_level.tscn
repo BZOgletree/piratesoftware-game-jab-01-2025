@@ -34,7 +34,7 @@ hud = NodePath("../HUD")
 stairs = NodePath("../Stairs")
 scene_transition = NodePath("../SceneTransition")
 finish_level_screen = NodePath("../FinishLevel")
-allowed_remaining = 98
+allowed_remaining = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)

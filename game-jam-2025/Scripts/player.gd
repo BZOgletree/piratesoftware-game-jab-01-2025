@@ -30,6 +30,12 @@ func _process(delta: float) -> void:
 	move_and_slide()
 	check_for_kill()
 	check_for_exit()
+	if hud.health <= 0:
+		finish_level_screen.number_of_enemies_killed = infected
+		hud.stopped = true
+		finish_level_screen.final_time = str(hud.time)
+		finish_level_screen.died = true
+		scene_transition.scene_transition('level_complete')
 
 func get_input(): 
 	print(nav_agent.distance_to_target())
