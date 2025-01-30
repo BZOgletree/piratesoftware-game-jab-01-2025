@@ -139,7 +139,7 @@ func pickSkin():
 		target_skin_doc.visible = true
 		target_skin_doc.animation = 'Walking' if speed == state.IDLE else 'Running'
 		target_skin_doc.play()
-		currently_selected_skin = currently_selected_skin
+		currently_selected_skin = target_skin_doc
 	elif current_skin == 10:
 		target_skin_army.visible = true
 		target_skin_army.animation = 'Walking' if speed == state.IDLE else 'Running'
