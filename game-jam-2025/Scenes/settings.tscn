@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://pk17hdsnxrne"]
+
+[ext_resource type="Texture2D" uid="uid://c2sbinj3q2luo" path="res://Assets/Title/Background1.png" id="1_1bup8"]
+[ext_resource type="Script" path="res://Scripts/settings.gd" id="1_8572w"]
+[ext_resource type="Texture2D" uid="uid://dbti4cr4360os" path="res://Assets/Title/TumbstoneE.png" id="2_ehqvm"]
+[ext_resource type="Texture2D" uid="uid://dao2wpcevsq2o" path="res://Assets/Title/TumbstoneJ.png" id="3_18s52"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_8572w")
+
+[node name="Background1" type="Sprite2D" parent="."]
+position = Vector2(563, 244)
+scale = Vector2(1.256, 1)
+texture = ExtResource("1_1bup8")
+
+[node name="TumbstoneE" type="Sprite2D" parent="."]
+position = Vector2(209.341, 569.554)
+texture = ExtResource("2_ehqvm")
+
+[node name="TumbstoneJ" type="Sprite2D" parent="."]
+position = Vector2(1289.34, 477.554)
+texture = ExtResource("3_18s52")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 120.0
+offset_top = 250.0
+offset_right = 330.0
+offset_bottom = 362.0
+text = "Sound Effects: On"
+flat = true
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 834.0
+offset_top = 250.0
+offset_right = 1044.0
+offset_bottom = 362.0
+text = "Music: On"
+flat = true
+
+[node name="Button3" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Back
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cqgso6s68kbpn"
+path="res://.godot/imported/zombie low growl.mp3-802a09f2e6b32fe29af1ca33f904ed5f.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/zombie low growl.mp3"
+dest_files=["res://.godot/imported/zombie low growl.mp3-802a09f2e6b32fe29af1ca33f904ed5f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

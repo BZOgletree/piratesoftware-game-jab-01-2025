@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="Game-Jam-2025"
-run/main_scene="res://Scenes/main_menu.tscn"
+config/name="Patient Zero"
+run/main_scene="res://Scenes/title_screen_final.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://Assets/icon.svg"
+
+[autoload]
+
+Settings="*res://Scripts/settings.gd"
 
 [input]
 

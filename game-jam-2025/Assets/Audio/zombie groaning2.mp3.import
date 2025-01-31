@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://743411luc0p2"
+path="res://.godot/imported/zombie groaning2.mp3-cb249099f249e71afa8bf5add40e83eb.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/zombie groaning2.mp3"
+dest_files=["res://.godot/imported/zombie groaning2.mp3-cb249099f249e71afa8bf5add40e83eb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

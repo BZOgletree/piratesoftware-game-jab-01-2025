@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bhbkpprxcjpbs"]
+[gd_scene load_steps=17 format=3 uid="uid://bhbkpprxcjpbs"]
 
 [ext_resource type="PackedScene" uid="uid://x4ystqk34ocr" path="res://Scenes/Floor6 (First level)/floor_6_map.tscn" id="1_sjgvh"]
 [ext_resource type="PackedScene" uid="uid://bcosepain78m5" path="res://Scenes/stopwatch.tscn" id="2_03adn"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://dmry15e2202po" path="res://Scenes/bed.tscn" id="11_0ix62"]
 [ext_resource type="PackedScene" uid="uid://d0jpm3cjyvik5" path="res://Scenes/chair_fancy.tscn" id="12_xijn5"]
 [ext_resource type="PackedScene" uid="uid://i6f3rqocfjek" path="res://Scenes/workstation_waypoint.tscn" id="13_vwdx7"]
+[ext_resource type="PackedScene" uid="uid://ck2ohoqtwb3f3" path="res://Scenes/door.tscn" id="14_dqmbe"]
+[ext_resource type="AudioStream" uid="uid://duab5kx88p2xk" path="res://Assets/Audio/ZombZomb the Song.wav" id="15_edm4b"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_q3hmo"]
 
@@ -26,7 +28,113 @@ position = Vector2(-1022.8, 605.617)
 
 [node name="Stopwatch" parent="." instance=ExtResource("2_03adn")]
 
-[node name="HUD" parent="." instance=ExtResource("3_fcwap")]
+[node name="HUD" parent="." node_paths=PackedStringArray("song") instance=ExtResource("3_fcwap")]
+max_health = 100
+song = NodePath("../AudioStreamPlayer")
+
+[node name="Door" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(-1050.44, -246.903)
+
+[node name="Door2" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(-690.224, -246.903)
+
+[node name="Door3" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(-464.559, -244.784)
+
+[node name="Door4" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(-107.52, -243.724)
+
+[node name="Door5" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(114.893, -243.724)
+
+[node name="Door6" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(475.12, -244.943)
+
+[node name="Door7" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(696.443, -243.452)
+
+[node name="Door8" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(1056.34, -243.419)
+
+[node name="Door9" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(1054.73, 215.918)
+
+[node name="Door10" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(694.165, 217.989)
+
+[node name="Door11" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(475.43, 217.04)
+
+[node name="Door12" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(114.339, 215.601)
+
+[node name="Door13" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(-111.519, 213.356)
+
+[node name="Door14" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(-467.029, 213.744)
+
+[node name="Door15" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(-691.029, 214.234)
+
+[node name="Door16" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(-1049.83, 213.989)
+
+[node name="Door17" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(-579.274, -134.399)
+rotation = 1.5708
+
+[node name="Door18" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(-579.274, 101.601)
+rotation = 1.5708
+
+[node name="Door19" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(4.72626, -138.399)
+rotation = 1.5708
+
+[node name="Door20" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(4.97118, 105.775)
+rotation = 1.5708
+
+[node name="Door21" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(584.726, -134.399)
+rotation = 1.5708
+
+[node name="Door22" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(584.726, 107.601)
+rotation = 1.5708
+
+[node name="Door23" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(6.72626, -354.399)
+rotation = 1.5708
+
+[node name="Door24" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(8.72626, -596.399)
+rotation = 1.5708
+
+[node name="Door25" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(582.461, 330.968)
+rotation = 1.5708
+
+[node name="Door26" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(584.349, 570.712)
+rotation = 1.5708
+
+[node name="Door27" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(3.84039, 565.61)
+rotation = 1.5708
+
+[node name="Door28" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(4.40161, 326.988)
+rotation = 1.5708
+
+[node name="Door29" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(-578.351, 326.223)
+rotation = 1.5708
+
+[node name="Door30" parent="." instance=ExtResource("14_dqmbe")]
+position = Vector2(-579.27, 564.283)
+rotation = 1.5708
 
 [node name="Player" parent="." node_paths=PackedStringArray("hud", "stairs", "scene_transition", "finish_level_screen") instance=ExtResource("4_48oll")]
 position = Vector2(-1020.27, -584.901)
@@ -40,9 +148,10 @@ allowed_remaining = 2
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
 
-[node name="EscapeLocation" parent="." instance=ExtResource("5_psj5r")]
+[node name="EscapeLocation" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_psj5r")]
 position = Vector2(1055.1, 567.246)
 rotation = -3.13769
+player = NodePath("../Player")
 
 [node name="Clark" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("6_moxcc")]
 position = Vector2(-665, -644)
@@ -550,3 +659,6 @@ position = Vector2(445, -119)
 
 [node name="Waypoint 15" parent="." instance=ExtResource("13_vwdx7")]
 position = Vector2(200, 130)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_edm4b")

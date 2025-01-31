@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://0dssfb4d2gbd"]
+
+[ext_resource type="AudioStream" uid="uid://duab5kx88p2xk" path="res://Assets/Audio/ZombZomb the Song.wav" id="1_5v0dn"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_5v0dn")

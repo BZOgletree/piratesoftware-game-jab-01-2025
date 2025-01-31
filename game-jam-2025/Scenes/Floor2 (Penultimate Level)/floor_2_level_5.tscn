@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://fudlq50gl4a4"]
+[gd_scene load_steps=17 format=3 uid="uid://fudlq50gl4a4"]
 
 [ext_resource type="PackedScene" uid="uid://dmaud01psrrrp" path="res://Scenes/Floor2 (Penultimate Level)/floor_2_map.tscn" id="1_oc6xw"]
 [ext_resource type="PackedScene" uid="uid://bcosepain78m5" path="res://Scenes/stopwatch.tscn" id="2_0idxf"]
 [ext_resource type="PackedScene" uid="uid://budn5kngr202o" path="res://Scenes/player.tscn" id="3_uf0rr"]
 [ext_resource type="PackedScene" uid="uid://ua7jj7xp0xja" path="res://Scenes/target.tscn" id="4_igwew"]
+[ext_resource type="PackedScene" uid="uid://ck2ohoqtwb3f3" path="res://Scenes/door.tscn" id="4_kt2r8"]
 [ext_resource type="PackedScene" uid="uid://6s2y2bkxqfef" path="res://Scenes/hud.tscn" id="5_h2ekm"]
 [ext_resource type="PackedScene" uid="uid://qqs6ysaoacew" path="res://Scenes/stairs.tscn" id="6_1855v"]
 [ext_resource type="PackedScene" uid="uid://wolgs7r05dfi" path="res://Scenes/elevator.tscn" id="7_s4ila"]
@@ -14,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://d0jpm3cjyvik5" path="res://Scenes/chair_fancy.tscn" id="12_cvgal"]
 [ext_resource type="PackedScene" uid="uid://i6f3rqocfjek" path="res://Scenes/workstation_waypoint.tscn" id="13_gxkhg"]
 [ext_resource type="PackedScene" uid="uid://3qcwmqyv03uy" path="res://Justins work/doorway_waypoint.tscn" id="14_1ic26"]
+[ext_resource type="AudioStream" uid="uid://duab5kx88p2xk" path="res://Assets/Audio/ZombZomb the Song.wav" id="16_veixv"]
 
 [node name="Floor 2" type="Node2D"]
 
@@ -24,6 +26,20 @@ position = Vector2(-768.863, -407.864)
 
 [node name="Stairs" parent="." instance=ExtResource("6_1855v")]
 position = Vector2(-1131.91, -185.958)
+
+[node name="Door" parent="." instance=ExtResource("4_kt2r8")]
+position = Vector2(-1.49823, 197.777)
+scale = Vector2(2, 1)
+
+[node name="Door2" parent="." instance=ExtResource("4_kt2r8")]
+position = Vector2(-425.519, 561.865)
+rotation = 1.5708
+scale = Vector2(2, 1)
+
+[node name="Door3" parent="." instance=ExtResource("4_kt2r8")]
+position = Vector2(425.519, 564.862)
+rotation = 1.5708
+scale = Vector2(2, 1)
 
 [node name="Player" parent="." node_paths=PackedStringArray("hud", "stairs", "scene_transition", "finish_level_screen") instance=ExtResource("3_uf0rr")]
 position = Vector2(998.46, -176.199)
@@ -137,8 +153,6 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint6")
 escape_waypoint_3 = NodePath("../EscapeLocation")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-workstation_waypoint_1 = NodePath("")
-workstation_waypoint_2 = NodePath("")
 current_skin = 5
 
 [node name="Glenda" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("4_igwew")]
@@ -150,8 +164,6 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint6")
 escape_waypoint_3 = NodePath("../EscapeLocation")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-workstation_waypoint_1 = NodePath("")
-workstation_waypoint_2 = NodePath("")
 current_skin = 6
 
 [node name="Emma" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5") groups=["targets"] instance=ExtResource("4_igwew")]
@@ -163,8 +175,6 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint6")
 escape_waypoint_3 = NodePath("../EscapeLocation")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-workstation_waypoint_1 = NodePath("")
-workstation_waypoint_2 = NodePath("")
 current_skin = 1
 
 [node name="Dr Mundo" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("4_igwew")]
@@ -232,8 +242,6 @@ escape_waypoint_2 = NodePath("../Doorway Waypoint6")
 escape_waypoint_3 = NodePath("../EscapeLocation")
 escape_waypoint_4 = NodePath("../EscapeLocation")
 escape_waypoint_5 = NodePath("../EscapeLocation")
-workstation_waypoint_1 = NodePath("")
-workstation_waypoint_2 = NodePath("")
 current_skin = 2
 
 [node name="Wunder" parent="." node_paths=PackedStringArray("player", "escape_location", "escape_waypoint_1", "escape_waypoint_2", "escape_waypoint_3", "escape_waypoint_4", "escape_waypoint_5", "workstation_waypoint_1", "workstation_waypoint_2") groups=["targets"] instance=ExtResource("4_igwew")]
@@ -278,7 +286,9 @@ workstation_waypoint_2 = NodePath("../Fancy side middle L")
 next_workstation = 1
 current_skin = 5
 
-[node name="HUD" parent="." instance=ExtResource("5_h2ekm")]
+[node name="HUD" parent="." node_paths=PackedStringArray("song") instance=ExtResource("5_h2ekm")]
+max_health = 100
+song = NodePath("../AudioStreamPlayer")
 
 [node name="Elevator" parent="." instance=ExtResource("7_s4ila")]
 position = Vector2(1180.04, -260.709)
@@ -593,3 +603,6 @@ position = Vector2(386, 561)
 
 [node name="Doorway Waypoint6" parent="." instance=ExtResource("14_1ic26")]
 position = Vector2(474, 561)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_veixv")

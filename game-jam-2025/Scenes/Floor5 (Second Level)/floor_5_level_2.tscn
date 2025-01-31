@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://crp6snhlaouel"]
+[gd_scene load_steps=15 format=3 uid="uid://crp6snhlaouel"]
 
 [ext_resource type="PackedScene" uid="uid://dxr2c2s06ssrf" path="res://Scenes/Floor5 (Second Level)/floor_5_(second_level).tscn" id="1_ax2td"]
 [ext_resource type="PackedScene" uid="uid://budn5kngr202o" path="res://Scenes/player.tscn" id="2_6bwcw"]
+[ext_resource type="PackedScene" uid="uid://ck2ohoqtwb3f3" path="res://Scenes/door.tscn" id="3_b6lg3"]
 [ext_resource type="PackedScene" uid="uid://6s2y2bkxqfef" path="res://Scenes/hud.tscn" id="3_o4ibg"]
 [ext_resource type="PackedScene" uid="uid://bcosepain78m5" path="res://Scenes/stopwatch.tscn" id="4_ghnu4"]
 [ext_resource type="PackedScene" uid="uid://b5onfjpq3c8uj" path="res://Scenes/escape_location.tscn" id="5_s2phr"]
@@ -12,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dqwje5mbu8xka" path="res://Scenes/finish_level.tscn" id="10_owphe"]
 [ext_resource type="PackedScene" uid="uid://b7rvckgvlp71l" path="res://Scenes/scene_transition.tscn" id="11_b5ymg"]
 [ext_resource type="PackedScene" uid="uid://dmry15e2202po" path="res://Scenes/bed.tscn" id="12_1jhuv"]
+[ext_resource type="AudioStream" uid="uid://duab5kx88p2xk" path="res://Assets/Audio/ZombZomb the Song.wav" id="14_obrlm"]
 
 [node name="floor-2-level" type="Node2D"]
 position = Vector2(-720.814, -352.398)
@@ -22,6 +24,188 @@ position = Vector2(710, -4)
 [node name="Stairs" parent="." instance=ExtResource("7_7731p")]
 position = Vector2(1327.02, 7.9801)
 scale = Vector2(0.8, 0.8)
+
+[node name="Door" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(19.8214, 94.3875)
+
+[node name="Door2" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(194.438, 97.219)
+
+[node name="Door3" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(24.9549, 295.134)
+scale = Vector2(1, 2)
+
+[node name="Door4" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(194.469, 294.604)
+scale = Vector2(1, 2)
+
+[node name="Door5" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(344.383, 296.194)
+scale = Vector2(1, 2)
+
+[node name="Door6" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(497.475, 296.194)
+scale = Vector2(1, 2)
+
+[node name="Door7" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(646.33, 297.253)
+scale = Vector2(1, 2)
+
+[node name="Door8" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(796.244, 295.664)
+scale = Vector2(1, 2)
+
+[node name="Door9" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(946.688, 295.664)
+scale = Vector2(1, 2)
+
+[node name="Door15" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(946.093, 499.018)
+scale = Vector2(1, 2)
+
+[node name="Door16" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(1097.12, 499.613)
+scale = Vector2(1, 2)
+
+[node name="Door17" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(1247.56, 499.018)
+scale = Vector2(1, 2)
+
+[node name="Door18" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(795.659, 499.018)
+scale = Vector2(1, 2)
+
+[node name="Door19" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(645.224, 499.613)
+scale = Vector2(1, 2)
+
+[node name="Door20" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(494.789, 499.018)
+scale = Vector2(1, 2)
+
+[node name="Door21" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(344.354, 501.397)
+scale = Vector2(1, 2)
+
+[node name="Door22" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(196.298, 500.207)
+scale = Vector2(1, 2)
+
+[node name="Door23" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(19.7009, 500.207)
+scale = Vector2(1, 2)
+
+[node name="Door24" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(1420.59, 499.613)
+scale = Vector2(1, 2)
+
+[node name="Door25" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(1326.04, 397.936)
+rotation = 1.5708
+scale = Vector2(1, 2)
+
+[node name="Door26" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(1173.83, 396.746)
+rotation = 1.5708
+scale = Vector2(1, 2)
+
+[node name="Door27" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(1174.42, 196.365)
+rotation = 1.5708
+scale = Vector2(1, 2)
+
+[node name="Door28" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(1326.64, 197.554)
+rotation = 1.5708
+scale = Vector2(1, 2)
+
+[node name="Door29" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(1023.39, 196.365)
+rotation = 1.5708
+scale = Vector2(1, 2)
+
+[node name="Door30" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(874.146, 197.554)
+rotation = 1.5708
+scale = Vector2(1, 2)
+
+[node name="Door31" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(871.768, 398.53)
+rotation = 1.5708
+scale = Vector2(1, 2)
+
+[node name="Door32" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(1023.99, 397.936)
+rotation = 1.5708
+scale = Vector2(1, 2)
+
+[node name="Door33" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(721.927, 396.746)
+rotation = 1.5708
+scale = Vector2(1, 2)
+
+[node name="Door34" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(721.927, 197.554)
+rotation = 1.5708
+scale = Vector2(1, 2)
+
+[node name="Door35" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(574.466, 196.96)
+rotation = 1.5708
+scale = Vector2(1, 2)
+
+[node name="Door36" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(572.682, 397.341)
+rotation = 1.5708
+scale = Vector2(1, 2)
+
+[node name="Door37" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(422.247, 398.53)
+rotation = 1.5708
+scale = Vector2(1, 2)
+
+[node name="Door38" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(422.842, 198.743)
+rotation = 1.5708
+scale = Vector2(1, 2)
+
+[node name="Door39" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(270.623, 195.176)
+rotation = 1.5708
+scale = Vector2(1, 2)
+
+[node name="Door40" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(271.218, 398.53)
+rotation = 1.5708
+scale = Vector2(1, 2)
+
+[node name="Door41" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(118.405, 399.719)
+rotation = 1.5708
+scale = Vector2(1, 2)
+
+[node name="Door42" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(117.216, 196.96)
+rotation = 1.5708
+scale = Vector2(1, 2)
+
+[node name="Door10" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(1098.72, 296.723)
+scale = Vector2(1, 2)
+
+[node name="Door11" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(1248.1, 295.134)
+scale = Vector2(1, 2)
+
+[node name="Door12" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(1416.03, 297.253)
+scale = Vector2(1, 2)
+
+[node name="Door13" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(1421.38, 95.0879)
+
+[node name="Door14" parent="." instance=ExtResource("3_b6lg3")]
+position = Vector2(1245.38, 97.4663)
 
 [node name="Player" parent="." node_paths=PackedStringArray("hud", "stairs", "scene_transition", "finish_level_screen") instance=ExtResource("2_6bwcw")]
 position = Vector2(-4.49744, 581.299)
@@ -34,7 +218,9 @@ allowed_remaining = 3
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
 
-[node name="HUD" parent="." instance=ExtResource("3_o4ibg")]
+[node name="HUD" parent="." node_paths=PackedStringArray("song") instance=ExtResource("3_o4ibg")]
+max_health = 100
+song = NodePath("../AudioStreamPlayer")
 
 [node name="Stopwatch" parent="." instance=ExtResource("4_ghnu4")]
 
@@ -394,3 +580,6 @@ scale = Vector2(0.75, 0.75)
 [node name="Bed15" parent="." instance=ExtResource("12_1jhuv")]
 position = Vector2(1284.36, 252.134)
 scale = Vector2(0.75, 0.75)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_obrlm")

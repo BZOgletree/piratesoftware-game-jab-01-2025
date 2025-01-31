@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8c151adgmcbq"
+path="res://.godot/imported/zombie sad8.mp3-7066e91ff727619eb23ff65dbe791a46.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/zombie sad8.mp3"
+dest_files=["res://.godot/imported/zombie sad8.mp3-7066e91ff727619eb23ff65dbe791a46.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

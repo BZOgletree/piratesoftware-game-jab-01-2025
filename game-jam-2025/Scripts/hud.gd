@@ -4,10 +4,12 @@ extends CanvasLayer
 @export var health_label: Label
 @export var target_label: Label
 @export var warning_label: Label
+@export var max_health: int
+@export var song : AudioStreamPlayer
 
 var stopwatch: Stopwatch
 var time = 0.0
-var health = 100
+var health = max_health
 var previous_sec = 0
 var number_of_targets_remaining: int
 var stopped = false
@@ -16,6 +18,9 @@ var stopped = false
 func _ready() -> void:
 	stopwatch = get_tree().get_first_node_in_group("stopwatch")
 	update_number_of_targets_remaining()
+	health = max_health
+	if Settings.music:
+		song.playing = true
 	pass # Replace with function body.
 
 
@@ -37,8 +42,8 @@ func update_stopwatch_label():
 	
 func update_health_label(sec):
 	previous_sec = sec
-	if health > 100:
-		health = 100
+	if health > max_health:
+		health = max_health
 	health -= 1
 	health_label.text = 'Health: ' + str(health)
 

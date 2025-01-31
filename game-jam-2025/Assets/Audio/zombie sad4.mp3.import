@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cigeowsh61wrb"
+path="res://.godot/imported/zombie sad4.mp3-2a84b13da7004dc7b5a51e126dc1b05e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/zombie sad4.mp3"
+dest_files=["res://.godot/imported/zombie sad4.mp3-2a84b13da7004dc7b5a51e126dc1b05e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

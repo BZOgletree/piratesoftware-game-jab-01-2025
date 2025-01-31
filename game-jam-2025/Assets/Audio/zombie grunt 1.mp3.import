@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://r5wgtlau145e"
+path="res://.godot/imported/zombie grunt 1.mp3-a65d4bba1d5a14f8fad43b3d58e0b270.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/zombie grunt 1.mp3"
+dest_files=["res://.godot/imported/zombie grunt 1.mp3-a65d4bba1d5a14f8fad43b3d58e0b270.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

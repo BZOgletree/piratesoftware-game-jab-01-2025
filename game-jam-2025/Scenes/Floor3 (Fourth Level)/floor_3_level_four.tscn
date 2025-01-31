@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://baar41hya7pwn"]
+[gd_scene load_steps=18 format=3 uid="uid://baar41hya7pwn"]
 
 [ext_resource type="PackedScene" uid="uid://bf6lj1kfphkrd" path="res://Scenes/Floor3 (Fourth Level)/floor_3_map.tscn" id="1_rbml6"]
 [ext_resource type="PackedScene" uid="uid://6s2y2bkxqfef" path="res://Scenes/hud.tscn" id="2_602wy"]
 [ext_resource type="PackedScene" uid="uid://bcosepain78m5" path="res://Scenes/stopwatch.tscn" id="3_3ualn"]
 [ext_resource type="PackedScene" uid="uid://budn5kngr202o" path="res://Scenes/player.tscn" id="4_nvdbn"]
 [ext_resource type="PackedScene" uid="uid://ua7jj7xp0xja" path="res://Scenes/target.tscn" id="5_craxh"]
+[ext_resource type="PackedScene" uid="uid://ck2ohoqtwb3f3" path="res://Scenes/door.tscn" id="5_u4uv7"]
 [ext_resource type="PackedScene" uid="uid://qqs6ysaoacew" path="res://Scenes/stairs.tscn" id="6_hptrb"]
 [ext_resource type="PackedScene" uid="uid://b5onfjpq3c8uj" path="res://Scenes/escape_location.tscn" id="7_qehne"]
 [ext_resource type="PackedScene" uid="uid://b7rvckgvlp71l" path="res://Scenes/scene_transition.tscn" id="8_315n3"]
@@ -15,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://6kaaeumlndc1" path="res://Scenes/chair_shitty.tscn" id="15_dty23"]
 [ext_resource type="PackedScene" uid="uid://d0jpm3cjyvik5" path="res://Scenes/chair_fancy.tscn" id="15_rm80s"]
 [ext_resource type="PackedScene" uid="uid://dmry15e2202po" path="res://Scenes/bed.tscn" id="15_rv2lw"]
+[ext_resource type="AudioStream" uid="uid://duab5kx88p2xk" path="res://Assets/Audio/ZombZomb the Song.wav" id="17_hesva"]
 
 [node name="floor_3_level four" type="Node2D"]
 
@@ -24,9 +26,17 @@ position = Vector2(-158.79, -148.854)
 [node name="Stairs" parent="." instance=ExtResource("6_hptrb")]
 position = Vector2(883.595, -336.971)
 
-[node name="HUD" parent="." instance=ExtResource("2_602wy")]
+[node name="HUD" parent="." node_paths=PackedStringArray("song") instance=ExtResource("2_602wy")]
+max_health = 100
+song = NodePath("../AudioStreamPlayer")
 
 [node name="Stopwatch" parent="." instance=ExtResource("3_3ualn")]
+
+[node name="Door" parent="." instance=ExtResource("5_u4uv7")]
+position = Vector2(-1034.82, -177.143)
+
+[node name="Door2" parent="." instance=ExtResource("5_u4uv7")]
+position = Vector2(914.116, -177.092)
 
 [node name="Player" parent="." node_paths=PackedStringArray("hud", "stairs", "scene_transition", "finish_level_screen") instance=ExtResource("4_nvdbn")]
 position = Vector2(-1008, -290)
@@ -470,3 +480,6 @@ rotation = 3.85209
 [node name="chair-fancy9" parent="." instance=ExtResource("15_rm80s")]
 position = Vector2(255, 302)
 rotation = 3.85209
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_hesva")

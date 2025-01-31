@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1w5sjp05u08"
+path="res://.godot/imported/zombie hungry 1.mp3-37e519b019908452fd0b7d262e5b29f6.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/zombie hungry 1.mp3"
+dest_files=["res://.godot/imported/zombie hungry 1.mp3-37e519b019908452fd0b7d262e5b29f6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

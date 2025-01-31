@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://de81iti328gc3"]
+[gd_scene load_steps=15 format=3 uid="uid://de81iti328gc3"]
 
 [ext_resource type="PackedScene" uid="uid://hwmbi4chg6lj" path="res://Scenes/Floor4 (Third Level)/floor_4_map.tscn" id="1_1hq5q"]
 [ext_resource type="PackedScene" uid="uid://budn5kngr202o" path="res://Scenes/player.tscn" id="2_y8lp6"]
+[ext_resource type="PackedScene" uid="uid://ck2ohoqtwb3f3" path="res://Scenes/door.tscn" id="3_db0ag"]
 [ext_resource type="PackedScene" uid="uid://bcosepain78m5" path="res://Scenes/stopwatch.tscn" id="4_5xomb"]
 [ext_resource type="PackedScene" uid="uid://qqs6ysaoacew" path="res://Scenes/stairs.tscn" id="5_p3lmg"]
 [ext_resource type="PackedScene" uid="uid://6s2y2bkxqfef" path="res://Scenes/hud.tscn" id="5_w0gm7"]
@@ -12,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b7rvckgvlp71l" path="res://Scenes/scene_transition.tscn" id="10_mge56"]
 [ext_resource type="PackedScene" uid="uid://dqwje5mbu8xka" path="res://Scenes/finish_level.tscn" id="11_mnln8"]
 [ext_resource type="PackedScene" uid="uid://6kaaeumlndc1" path="res://Scenes/chair_shitty.tscn" id="12_6ifln"]
+[ext_resource type="AudioStream" uid="uid://duab5kx88p2xk" path="res://Assets/Audio/ZombZomb the Song.wav" id="14_6xroh"]
 
 [node name="Floor4Level3" type="Node2D"]
 
@@ -20,6 +22,18 @@ position = Vector2(2.55066, -4.08521)
 
 [node name="Stairs" parent="." instance=ExtResource("5_p3lmg")]
 position = Vector2(-1208.3, -709.775)
+
+[node name="Door" parent="." instance=ExtResource("3_db0ag")]
+position = Vector2(-864.035, 566.25)
+rotation = 1.5708
+
+[node name="Door2" parent="." instance=ExtResource("3_db0ag")]
+position = Vector2(947.646, 564.131)
+rotation = 1.5708
+
+[node name="Door3" parent="." instance=ExtResource("3_db0ag")]
+position = Vector2(37.5676, 33.3404)
+scale = Vector2(2, 2)
 
 [node name="Player" parent="." node_paths=PackedStringArray("hud", "stairs", "scene_transition", "finish_level_screen") instance=ExtResource("2_y8lp6")]
 position = Vector2(1192, -364)
@@ -34,7 +48,9 @@ zoom = Vector2(2, 2)
 
 [node name="Stopwatch" parent="." instance=ExtResource("4_5xomb")]
 
-[node name="HUD" parent="." instance=ExtResource("5_w0gm7")]
+[node name="HUD" parent="." node_paths=PackedStringArray("song") instance=ExtResource("5_w0gm7")]
+max_health = 100
+song = NodePath("../AudioStreamPlayer")
 
 [node name="Elevator" parent="." instance=ExtResource("6_he172")]
 position = Vector2(1200.67, -750.092)
@@ -1208,3 +1224,6 @@ position = Vector2(-1155, -494)
 
 [node name="Doorway Waypoint22" parent="." instance=ExtResource("9_eo5ar")]
 position = Vector2(-1140, 492)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_6xroh")

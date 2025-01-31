@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2owughkufjii"]
+
+[ext_resource type="Texture2D" uid="uid://cl2ryrvjvqh6v" path="res://Assets/New Stuff/MainDoor.png" id="1_3vaav"]
+
+[node name="final_door" type="Node2D"]
+
+[node name="MainDoor" type="Sprite2D" parent="."]
+texture = ExtResource("1_3vaav")
