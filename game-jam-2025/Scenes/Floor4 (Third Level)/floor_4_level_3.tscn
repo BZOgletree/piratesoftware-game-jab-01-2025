@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://de81iti328gc3"]
+[gd_scene load_steps=14 format=3 uid="uid://de81iti328gc3"]
 
 [ext_resource type="PackedScene" uid="uid://hwmbi4chg6lj" path="res://Scenes/Floor4 (Third Level)/floor_4_map.tscn" id="1_1hq5q"]
 [ext_resource type="PackedScene" uid="uid://budn5kngr202o" path="res://Scenes/player.tscn" id="2_y8lp6"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bcosepain78m5" path="res://Scenes/stopwatch.tscn" id="4_5xomb"]
 [ext_resource type="PackedScene" uid="uid://qqs6ysaoacew" path="res://Scenes/stairs.tscn" id="5_p3lmg"]
 [ext_resource type="PackedScene" uid="uid://6s2y2bkxqfef" path="res://Scenes/hud.tscn" id="5_w0gm7"]
-[ext_resource type="PackedScene" uid="uid://wolgs7r05dfi" path="res://Scenes/elevator.tscn" id="6_he172"]
 [ext_resource type="PackedScene" uid="uid://b5onfjpq3c8uj" path="res://Scenes/escape_location.tscn" id="7_n8k4d"]
 [ext_resource type="PackedScene" uid="uid://ua7jj7xp0xja" path="res://Scenes/target.tscn" id="8_6eec8"]
 [ext_resource type="PackedScene" uid="uid://3qcwmqyv03uy" path="res://Justins work/doorway_waypoint.tscn" id="9_eo5ar"]
@@ -52,11 +51,8 @@ zoom = Vector2(2, 2)
 max_health = 100
 song = NodePath("../AudioStreamPlayer")
 
-[node name="Elevator" parent="." instance=ExtResource("6_he172")]
-position = Vector2(1200.67, -750.092)
-
 [node name="EscapeLocation" parent="." instance=ExtResource("7_n8k4d")]
-position = Vector2(1187, -754)
+position = Vector2(1181.51, -740.967)
 
 [node name="EscapeLocation2" parent="." instance=ExtResource("7_n8k4d")]
 position = Vector2(-1146.26, 907.219)
@@ -780,10 +776,6 @@ position = Vector2(43, -36)
 [node name="Doorway Waypoint7" parent="." instance=ExtResource("9_eo5ar")]
 position = Vector2(45, 636)
 
-[node name="SceneTransition" parent="." node_paths=PackedStringArray("finished_level") instance=ExtResource("10_mge56")]
-visible = false
-finished_level = NodePath("../FinishLevel")
-
 [node name="FinishLevel" parent="." node_paths=PackedStringArray("player", "hud", "stopwatch") instance=ExtResource("11_mnln8")]
 visible = false
 current_level = 3
@@ -792,6 +784,10 @@ player = NodePath("../Player")
 hud = NodePath("../HUD")
 numberOfEnemies = 57
 stopwatch = NodePath("../Stopwatch")
+
+[node name="SceneTransition" parent="." node_paths=PackedStringArray("finished_level") instance=ExtResource("10_mge56")]
+visible = false
+finished_level = NodePath("../FinishLevel")
 
 [node name="chair_shitty" parent="." instance=ExtResource("12_6ifln")]
 position = Vector2(-646.927, 569.906)
@@ -1227,3 +1223,4 @@ position = Vector2(-1140, 492)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_6xroh")
+volume_db = -10.0

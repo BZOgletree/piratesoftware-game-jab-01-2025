@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1ikol6t4hejh"]
+[gd_scene load_steps=5 format=3 uid="uid://b1ikol6t4hejh"]
 
 [ext_resource type="Script" path="res://Scripts/thanks_for_playing.gd" id="1_4do15"]
+[ext_resource type="Texture2D" uid="uid://c2sbinj3q2luo" path="res://Assets/Title/Background1.png" id="2_pw8st"]
 [ext_resource type="PackedScene" uid="uid://b7rvckgvlp71l" path="res://Scenes/scene_transition.tscn" id="2_rvma4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_581np"]
@@ -14,15 +15,10 @@ shadow_color = Color(0.328629, 0.353923, 0.313526, 0)
 script = ExtResource("1_4do15")
 scene_transition = NodePath("SceneTransition")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -676.0
-offset_top = -685.0
-offset_right = 1753.0
-offset_bottom = 1312.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 12.83
-color = Color(0.277953, 0.330825, 0.131128, 1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(607.974, 219.061)
+scale = Vector2(1.51114, 1)
+texture = ExtResource("2_pw8st")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8
@@ -50,24 +46,12 @@ offset_right = 96.0
 grow_vertical = 0
 text = "Play Again?"
 
-[node name="Button2" type="Button" parent="."]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-offset_top = -8.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Settings"
-
 [node name="Label2" type="Label" parent="."]
 offset_left = 464.0
 offset_top = 388.0
 offset_right = 677.0
 offset_bottom = 437.0
-text = "From us at AutoFill Games Kyle, Braxton and Justin"
+text = "From us at AutoFill Games Kyle, Braxton and Justin with voicing by Eric"
 autowrap_mode = 2
 
 [node name="SceneTransition" parent="." instance=ExtResource("2_rvma4")]

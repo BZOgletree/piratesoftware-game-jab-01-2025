@@ -20,6 +20,11 @@
 
 [node name="floor_3_level four" type="Node2D"]
 
+[node name="Bed3" parent="." instance=ExtResource("15_rv2lw")]
+position = Vector2(-40.6303, 192.38)
+rotation = 0.00302947
+scale = Vector2(0.463587, 0.393712)
+
 [node name="Floor 3 Map" parent="." instance=ExtResource("1_rbml6")]
 position = Vector2(-158.79, -148.854)
 
@@ -302,9 +307,6 @@ current_skin = 9
 [node name="EscapeLocation" parent="." instance=ExtResource("7_qehne")]
 position = Vector2(-1041.24, -457.106)
 
-[node name="SceneTransition" parent="." node_paths=PackedStringArray("finished_level") instance=ExtResource("8_315n3")]
-finished_level = NodePath("../FinishLevel")
-
 [node name="FinishLevel" parent="." node_paths=PackedStringArray("player", "hud", "stopwatch") instance=ExtResource("9_6qabc")]
 visible = false
 current_level = 4
@@ -312,6 +314,9 @@ player = NodePath("../Player")
 hud = NodePath("../HUD")
 numberOfEnemies = 18
 stopwatch = NodePath("../Stopwatch")
+
+[node name="SceneTransition" parent="." node_paths=PackedStringArray("finished_level") instance=ExtResource("8_315n3")]
+finished_level = NodePath("../FinishLevel")
 
 [node name="Doorway Waypoint" parent="." instance=ExtResource("10_eru1i")]
 position = Vector2(-1033, -221)
@@ -429,6 +434,11 @@ position = Vector2(-473, 418)
 rotation = -0.560993
 scale = Vector2(0.4, 0.75)
 
+[node name="Bed10" parent="." instance=ExtResource("15_rv2lw")]
+position = Vector2(-780.013, 419.335)
+rotation = -0.00161378
+scale = Vector2(0.276441, 1.18011)
+
 [node name="Bed6" parent="." instance=ExtResource("15_rv2lw")]
 position = Vector2(193, 75)
 rotation = 2.17555
@@ -483,3 +493,4 @@ rotation = 3.85209
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_hesva")
+volume_db = -10.0

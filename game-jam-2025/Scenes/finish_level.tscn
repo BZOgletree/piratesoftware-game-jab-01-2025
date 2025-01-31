@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqwje5mbu8xka"]
+[gd_scene load_steps=7 format=3 uid="uid://dqwje5mbu8xka"]
 
 [ext_resource type="Script" path="res://Scripts/finish_level.gd" id="1_sfeqs"]
+[ext_resource type="Texture2D" uid="uid://cbp65wr20tili" path="res://Assets/Stairs.png" id="2_1q4mt"]
 [ext_resource type="PackedScene" uid="uid://b7rvckgvlp71l" path="res://Scenes/scene_transition.tscn" id="2_i3aot"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_deyqh"]
@@ -24,15 +25,10 @@ level_complete = NodePath("Label")
 time = NodePath("Label2")
 rank = NodePath("Label3")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -676.0
-offset_top = -685.0
-offset_right = 1753.0
-offset_bottom = 1312.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 12.83
-color = Color(0.277953, 0.330825, 0.131128, 1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(568.431, 363.706)
+scale = Vector2(4.40208, 4.20513)
+texture = ExtResource("2_1q4mt")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8

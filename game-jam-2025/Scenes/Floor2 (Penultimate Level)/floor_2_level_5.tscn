@@ -293,9 +293,6 @@ song = NodePath("../AudioStreamPlayer")
 [node name="Elevator" parent="." instance=ExtResource("7_s4ila")]
 position = Vector2(1180.04, -260.709)
 
-[node name="SceneTransition" parent="." node_paths=PackedStringArray("finished_level") instance=ExtResource("8_5qb63")]
-finished_level = NodePath("../FinishLevel")
-
 [node name="FinishLevel" parent="." node_paths=PackedStringArray("player", "hud", "stopwatch") instance=ExtResource("9_g8g7m")]
 visible = false
 current_level = 5
@@ -303,6 +300,9 @@ player = NodePath("../Player")
 hud = NodePath("../HUD")
 numberOfEnemies = 18
 stopwatch = NodePath("../Stopwatch")
+
+[node name="SceneTransition" parent="." node_paths=PackedStringArray("finished_level") instance=ExtResource("8_5qb63")]
+finished_level = NodePath("../FinishLevel")
 
 [node name="EscapeLocation" parent="." instance=ExtResource("10_3airr")]
 position = Vector2(1183, -238)
@@ -606,3 +606,4 @@ position = Vector2(474, 561)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_veixv")
+volume_db = -10.0

@@ -1,8 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2owughkufjii"]
+[gd_scene load_steps=3 format=3 uid="uid://d2owughkufjii"]
 
 [ext_resource type="Texture2D" uid="uid://cl2ryrvjvqh6v" path="res://Assets/New Stuff/MainDoor.png" id="1_3vaav"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d5ftf"]
+font_size = 86
+font_color = Color(0, 0, 0, 1)
 
 [node name="final_door" type="Node2D"]
 
 [node name="MainDoor" type="Sprite2D" parent="."]
 texture = ExtResource("1_3vaav")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -87.4532
+offset_top = -63.9081
+offset_right = 88.5468
+offset_bottom = 54.0919
+text = "EXIT"
+label_settings = SubResource("LabelSettings_d5ftf")

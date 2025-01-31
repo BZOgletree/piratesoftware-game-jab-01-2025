@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=3 uid="uid://d13rn4cig3aao"]
+
+[ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="1_enoi3"]
+[ext_resource type="Texture2D" uid="uid://b2tlde2wgq5p8" path="res://Assets/New Stuff/Robert.png" id="2_cm18s"]
+[ext_resource type="AudioStream" uid="uid://b88pcj880g8e2" path="res://Assets/Audio/zombie groning1.mp3" id="3_3apow"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsqiu"]
+atlas = ExtResource("2_cm18s")
+region = Rect2(0, 600, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lvo2l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsqiu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_csrex"]
+font_size = 32
+
+[node name="Tutorial" type="CanvasLayer" node_paths=PackedStringArray("zombie_groan")]
+script = ExtResource("1_enoi3")
+zombie_groan = NodePath("AudioStreamPlayer")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_top = 0.78858
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.560784)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1011.59, 399.786)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_lvo2l")
+frame_progress = 0.23766
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.588891
+anchor_top = 0.94096
+anchor_right = 0.982988
+anchor_bottom = 0.98417
+offset_left = -653.117
+offset_top = -71.482
+offset_right = -653.117
+offset_bottom = -71.482
+text = "WASD or Arrow Keys to move. Left Click or E to bite."
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.588891
+anchor_top = 0.94096
+anchor_right = 0.982988
+anchor_bottom = 0.98417
+offset_left = -655.637
+offset_top = -45.0236
+offset_right = -655.637
+offset_bottom = -45.0236
+text = "MUST EAT ALL OTHER HUMANS"
+label_settings = SubResource("LabelSettings_csrex")
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.644097
+anchor_top = 0.876543
+anchor_right = 0.931424
+anchor_bottom = 0.912037
+offset_left = -75.6161
+offset_top = 46.4946
+offset_right = -75.6161
+offset_bottom = 46.4946
+grow_horizontal = 0
+grow_vertical = 0
+text = "Press Q or Right Click to Continue"
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3apow")
+volume_db = -10.306

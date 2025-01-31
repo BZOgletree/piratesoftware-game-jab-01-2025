@@ -11,10 +11,20 @@ const speed = 200
 @export var finish_level_screen: CanvasLayer
 @export var allowed_remaining: int
 
+@onready var zombie_bite := $zombie_bite
+@onready var zombie_moan := $zombie_moan
+@onready var zombie_sad := $zombie_sad
+@onready var zombie_hungry := $zombie_hungry
+@onready var person_running := $zombie_running
+@onready var person_screaming := $zombie_screaming
+@onready var zombie_angry := $zombie_angry
+
+
 var kill_state = false
 var break_barrier = false
 var collision
 var infected = 0
+var sound_effect_cooldown = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -67,8 +77,26 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	kill_state = false
 
 func check_for_kill():
+	if Settings.sound_effects:
+		var random = randf()
+		if random > 0.75 && !sound_effect_cooldown:
+			if random > 0.75 && random < 0.8:
+				zombie_bite.playing = true
+			elif random >= 0.8 && random < 0.85:
+				zombie_moan.playing = true
+			elif random >= 0.85 && random < 0.9:
+				zombie_sad.playing = true
+			elif random >= 0.9 && random < 0.95:
+				zombie_angry.playing = true
+			elif random >= 0.95 && random < 0.97:
+				person_running.playing = true
+			else:
+				person_screaming.playing = true
+			sound_effect_cooldown = true
 	if Input.is_action_just_pressed("Bite") && kill_state:
 		biting()
+		if Settings.sound_effects:
+			zombie_bite.playing = true
 		collision.get_parent().queue_free()
 		hud.health += 3
 		infected += 1
@@ -78,6 +106,11 @@ func biting():
 	bite.animation = "Bite"
 	bite.play()
 	infected += 1
+
+func sound_effect_cooldown_function():
+	if sound_effect_cooldown:
+		await get_tree().create_timer(3.0).timeout
+		sound_effect_cooldown = false
 
 func _on_bite_animation_finished() -> void:
 	bite.visible = false

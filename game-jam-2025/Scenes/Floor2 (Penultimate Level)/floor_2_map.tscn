@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dmaud01psrrrp"]
+[gd_scene load_steps=15 format=3 uid="uid://dmaud01psrrrp"]
 
 [ext_resource type="Texture2D" uid="uid://cqxu14sroltge" path="res://Assets/ZombZomb/JustWall.png" id="1_160di"]
 [ext_resource type="PackedScene" uid="uid://bulsgc2qungov" path="res://Scenes/Floor2 (Penultimate Level)/f_2bl_middle_room.tscn" id="1_edc6t"]
@@ -14,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://25mfl3al08m6" path="res://Scenes/Floor2 (Penultimate Level)/f_2_peak_outside_room.tscn" id="11_vfbfs"]
 [ext_resource type="PackedScene" uid="uid://id6ffqyhae6e" path="res://Scenes/Floor2 (Penultimate Level)/f_2_circle.tscn" id="12_udnu1"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfe06"]
+size = Vector2(50, 236)
+
 [node name="Floor2 Map" type="Node2D"]
 
 [node name="JustWall" type="Sprite2D" parent="."]
@@ -21,20 +24,36 @@ position = Vector2(342.436, 511.103)
 scale = Vector2(0.3, 1)
 texture = ExtResource("1_160di")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JustWall"]
+position = Vector2(-3.12012, -28.103)
+shape = SubResource("RectangleShape2D_gfe06")
+
 [node name="JustWall2" type="Sprite2D" parent="."]
 position = Vector2(448.531, 282.342)
 scale = Vector2(0.3, 1)
 texture = ExtResource("1_160di")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JustWall2"]
+position = Vector2(-3.12012, -28.103)
+shape = SubResource("RectangleShape2D_gfe06")
 
 [node name="JustWall3" type="Sprite2D" parent="."]
 position = Vector2(1084.93, 288.522)
 scale = Vector2(0.3, 1)
 texture = ExtResource("1_160di")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JustWall3"]
+position = Vector2(-3.12012, -28.103)
+shape = SubResource("RectangleShape2D_gfe06")
+
 [node name="JustWall4" type="Sprite2D" parent="."]
 position = Vector2(1192.34, 499.907)
 scale = Vector2(0.3, 1)
 texture = ExtResource("1_160di")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JustWall4"]
+position = Vector2(-3.12012, -28.103)
+shape = SubResource("RectangleShape2D_gfe06")
 
 [node name="F2BLMiddleRoom" parent="." instance=ExtResource("1_edc6t")]
 position = Vector2(548.82, 962.887)

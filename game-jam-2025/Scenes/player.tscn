@@ -1,8 +1,21 @@
-[gd_scene load_steps=26 format=3 uid="uid://budn5kngr202o"]
+[gd_scene load_steps=43 format=3 uid="uid://budn5kngr202o"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_agtxk"]
 [ext_resource type="Texture2D" uid="uid://c3ad6p4gcgclq" path="res://Assets/PlayerCharacter.png" id="2_orlru"]
 [ext_resource type="Texture2D" uid="uid://t1mjq4obdmvk" path="res://Assets/SpriteSheets/Bite.png" id="3_o2dka"]
+[ext_resource type="AudioStream" uid="uid://7n6kouce52qr" path="res://Assets/Audio/zombie bite1.mp3" id="4_wxgg3"]
+[ext_resource type="AudioStream" uid="uid://ygoy3ar4rycn" path="res://Assets/Audio/zombie bite2.mp3" id="5_cdes3"]
+[ext_resource type="AudioStream" uid="uid://743411luc0p2" path="res://Assets/Audio/zombie groaning2.mp3" id="6_w3ec7"]
+[ext_resource type="AudioStream" uid="uid://b88pcj880g8e2" path="res://Assets/Audio/zombie groning1.mp3" id="7_bps1u"]
+[ext_resource type="AudioStream" uid="uid://cigeowsh61wrb" path="res://Assets/Audio/zombie sad4.mp3" id="8_ow3mi"]
+[ext_resource type="AudioStream" uid="uid://c1w5sjp05u08" path="res://Assets/Audio/zombie hungry 1.mp3" id="9_rpput"]
+[ext_resource type="AudioStream" uid="uid://dk1bd76fv1xrv" path="res://Assets/Audio/zombie hungry 2.mp3" id="10_1q0h7"]
+[ext_resource type="AudioStream" uid="uid://bp3amvfukixye" path="res://Assets/Audio/zombie hungry 3.mp3" id="11_yfkrf"]
+[ext_resource type="AudioStream" uid="uid://cqgso6s68kbpn" path="res://Assets/Audio/zombie low growl.mp3" id="12_1ndyf"]
+[ext_resource type="AudioStream" uid="uid://cake43edxus56" path="res://Assets/Audio/targets running.mp3" id="12_2hquc"]
+[ext_resource type="AudioStream" uid="uid://bkj4ovbcfs6tg" path="res://Assets/Audio/targets scream.mp3" id="13_4cgu5"]
+[ext_resource type="AudioStream" uid="uid://c767d2nytxkwa" path="res://Assets/Audio/zombie  grunt 2.mp3" id="13_phe5j"]
+[ext_resource type="AudioStream" uid="uid://r5wgtlau145e" path="res://Assets/Audio/zombie grunt 1.mp3" id="14_cma0f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4pis"]
 atlas = ExtResource("2_orlru")
@@ -158,6 +171,29 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tbjrs"]
+random_pitch = 1.28
+streams_count = 2
+stream_0/stream = ExtResource("4_wxgg3")
+stream_1/stream = ExtResource("5_cdes3")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_brwc5"]
+streams_count = 2
+stream_0/stream = ExtResource("6_w3ec7")
+stream_1/stream = ExtResource("7_bps1u")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_g8ync"]
+streams_count = 3
+stream_0/stream = ExtResource("9_rpput")
+stream_1/stream = ExtResource("10_1q0h7")
+stream_2/stream = ExtResource("11_yfkrf")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7dssv"]
+streams_count = 3
+stream_0/stream = ExtResource("12_1ndyf")
+stream_1/stream = ExtResource("13_phe5j")
+stream_2/stream = ExtResource("14_cma0f")
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "bite")]
 scale = Vector2(0.75, 0.75)
 collision_layer = 47
@@ -193,6 +229,34 @@ frame = 7
 frame_progress = 1.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="zombie_bite" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_tbjrs")
+volume_db = -6.883
+
+[node name="zombie_moan" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_brwc5")
+volume_db = -20.0
+
+[node name="zombie_sad" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_ow3mi")
+volume_db = -20.0
+
+[node name="zombie_hungry" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_g8ync")
+volume_db = -20.0
+
+[node name="zombie_running" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_2hquc")
+volume_db = -20.0
+
+[node name="zombie_screaming" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_4cgu5")
+volume_db = -20.0
+
+[node name="zombie_angry" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_7dssv")
+volume_db = -20.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

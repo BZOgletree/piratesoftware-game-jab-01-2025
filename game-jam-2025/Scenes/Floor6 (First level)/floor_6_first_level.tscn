@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bhbkpprxcjpbs"]
+[gd_scene load_steps=18 format=3 uid="uid://bhbkpprxcjpbs"]
 
 [ext_resource type="PackedScene" uid="uid://x4ystqk34ocr" path="res://Scenes/Floor6 (First level)/floor_6_map.tscn" id="1_sjgvh"]
 [ext_resource type="PackedScene" uid="uid://bcosepain78m5" path="res://Scenes/stopwatch.tscn" id="2_03adn"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b5onfjpq3c8uj" path="res://Scenes/escape_location.tscn" id="5_psj5r"]
 [ext_resource type="PackedScene" uid="uid://ua7jj7xp0xja" path="res://Scenes/target.tscn" id="6_moxcc"]
 [ext_resource type="PackedScene" uid="uid://3qcwmqyv03uy" path="res://Justins work/doorway_waypoint.tscn" id="7_31nix"]
+[ext_resource type="PackedScene" uid="uid://d13rn4cig3aao" path="res://Scenes/tutorial.tscn" id="7_52s5w"]
 [ext_resource type="PackedScene" uid="uid://qqs6ysaoacew" path="res://Scenes/stairs.tscn" id="8_6ef2n"]
 [ext_resource type="PackedScene" uid="uid://b7rvckgvlp71l" path="res://Scenes/scene_transition.tscn" id="9_07ypf"]
 [ext_resource type="PackedScene" uid="uid://dqwje5mbu8xka" path="res://Scenes/finish_level.tscn" id="10_5erfu"]
@@ -144,6 +145,8 @@ stairs = NodePath("../Stairs")
 scene_transition = NodePath("../SceneTransition")
 finish_level_screen = NodePath("../FinishLevel")
 allowed_remaining = 2
+
+[node name="Tutorial" parent="Player" instance=ExtResource("7_52s5w")]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
@@ -483,9 +486,6 @@ position = Vector2(-468, 182)
 scale = Vector2(1e-05, 1e-05)
 shape = SubResource("SegmentShape2D_q3hmo")
 
-[node name="SceneTransition" parent="." node_paths=PackedStringArray("finished_level") instance=ExtResource("9_07ypf")]
-finished_level = NodePath("../FinishLevel")
-
 [node name="FinishLevel" parent="." node_paths=PackedStringArray("player", "hud", "stopwatch") instance=ExtResource("10_5erfu")]
 visible = false
 current_level = 1
@@ -494,6 +494,9 @@ player = NodePath("../Player")
 hud = NodePath("../HUD")
 numberOfEnemies = 9
 stopwatch = NodePath("../Stopwatch")
+
+[node name="SceneTransition" parent="." node_paths=PackedStringArray("finished_level") instance=ExtResource("9_07ypf")]
+finished_level = NodePath("../FinishLevel")
 
 [node name="Bed" parent="." instance=ExtResource("11_0ix62")]
 position = Vector2(-1088.48, -563.94)
@@ -662,3 +665,4 @@ position = Vector2(200, 130)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_edm4b")
+volume_db = -10.0

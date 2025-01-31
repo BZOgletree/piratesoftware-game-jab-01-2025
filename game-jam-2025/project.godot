@@ -19,6 +19,10 @@ config/icon="res://Assets/icon.svg"
 
 Settings="*res://Scripts/settings.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [input]
 
 Up={

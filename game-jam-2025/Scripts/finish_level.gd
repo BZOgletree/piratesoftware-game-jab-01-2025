@@ -55,14 +55,19 @@ func _on_button_2_pressed() -> void:
 func update_information() -> void:
 	number_of_enemies_killed = player.infected
 	passed = float(number_of_enemies_killed) / float(numberOfEnemies) >= 0.60
+	var msec = fmod(float(final_time), 1) * 1000
+	var sec = fmod(float(final_time), 60)
+	var min = float(final_time) / 60
+	var formatted_string = "%02d : %02d : %02d"
+	var actual_string = formatted_string % [min, sec, msec]
 	if !passed || died:
 		next_level_button.disabled = true
 		level_complete.text = 'Level Failed!'
-		time.text = final_time
+		time.text = 'Time: ' + actual_string
 		rank.text = 'Rank: F'
 		player.queue_free()
 	else:
 		level_complete.text = 'Level Complete!'
-		time.text = final_time
+		time.text = 'Time: ' + actual_string
 		rank.text = 'Rank: A'
 		player.queue_free()
